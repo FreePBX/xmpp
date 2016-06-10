@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-21 09:51-0700\n"
+"POT-Creation-Date: 2016-06-10 12:03-0700\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
@@ -21,106 +21,137 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
+#: ucp/assets/js/global.js:356
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s が入力中…"
 
+#: install.php:89
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr "%s をユーザー管理に追加中"
 
+#: xmpp.i18n.php:6 xmpp.i18n.php:12
 msgid "Admin"
 msgstr ""
 
-msgid ""
-"COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www."
-"schmoozecom.com/oss.php. Manage and configure a XMPP Server Prosody and "
-"requires the Prosody RPM from FreePBX be installed."
-msgstr ""
-
+#: install.php:48
 msgid "Cannot create xmpp tables"
 msgstr "xmppテーブルを作成できませんでした"
 
+#: install.php:82
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "ユーザー %s から %s に変更中"
 
+#: page.xmpp.php:20
 msgid "Delete"
 msgstr "削除"
 
+#: install.php:75
 msgid "Detected Blank username, removing"
 msgstr "空のユーザー名を検出しましたので削除します"
 
+#: views/xmpp.php:21
 msgid "Domain"
 msgstr "ドメイン"
 
+#: views/xmpp.php:33
 msgid "Domain XMPP will serve"
 msgstr "XMPP機能が提供されるドメイン"
 
+#: views/userman_hook.php:37
 msgid "Enable XMPP for this user"
 msgstr ""
 
+#: views/userman_hook.php:18
 msgid "Enabled"
 msgstr "有効"
 
+#: views/userman_hook.php:27
 msgid "Inherit"
 msgstr ""
 
+#: ucp/assets/js/global.js:244
 msgid "Login"
 msgstr ""
 
+#: xmpp.i18n.php:8
+msgid ""
+"Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
+"your PBX be installed."
+msgstr ""
+
+#: ucp/assets/js/global.js:155
 msgid "Me"
 msgstr "自分"
 
+#: install.php:58
 msgid "Migrating Token Users to User Manager"
 msgstr "トークンのユーザーをユーザー管理に移行中"
 
+#: install.php:52
 msgid "Missing User Manager Module!"
 msgstr "ユーザー管理モジュールはインストールされていません！"
 
+#: ucp/assets/js/global.js:113
 msgid "Need a valid recipient"
 msgstr "有効な受信者を指定してください"
 
+#: ucp/assets/js/global.js:340
 #, perl-format
 msgid "New Message from %s"
 msgstr "%s より新規メッセージ"
 
+#: ucp/Xmpp.class.php:32
 msgid "New XMPP"
 msgstr "新規XMPP"
 
+#: views/userman_hook.php:24
 msgid "No"
 msgstr "いいえ"
 
+#: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr ""
 
+#: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
+#: ucp/assets/js/global.js:116
 msgid "Recursively sending to yourself!"
 msgstr "自分宛てに送信します！"
 
+#: Xmpp.class.php:556
 msgid "Reset"
 msgstr ""
 
+#: Xmpp.class.php:620
 msgid "Running XMPP Hooks"
 msgstr ""
 
+#: ucp/assets/js/global.js:45
 msgid "Send Message"
 msgstr "メッセージを送信"
 
+#: ucp/assets/js/global.js:97
 msgid "Start XMPP"
 msgstr "XMPPを起動"
 
+#: Xmpp.class.php:621
 msgid "Starting XMPP Server"
 msgstr ""
 
+#: Xmpp.class.php:561
 msgid "Submit"
 msgstr ""
 
+#: ucp/assets/js/global.js:43
 msgid "There is currently no connection to a valid server"
 msgstr "有効なサーバーに接続していません"
 
+#: views/userman_hook.php:9
 #, php-format
 msgid ""
 "This section will add this user to XMPP. The user can then login to the XMPP "
@@ -128,49 +159,63 @@ msgid ""
 "users password after clicking Yes"
 msgstr ""
 
+#: install.php:101
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr "%s をユーザー管理に追加できません"
 
+#: Xmpp.class.php:516 Xmpp.class.php:523
 msgid "Unknown"
 msgstr "不明"
 
+#: install.php:92
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr "ユーザー %s は既に存在するため、更新します"
 
+#: ucp/assets/js/global.js:240
 msgid "Username"
 msgstr ""
 
+#: install.php:84
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "ユーザー名が衝突: %s を %s に変更して %s を削除します"
 
+#: views/userman_hook.php:4
 msgid "What is XMPP"
 msgstr ""
 
+#: xmpp.i18n.php:4 xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
+#: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
 msgstr ""
 
+#: Xmpp.class.php:628
 #, php-format
 msgid "XMPP Server Start Failed: %s"
 msgstr ""
 
+#: Xmpp.class.php:626
 msgid "XMPP Server Started"
 msgstr ""
 
+#: Xmpp.class.php:645
 msgid "XMPP Server Stopped"
 msgstr ""
 
+#: Xmpp.class.php:647
 msgid "XMPP Server was not running"
 msgstr ""
 
+#: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
 msgstr ""
 
+#: views/userman_hook.php:23
 msgid "Yes"
 msgstr "はい"
 
