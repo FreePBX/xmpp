@@ -6,11 +6,7 @@
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<category>Admin</category>
-	<description>Manage and configure a XMPP Server Prosody and requires the Prosody RPM from FreePBX be installed.</description>
-	<commercial>
-		<type>paid</type>
-		<link>//schmoozecom.com/freepbx/xmpp.php</link>
-	</commercial>
+	<description>Manage and configure a XMPP Server Prosody and requires the Prosody RPM from your PBX be installed.</description>
 	<menuitems>
 		<xmpp needsenginedb="yes">XMPP</xmpp>
 	</menuitems>
