@@ -1,0 +1,206 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for xmpp
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-21 09:51-0700\n"
+"PO-Revision-Date: 2016-06-07 08:31+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/fpbxc/xmpp/es_ES/"
+">\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
+
+#, perl-format
+msgid "%s is typing..."
+msgstr "%s esta escribiendo.."
+
+#, php-format
+msgid "Adding %s to User Manager"
+msgstr "Agregando %s al Administrador de Usuarios"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid ""
+"COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www."
+"schmoozecom.com/oss.php. Manage and configure a XMPP Server Prosody and "
+"requires the Prosody RPM from FreePBX be installed."
+msgstr ""
+"MODULO COMERCIAL requiere una licencia para su funcionamiento. Por favor, "
+"visite www.schmoozecom.com/oss.php. Administración y configuración de un "
+"servidor XMPP Prosodia y se requiere instalar el RPM Prosodia de FreePBX."
+
+msgid "Cannot create xmpp tables"
+msgstr "No se pueden crear tablas XMPP"
+
+#, php-format
+msgid "Changing user %s to %s"
+msgstr "Cambio de usuario %s to %s"
+
+msgid "Delete"
+msgstr "Borrar"
+
+msgid "Detected Blank username, removing"
+msgstr "Nombre de usuario en blanco detectado, eliminando"
+
+msgid "Domain"
+msgstr "Dominio"
+
+msgid "Domain XMPP will serve"
+msgstr "Dominio XMPP servirá"
+
+msgid "Enable XMPP for this user"
+msgstr "Habilitar XMPP para este usuario"
+
+msgid "Enabled"
+msgstr "Habilitado"
+
+msgid "Inherit"
+msgstr "Heredar"
+
+msgid "Login"
+msgstr "Inicio de sesión"
+
+msgid "Me"
+msgstr "Yo"
+
+msgid "Migrating Token Users to User Manager"
+msgstr "Migración del Token de  Usuarios a Administrador de usuarios"
+
+msgid "Missing User Manager Module!"
+msgstr "Falta el Módulo Administrador de usuarios!"
+
+msgid "Need a valid recipient"
+msgstr "Necesita un destinatario válido"
+
+#, perl-format
+msgid "New Message from %s"
+msgstr "Nuevo mensaje de %s"
+
+msgid "New XMPP"
+msgstr "XMPP Nuevo"
+
+msgid "No"
+msgstr "No"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Please enter your username and password to login to the XMPP server"
+msgstr ""
+"Por favor ingrese su nombre de usuario y contraseña para iniciar sesión en "
+"el Servidor XMMP"
+
+msgid "Recursively sending to yourself!"
+msgstr "Respectivamente enviar a ti mismo!"
+
+msgid "Reset"
+msgstr "Reinicio"
+
+msgid "Running XMPP Hooks"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Mensaje Enviado"
+
+msgid "Start XMPP"
+msgstr "XMPP Inicio"
+
+msgid "Starting XMPP Server"
+msgstr "Iniciando el Servidor XMPP"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "There is currently no connection to a valid server"
+msgstr "Actualmente no existe una conexión a un servidor válido"
+
+#, php-format
+msgid ""
+"This section will add this user to XMPP. The user can then login to the XMPP "
+"server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
+"users password after clicking Yes"
+msgstr ""
+"En esta sección puede agregar este usuario XMPP. El usuario puede iniciar "
+"sesión en el Servidor XMPP en \"%s\" usando \"&lt;username&gt;@%s\" Usted "
+"necesitará redefinir las contraseñas de usuarios antes de dar clic en Si"
+
+#, php-format
+msgid "Unable to add %s to User Manager"
+msgstr "No es posible añadir %s para el Administrador de usuarios"
+
+msgid "Unknown"
+msgstr "Desconocido"
+
+#, php-format
+msgid "User %s already exists, updating instead"
+msgstr "El usuario %s ya existe, en lugar de actualizar"
+
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#, php-format
+msgid "Username Conflict %s changing to %s deleting %s"
+msgstr "Conflicto en Nombre de Usurio %s cambiar a %s borrando %s"
+
+msgid "What is XMPP"
+msgstr "Qué es XMPP"
+
+msgid "XMPP"
+msgstr "XMPP"
+
+msgid "XMPP Credentials"
+msgstr "Credenciales XMPP"
+
+#, php-format
+msgid "XMPP Server Start Failed: %s"
+msgstr "El inicio del Servidor XMPP fallo: %s"
+
+msgid "XMPP Server Started"
+msgstr "Servidor XMPP iniciado"
+
+msgid "XMPP Server Stopped"
+msgstr "Servidor XMPP detenido"
+
+msgid "XMPP Server was not running"
+msgstr "El Servidor XMPP no esta funcionando"
+
+msgid "XMPP/Jabber Settings"
+msgstr "Ajustes XMPP/Jabber"
+
+msgid "Yes"
+msgstr "Si"
+
+#~ msgid ""
+#~ "Enabling XMPP requires you to redefine your password(s) and will expose "
+#~ "your password in the database"
+#~ msgstr ""
+#~ "Habilitar XMMP requiere redefinir su contraseña(s) y exponer su "
+#~ "contraseña a la base de datos"
+
+#~ msgid "You Enabled XMPP but did not change your password"
+#~ msgstr "Habilitó su XMPP, pero no cambió su contraseña"
+
+#~ msgid ""
+#~ "Enabling XMPP requires you to redefine your password and will expose your "
+#~ "password in the database"
+#~ msgstr ""
+#~ "Habilitar XMPP requiere redefinir su contraseña y expondrá su contraseña "
+#~ "en la base de datos"
+
+#~ msgid "Running"
+#~ msgstr "ejecutando"
+
+#~ msgid "Save"
+#~ msgstr "Guardar"
