@@ -109,14 +109,14 @@ var XmppC = UCPMC.extend({
 	initiateChat: function(to) {
 		var Xmpp = this,
 				user = to.split("@");
+		user[1] = (typeof user[1] !== "undefined") ? user[1] : Xmpp.jid.domain;
 		if (to === "") {
 			alert(_("Need a valid recipient"));
 			return false;
-		} else if (to == this.jid.user + "@" + this.jid.domain) {
-			alert(_("Recursively sending to yourself!"));
+		} else if (user[0] == this.jid.user && user[1] == this.jid.domain) {
+			alert(_("Recursively sending to yourself is not allowed!"));
 			return;
 		}
-		user[1] = (typeof user[1] !== "undefined") ? user[1] : Xmpp.jid.domain;
 		UCP.addChat("Xmpp", encodeURIComponent(user[0] + "@" + user[1]), Xmpp.icon, Xmpp.jid.user + "@" + user[1], this.replaceContact(user[0] + "@" + user[1]));
 		UCP.closeDialog();
 	},

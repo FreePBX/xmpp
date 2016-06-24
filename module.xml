@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>13.0.12</version>
+	<version>13.0.13</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,6 +17,7 @@
 		<module>userman ge 12.0.21</module>
 	</depends>
 	<changelog>
+		*13.0.13* FREEPBX-12517 dont allow sending messages to self
 		*13.0.12* Open Source Module: https://www.freepbx.org/sangomas-commitment-to-open-source/
 		*13.0.11* Support better chat interfaces
 		*13.0.10* FREEPBX-12419 remove debug
