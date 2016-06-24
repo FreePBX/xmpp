@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-10 12:03-0700\n"
+"POT-Creation-Date: 2016-06-23 17:43-0700\n"
 "PO-Revision-Date: 2016-06-07 08:31+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/fpbxc/xmpp/es_ES/"
@@ -94,7 +94,7 @@ msgstr "Migración del Token de  Usuarios a Administrador de usuarios"
 msgid "Missing User Manager Module!"
 msgstr "Falta el Módulo Administrador de usuarios!"
 
-#: ucp/assets/js/global.js:113
+#: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
 msgstr "Necesita un destinatario válido"
 
@@ -121,9 +121,9 @@ msgstr ""
 "Por favor ingrese su nombre de usuario y contraseña para iniciar sesión en "
 "el Servidor XMMP"
 
-#: ucp/assets/js/global.js:116
-msgid "Recursively sending to yourself!"
-msgstr "Respectivamente enviar a ti mismo!"
+#: ucp/assets/js/global.js:117
+msgid "Recursively sending to yourself is not allowed!"
+msgstr ""
 
 #: Xmpp.class.php:556
 msgid "Reset"
@@ -223,6 +223,9 @@ msgstr "Ajustes XMPP/Jabber"
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "Si"
+
+#~ msgid "Recursively sending to yourself!"
+#~ msgstr "Respectivamente enviar a ti mismo!"
 
 #~ msgid ""
 #~ "COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit "

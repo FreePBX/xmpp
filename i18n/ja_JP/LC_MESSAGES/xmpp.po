@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-10 12:03-0700\n"
+"POT-Creation-Date: 2016-06-23 17:43-0700\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
@@ -94,7 +94,7 @@ msgstr "トークンのユーザーをユーザー管理に移行中"
 msgid "Missing User Manager Module!"
 msgstr "ユーザー管理モジュールはインストールされていません！"
 
-#: ucp/assets/js/global.js:113
+#: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
 msgstr "有効な受信者を指定してください"
 
@@ -119,9 +119,9 @@ msgstr ""
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
-#: ucp/assets/js/global.js:116
-msgid "Recursively sending to yourself!"
-msgstr "自分宛てに送信します！"
+#: ucp/assets/js/global.js:117
+msgid "Recursively sending to yourself is not allowed!"
+msgstr ""
 
 #: Xmpp.class.php:556
 msgid "Reset"
@@ -218,6 +218,9 @@ msgstr ""
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "はい"
+
+#~ msgid "Recursively sending to yourself!"
+#~ msgstr "自分宛てに送信します！"
 
 #~ msgid "You Enabled XMPP but did not change your password"
 #~ msgstr "XMPPを有効にしましたがパスワードはまだ変更していません。"
