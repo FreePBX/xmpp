@@ -1,0 +1,216 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for xmpp
+# Copyright (C) 2008-2016 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-23 17:43-0700\n"
+"PO-Revision-Date: 2016-06-23 17:43-0700\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ucp/assets/js/global.js:356
+#, perl-format
+msgid "%s is typing..."
+msgstr ""
+
+#: install.php:89
+#, php-format
+msgid "Adding %s to User Manager"
+msgstr ""
+
+#: xmpp.i18n.php:6 xmpp.i18n.php:12
+msgid "Admin"
+msgstr ""
+
+#: install.php:48
+msgid "Cannot create xmpp tables"
+msgstr ""
+
+#: install.php:82
+#, php-format
+msgid "Changing user %s to %s"
+msgstr ""
+
+#: page.xmpp.php:20
+msgid "Delete"
+msgstr ""
+
+#: install.php:75
+msgid "Detected Blank username, removing"
+msgstr ""
+
+#: views/xmpp.php:21
+msgid "Domain"
+msgstr ""
+
+#: views/xmpp.php:33
+msgid "Domain XMPP will serve"
+msgstr ""
+
+#: views/userman_hook.php:37
+msgid "Enable XMPP for this user"
+msgstr ""
+
+#: views/userman_hook.php:18
+msgid "Enabled"
+msgstr ""
+
+#: views/userman_hook.php:27
+msgid "Inherit"
+msgstr ""
+
+#: ucp/assets/js/global.js:244
+msgid "Login"
+msgstr ""
+
+#: xmpp.i18n.php:8
+msgid ""
+"Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
+"your PBX be installed."
+msgstr ""
+
+#: ucp/assets/js/global.js:155
+msgid "Me"
+msgstr ""
+
+#: install.php:58
+msgid "Migrating Token Users to User Manager"
+msgstr ""
+
+#: install.php:52
+msgid "Missing User Manager Module!"
+msgstr ""
+
+#: ucp/assets/js/global.js:114
+msgid "Need a valid recipient"
+msgstr ""
+
+#: ucp/assets/js/global.js:340
+#, perl-format
+msgid "New Message from %s"
+msgstr ""
+
+#: ucp/Xmpp.class.php:32
+msgid "New XMPP"
+msgstr ""
+
+#: views/userman_hook.php:24
+msgid "No"
+msgstr ""
+
+#: ucp/assets/js/global.js:242
+msgid "Password"
+msgstr ""
+
+#: ucp/assets/js/global.js:240
+msgid "Please enter your username and password to login to the XMPP server"
+msgstr ""
+
+#: ucp/assets/js/global.js:117
+msgid "Recursively sending to yourself is not allowed!"
+msgstr ""
+
+#: Xmpp.class.php:556
+msgid "Reset"
+msgstr ""
+
+#: Xmpp.class.php:620
+msgid "Running XMPP Hooks"
+msgstr ""
+
+#: ucp/assets/js/global.js:45
+msgid "Send Message"
+msgstr ""
+
+#: ucp/assets/js/global.js:97
+msgid "Start XMPP"
+msgstr ""
+
+#: Xmpp.class.php:621
+msgid "Starting XMPP Server"
+msgstr ""
+
+#: Xmpp.class.php:561
+msgid "Submit"
+msgstr ""
+
+#: ucp/assets/js/global.js:43
+msgid "There is currently no connection to a valid server"
+msgstr ""
+
+#: views/userman_hook.php:9
+#, php-format
+msgid ""
+"This section will add this user to XMPP. The user can then login to the XMPP "
+"server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
+"users password after clicking Yes"
+msgstr ""
+
+#: install.php:101
+#, php-format
+msgid "Unable to add %s to User Manager"
+msgstr ""
+
+#: Xmpp.class.php:516 Xmpp.class.php:523
+msgid "Unknown"
+msgstr ""
+
+#: install.php:92
+#, php-format
+msgid "User %s already exists, updating instead"
+msgstr ""
+
+#: ucp/assets/js/global.js:240
+msgid "Username"
+msgstr ""
+
+#: install.php:84
+#, php-format
+msgid "Username Conflict %s changing to %s deleting %s"
+msgstr ""
+
+#: views/userman_hook.php:4
+msgid "What is XMPP"
+msgstr ""
+
+#: xmpp.i18n.php:4 xmpp.i18n.php:10
+msgid "XMPP"
+msgstr ""
+
+#: ucp/assets/js/global.js:240
+msgid "XMPP Credentials"
+msgstr ""
+
+#: Xmpp.class.php:628
+#, php-format
+msgid "XMPP Server Start Failed: %s"
+msgstr ""
+
+#: Xmpp.class.php:626
+msgid "XMPP Server Started"
+msgstr ""
+
+#: Xmpp.class.php:645
+msgid "XMPP Server Stopped"
+msgstr ""
+
+#: Xmpp.class.php:647
+msgid "XMPP Server was not running"
+msgstr ""
+
+#: views/xmpp.php:3
+msgid "XMPP/Jabber Settings"
+msgstr ""
+
+#: views/userman_hook.php:23
+msgid "Yes"
+msgstr ""
