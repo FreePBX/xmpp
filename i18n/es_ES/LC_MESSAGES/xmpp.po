@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-23 17:43-0700\n"
+"POT-Creation-Date: 2016-07-08 15:18-0700\n"
 "PO-Revision-Date: 2016-06-07 08:31+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/fpbxc/xmpp/es_ES/"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s esta escribiendo.."
 
-#: install.php:89
+#: install.php:84
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr "Agregando %s al Administrador de Usuarios"
@@ -39,7 +39,7 @@ msgstr "Admin"
 msgid "Cannot create xmpp tables"
 msgstr "No se pueden crear tablas XMPP"
 
-#: install.php:82
+#: install.php:77
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "Cambio de usuario %s to %s"
@@ -48,7 +48,7 @@ msgstr "Cambio de usuario %s to %s"
 msgid "Delete"
 msgstr "Borrar"
 
-#: install.php:75
+#: install.php:70
 msgid "Detected Blank username, removing"
 msgstr "Nombre de usuario en blanco detectado, eliminando"
 
@@ -86,13 +86,9 @@ msgstr ""
 msgid "Me"
 msgstr "Yo"
 
-#: install.php:58
+#: install.php:53
 msgid "Migrating Token Users to User Manager"
 msgstr "Migración del Token de  Usuarios a Administrador de usuarios"
-
-#: install.php:52
-msgid "Missing User Manager Module!"
-msgstr "Falta el Módulo Administrador de usuarios!"
 
 #: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
@@ -164,7 +160,7 @@ msgstr ""
 "sesión en el Servidor XMPP en \"%s\" usando \"&lt;username&gt;@%s\" Usted "
 "necesitará redefinir las contraseñas de usuarios antes de dar clic en Si"
 
-#: install.php:101
+#: install.php:96
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr "No es posible añadir %s para el Administrador de usuarios"
@@ -173,7 +169,7 @@ msgstr "No es posible añadir %s para el Administrador de usuarios"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: install.php:92
+#: install.php:87
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr "El usuario %s ya existe, en lugar de actualizar"
@@ -182,7 +178,7 @@ msgstr "El usuario %s ya existe, en lugar de actualizar"
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: install.php:84
+#: install.php:79
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "Conflicto en Nombre de Usurio %s cambiar a %s borrando %s"
@@ -223,6 +219,9 @@ msgstr "Ajustes XMPP/Jabber"
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "Si"
+
+#~ msgid "Missing User Manager Module!"
+#~ msgstr "Falta el Módulo Administrador de usuarios!"
 
 #~ msgid "Recursively sending to yourself!"
 #~ msgstr "Respectivamente enviar a ti mismo!"

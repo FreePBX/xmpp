@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-23 17:43-0700\n"
+"POT-Creation-Date: 2016-07-08 15:18-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "%s is typing..."
 msgstr ""
 
-#: install.php:89
+#: install.php:84
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr ""
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Cannot create xmpp tables"
 msgstr ""
 
-#: install.php:82
+#: install.php:77
 #, php-format
 msgid "Changing user %s to %s"
 msgstr ""
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: install.php:75
+#: install.php:70
 msgid "Detected Blank username, removing"
 msgstr ""
 
@@ -83,12 +83,8 @@ msgstr ""
 msgid "Me"
 msgstr ""
 
-#: install.php:58
+#: install.php:53
 msgid "Migrating Token Users to User Manager"
-msgstr ""
-
-#: install.php:52
-msgid "Missing User Manager Module!"
 msgstr ""
 
 #: ucp/assets/js/global.js:114
@@ -156,7 +152,7 @@ msgid ""
 "users password after clicking Yes"
 msgstr ""
 
-#: install.php:101
+#: install.php:96
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr ""
@@ -166,7 +162,7 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: install.php:92
+#: install.php:87
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr ""
@@ -175,7 +171,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: install.php:84
+#: install.php:79
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr ""

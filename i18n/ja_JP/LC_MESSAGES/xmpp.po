@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-23 17:43-0700\n"
+"POT-Creation-Date: 2016-07-08 15:18-0700\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s が入力中…"
 
-#: install.php:89
+#: install.php:84
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr "%s をユーザー管理に追加中"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Cannot create xmpp tables"
 msgstr "xmppテーブルを作成できませんでした"
 
-#: install.php:82
+#: install.php:77
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "ユーザー %s から %s に変更中"
@@ -48,7 +48,7 @@ msgstr "ユーザー %s から %s に変更中"
 msgid "Delete"
 msgstr "削除"
 
-#: install.php:75
+#: install.php:70
 msgid "Detected Blank username, removing"
 msgstr "空のユーザー名を検出しましたので削除します"
 
@@ -86,13 +86,9 @@ msgstr ""
 msgid "Me"
 msgstr "自分"
 
-#: install.php:58
+#: install.php:53
 msgid "Migrating Token Users to User Manager"
 msgstr "トークンのユーザーをユーザー管理に移行中"
-
-#: install.php:52
-msgid "Missing User Manager Module!"
-msgstr "ユーザー管理モジュールはインストールされていません！"
 
 #: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
@@ -159,7 +155,7 @@ msgid ""
 "users password after clicking Yes"
 msgstr ""
 
-#: install.php:101
+#: install.php:96
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr "%s をユーザー管理に追加できません"
@@ -168,7 +164,7 @@ msgstr "%s をユーザー管理に追加できません"
 msgid "Unknown"
 msgstr "不明"
 
-#: install.php:92
+#: install.php:87
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr "ユーザー %s は既に存在するため、更新します"
@@ -177,7 +173,7 @@ msgstr "ユーザー %s は既に存在するため、更新します"
 msgid "Username"
 msgstr ""
 
-#: install.php:84
+#: install.php:79
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "ユーザー名が衝突: %s を %s に変更して %s を削除します"
@@ -218,6 +214,9 @@ msgstr ""
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "はい"
+
+#~ msgid "Missing User Manager Module!"
+#~ msgstr "ユーザー管理モジュールはインストールされていません！"
 
 #~ msgid "Recursively sending to yourself!"
 #~ msgstr "自分宛てに送信します！"

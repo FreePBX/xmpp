@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-23 17:43-0700\n"
+"POT-Creation-Date: 2016-07-08 15:18-0700\n"
 "PO-Revision-Date: 2016-07-06 05:25+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian (Iran) "
-"<http://weblate.freepbx.org/projects/freepbx/xmpp/fa_IR/>\n"
-"Language: fa_IR\n"
+"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
+"xmpp/fa_IR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s در حال تایپ کردن است..."
 
-#: install.php:89
+#: install.php:84
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr "افزودن %s به مدیریت کاربر"
@@ -39,7 +39,7 @@ msgstr "مدیر"
 msgid "Cannot create xmpp tables"
 msgstr "عدم ایجاد جداول xmpp"
 
-#: install.php:82
+#: install.php:77
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "تغییر کاربر %s به %s"
@@ -48,7 +48,7 @@ msgstr "تغییر کاربر %s به %s"
 msgid "Delete"
 msgstr "حذف کردن"
 
-#: install.php:75
+#: install.php:70
 msgid "Detected Blank username, removing"
 msgstr "کاربر خالی تشخیص داده شد، در حال حذف"
 
@@ -86,13 +86,9 @@ msgstr "مدیریت و تنظیم سرور XMPP که باید نسخه RPM آن
 msgid "Me"
 msgstr "مرا"
 
-#: install.php:58
+#: install.php:53
 msgid "Migrating Token Users to User Manager"
 msgstr "مهاجرت توکن کاربران به مدیریت کاربر"
-
-#: install.php:52
-msgid "Missing User Manager Module!"
-msgstr "ماژول مدیریت کاربر یافت نشد!"
 
 #: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
@@ -162,7 +158,7 @@ msgstr ""
 "\"%s\" با استفاده از \"&lt;username&gt;@%s\" وارد شده و پس از کلیک کردن بله "
 "کلمه عبور را تغییر دهد"
 
-#: install.php:101
+#: install.php:96
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr "نمیتوان %s را به مدیریت کاربر اضافه کرد"
@@ -171,7 +167,7 @@ msgstr "نمیتوان %s را به مدیریت کاربر اضافه کرد"
 msgid "Unknown"
 msgstr "ناشناخته"
 
-#: install.php:92
+#: install.php:87
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr "کاربر %s وجود دارد، به روزرسانی تغییرات"
@@ -180,7 +176,7 @@ msgstr "کاربر %s وجود دارد، به روزرسانی تغییرات"
 msgid "Username"
 msgstr "نام کاربری"
 
-#: install.php:84
+#: install.php:79
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "نام کاربری %s تلاقی دارد تغییر %s حذف %s"
@@ -221,3 +217,6 @@ msgstr "تنظیمات XMPP/Jabber"
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "بله"
+
+#~ msgid "Missing User Manager Module!"
+#~ msgstr "ماژول مدیریت کاربر یافت نشد!"
