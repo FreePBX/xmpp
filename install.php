@@ -48,11 +48,6 @@ foreach($sql as $q) {
 	db_e($e = $db->query($q), 'die_freepbx', 4, _("Cannot create xmpp tables"));
 }
 
-if(!function_exists('setup_userman')) {
-    out(_('Missing User Manager Module!'));
-    return false;
-}
-
 $mod_info = module_getinfo('xmpp');
 if(!empty($mod_info['xmpp']['dbversion']) && version_compare($mod_info['xmpp']['dbversion'],'2.11.1.3','<')) {
     out(_('Migrating Token Users to User Manager'));
@@ -60,7 +55,7 @@ if(!empty($mod_info['xmpp']['dbversion']) && version_compare($mod_info['xmpp']['
     $users = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
     if(!empty($users)) {
         $usermapping = array();
-        $userman = setup_userman();
+        $userman = FreePBX::create()->Userman;
         $umusers = array();
         $umusersn = array();
         foreach($userman->getAllUsers() as $user) {
