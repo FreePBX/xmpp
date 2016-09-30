@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-08 15:18-0700\n"
-"PO-Revision-Date: 2016-09-30 10:20+0200\n"
+"PO-Revision-Date: 2016-09-30 14:07+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian "
 "<http://weblate.freepbx.org/projects/freepbx/xmpp/uk_UA/>\n"
@@ -30,7 +30,7 @@ msgstr "%s друкує..."
 #: install.php:84
 #, php-format
 msgid "Adding %s to User Manager"
-msgstr ""
+msgstr "Додайте %s у Диспетчері Користувачів"
 
 #: xmpp.i18n.php:6 xmpp.i18n.php:12
 msgid "Admin"
@@ -85,7 +85,7 @@ msgstr ""
 
 #: ucp/assets/js/global.js:155
 msgid "Me"
-msgstr ""
+msgstr "Я"
 
 #: install.php:53
 msgid "Migrating Token Users to User Manager"
@@ -98,7 +98,7 @@ msgstr ""
 #: ucp/assets/js/global.js:340
 #, perl-format
 msgid "New Message from %s"
-msgstr ""
+msgstr "Нове повідомлення від %s"
 
 #: ucp/Xmpp.class.php:32
 msgid "New XMPP"
@@ -106,11 +106,11 @@ msgstr ""
 
 #: views/userman_hook.php:24
 msgid "No"
-msgstr ""
+msgstr "Ні"
 
 #: ucp/assets/js/global.js:242
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ucp/assets/js/global.js:45
 msgid "Send Message"
-msgstr ""
+msgstr "Надіслати повідомлення"
 
 #: ucp/assets/js/global.js:97
 msgid "Start XMPP"
@@ -146,7 +146,7 @@ msgstr ""
 
 #: ucp/assets/js/global.js:43
 msgid "There is currently no connection to a valid server"
-msgstr ""
+msgstr "Наразі немає підключення до дійсного сервера"
 
 #: views/userman_hook.php:9
 #, php-format
@@ -163,7 +163,7 @@ msgstr ""
 
 #: Xmpp.class.php:516 Xmpp.class.php:523
 msgid "Unknown"
-msgstr ""
+msgstr "Невідомо"
 
 #: install.php:87
 #, php-format
@@ -172,7 +172,7 @@ msgstr ""
 
 #: ucp/assets/js/global.js:240
 msgid "Username"
-msgstr ""
+msgstr "Ім'я користувача"
 
 #: install.php:79
 #, php-format
@@ -181,11 +181,12 @@ msgstr ""
 
 #: views/userman_hook.php:4
 msgid "What is XMPP"
-msgstr ""
+msgstr "Що таке XMPP"
 
 #: xmpp.i18n.php:4 xmpp.i18n.php:10
+#, fuzzy
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
@@ -210,8 +211,8 @@ msgstr ""
 
 #: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
-msgstr ""
+msgstr "Налаштування XMPP/Jabber"
 
 #: views/userman_hook.php:23
 msgid "Yes"
-msgstr ""
+msgstr "Так"
