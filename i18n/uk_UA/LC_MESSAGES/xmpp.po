@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-08 15:18-0700\n"
-"PO-Revision-Date: 2016-09-30 14:07+0200\n"
+"PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian "
 "<http://weblate.freepbx.org/projects/freepbx/xmpp/uk_UA/>\n"
@@ -82,6 +82,8 @@ msgid ""
 "Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
 "your PBX be installed."
 msgstr ""
+"Керування та налаштування XMPP серверу Просоді і потребує щоб RPM Просоді "
+"було встановлено з вашої PBX."
 
 #: ucp/assets/js/global.js:155
 msgid "Me"
@@ -93,7 +95,7 @@ msgstr ""
 
 #: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
-msgstr ""
+msgstr "Потрібен дійсний одержувач"
 
 #: ucp/assets/js/global.js:340
 #, perl-format
@@ -102,7 +104,7 @@ msgstr "Нове повідомлення від %s"
 
 #: ucp/Xmpp.class.php:32
 msgid "New XMPP"
-msgstr ""
+msgstr "Новий XMPP"
 
 #: views/userman_hook.php:24
 msgid "No"
@@ -114,19 +116,19 @@ msgstr "Пароль"
 
 #: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
-msgstr ""
+msgstr "Будь ласка, введіть ім'я користувача та пароль для входу на сервер XMPP"
 
 #: ucp/assets/js/global.js:117
 msgid "Recursively sending to yourself is not allowed!"
-msgstr ""
+msgstr "Рекурсивне надсилання до себе не припускається!"
 
 #: Xmpp.class.php:556
 msgid "Reset"
-msgstr ""
+msgstr "Скинути"
 
 #: Xmpp.class.php:620
 msgid "Running XMPP Hooks"
-msgstr ""
+msgstr "Запуск гачка XMPP"
 
 #: ucp/assets/js/global.js:45
 msgid "Send Message"
@@ -134,15 +136,15 @@ msgstr "Надіслати повідомлення"
 
 #: ucp/assets/js/global.js:97
 msgid "Start XMPP"
-msgstr ""
+msgstr "Запуск XMPP"
 
 #: Xmpp.class.php:621
 msgid "Starting XMPP Server"
-msgstr ""
+msgstr "Запуск сервера XMPP"
 
 #: Xmpp.class.php:561
 msgid "Submit"
-msgstr ""
+msgstr "Застосувати"
 
 #: ucp/assets/js/global.js:43
 msgid "There is currently no connection to a valid server"
@@ -155,11 +157,15 @@ msgid ""
 "server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
 "users password after clicking Yes"
 msgstr ""
+"У цьому розділі можна додати цього користувача в XMPP. Після цього "
+"користувач може зайти на сервер XMPP \"%s\" використовуючи  \""
+"&lt;username&gt;@%s\" Вам буде необхідно перевизначити паролі користувачів "
+"після натискання Так"
 
 #: install.php:96
 #, php-format
 msgid "Unable to add %s to User Manager"
-msgstr ""
+msgstr "Неможливо додати %s в диспетчері користувачів"
 
 #: Xmpp.class.php:516 Xmpp.class.php:523
 msgid "Unknown"
@@ -168,7 +174,7 @@ msgstr "Невідомо"
 #: install.php:87
 #, php-format
 msgid "User %s already exists, updating instead"
-msgstr ""
+msgstr "Користувач %s вже існує, оновлення замість"
 
 #: ucp/assets/js/global.js:240
 msgid "Username"
@@ -190,24 +196,24 @@ msgstr "XMPP"
 
 #: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
-msgstr ""
+msgstr "Посвідчення XMPP"
 
 #: Xmpp.class.php:628
 #, php-format
 msgid "XMPP Server Start Failed: %s"
-msgstr ""
+msgstr "Збій запуску сервера XMPP: %s"
 
 #: Xmpp.class.php:626
 msgid "XMPP Server Started"
-msgstr ""
+msgstr "Сервер XMPP запущено"
 
 #: Xmpp.class.php:645
 msgid "XMPP Server Stopped"
-msgstr ""
+msgstr "Сервер XMPP зупинено"
 
 #: Xmpp.class.php:647
 msgid "XMPP Server was not running"
-msgstr ""
+msgstr "Сервер XMPP не запущено"
 
 #: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
