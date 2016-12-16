@@ -10,139 +10,144 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-08 15:18-0700\n"
-"PO-Revision-Date: 2016-07-08 15:18-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-12-16 01:43+0200\n"
+"Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/xmpp/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: ucp/assets/js/global.js:356
 #, perl-format
 msgid "%s is typing..."
-msgstr ""
+msgstr "%s está escrevendo..."
 
 #: install.php:84
 #, php-format
 msgid "Adding %s to User Manager"
-msgstr ""
+msgstr "Adicionando %s ao Gerenciador de Usuários"
 
 #: xmpp.i18n.php:6 xmpp.i18n.php:12
 msgid "Admin"
-msgstr ""
+msgstr "Administrador"
 
 #: install.php:48
 msgid "Cannot create xmpp tables"
-msgstr ""
+msgstr "Não é possível criar tabelas xmpp"
 
 #: install.php:77
 #, php-format
 msgid "Changing user %s to %s"
-msgstr ""
+msgstr "Alterando usuário %s para %s"
 
 #: page.xmpp.php:20
 msgid "Delete"
-msgstr ""
+msgstr "Apagar"
 
 #: install.php:70
 msgid "Detected Blank username, removing"
-msgstr ""
+msgstr "Detectado nome de usuário em branco, removendo"
 
 #: views/xmpp.php:21
 msgid "Domain"
-msgstr ""
+msgstr "Domínio"
 
 #: views/xmpp.php:33
 msgid "Domain XMPP will serve"
-msgstr ""
+msgstr "O domínio XMPP servirá"
 
 #: views/userman_hook.php:37
 msgid "Enable XMPP for this user"
-msgstr ""
+msgstr "Habilitar XMPP para este usuário"
 
 #: views/userman_hook.php:18
 msgid "Enabled"
-msgstr ""
+msgstr "Habilitado"
 
 #: views/userman_hook.php:27
 msgid "Inherit"
-msgstr ""
+msgstr "Herdar"
 
 #: ucp/assets/js/global.js:244
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: xmpp.i18n.php:8
 msgid ""
 "Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
 "your PBX be installed."
 msgstr ""
+"Gerencie e configure um servidor XMPP Prosody e requer que o RPM Prosody do "
+"seu PBX seja instalado."
 
 #: ucp/assets/js/global.js:155
 msgid "Me"
-msgstr ""
+msgstr "Eu"
 
 #: install.php:53
 msgid "Migrating Token Users to User Manager"
-msgstr ""
+msgstr "Migrando Token de Usuários para o Gerenciador de Usuários"
 
 #: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
-msgstr ""
+msgstr "Precisa de um destinatário válido"
 
 #: ucp/assets/js/global.js:340
 #, perl-format
 msgid "New Message from %s"
-msgstr ""
+msgstr "Nova Mensagem de %s"
 
 #: ucp/Xmpp.class.php:32
 msgid "New XMPP"
-msgstr ""
+msgstr "Novo XMPP"
 
 #: views/userman_hook.php:24
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: ucp/assets/js/global.js:242
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
-msgstr ""
+msgstr "Digite seu nome de usuário e senha para fazer login no servidor XMPP"
 
 #: ucp/assets/js/global.js:117
 msgid "Recursively sending to yourself is not allowed!"
-msgstr ""
+msgstr "O envio recursivo para si mesmo não é permitido!"
 
 #: Xmpp.class.php:556
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: Xmpp.class.php:620
 msgid "Running XMPP Hooks"
-msgstr ""
+msgstr "Executando Ganchos XMPP"
 
 #: ucp/assets/js/global.js:45
 msgid "Send Message"
-msgstr ""
+msgstr "Enviar Mensagem"
 
 #: ucp/assets/js/global.js:97
 msgid "Start XMPP"
-msgstr ""
+msgstr "Iniciar XMPP"
 
 #: Xmpp.class.php:621
 msgid "Starting XMPP Server"
-msgstr ""
+msgstr "Iniciando Servidor XMPP"
 
 #: Xmpp.class.php:561
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: ucp/assets/js/global.js:43
 msgid "There is currently no connection to a valid server"
-msgstr ""
+msgstr "Não existe atualmente nenhuma conexão a um servidor válido"
 
 #: views/userman_hook.php:9
 #, php-format
@@ -151,63 +156,66 @@ msgid ""
 "server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
 "users password after clicking Yes"
 msgstr ""
+"Esta seção adicionará este usuário ao XMPP. O usuário pode então fazer login "
+"no servidor XMPP em \"%s\" usando \"&lt;nomedeusuario&gt;@%s\" Você "
+"precisará redefinir a senha do usuário após clicar em Sim"
 
 #: install.php:96
 #, php-format
 msgid "Unable to add %s to User Manager"
-msgstr ""
+msgstr "Não é possível adicionar %s ao Gerenciador de Usuários"
 
 #: Xmpp.class.php:516 Xmpp.class.php:523
 msgid "Unknown"
-msgstr ""
+msgstr "Desconhecido"
 
 #: install.php:87
 #, php-format
 msgid "User %s already exists, updating instead"
-msgstr ""
+msgstr "O usuário %s já existe, no lugar de atualizar"
 
 #: ucp/assets/js/global.js:240
 msgid "Username"
-msgstr ""
+msgstr "Nome de Usuário"
 
 #: install.php:79
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
-msgstr ""
+msgstr "Conflito no Nome de Usuário %s alterando para %s apagando %s"
 
 #: views/userman_hook.php:4
 msgid "What is XMPP"
-msgstr ""
+msgstr "O que é XMPP"
 
 #: xmpp.i18n.php:4 xmpp.i18n.php:10
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
-msgstr ""
+msgstr "Credenciais XMPP"
 
 #: Xmpp.class.php:628
 #, php-format
 msgid "XMPP Server Start Failed: %s"
-msgstr ""
+msgstr "Falha na Inicialização do Servidor XMPP: %s"
 
 #: Xmpp.class.php:626
 msgid "XMPP Server Started"
-msgstr ""
+msgstr "Servidor XMPP Iniciado"
 
 #: Xmpp.class.php:645
 msgid "XMPP Server Stopped"
-msgstr ""
+msgstr "Servidor XMPP Parado"
 
 #: Xmpp.class.php:647
 msgid "XMPP Server was not running"
-msgstr ""
+msgstr "O servidor XMPP não estava em execução"
 
 #: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
-msgstr ""
+msgstr "Configurações XMPP/Jabber"
 
 #: views/userman_hook.php:23
 msgid "Yes"
-msgstr ""
+msgstr "Sim"
