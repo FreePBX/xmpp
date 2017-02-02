@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "forever": "^0.15.3",
-    "lets-chat": "git+ssh://git.freepbx.org/shmzl/lets-chat.git"
+    "lets-chat": "git+ssh://git.freepbx.org/zulu/lets-chat.git#development"
   },
   "devDependencies": {},
   "scripts": {
