@@ -1,14 +1,4 @@
 <?php
-//rpm -q --queryformat '%{version}.%{release}' prosody
-exec("rpm -q --queryformat '%{version}.%{release}' prosody",$output);
-if(preg_match('/is not installed/',$output[0])) {
-  out("Prosody Package is not installed");
-  return false;
-}
-if(version_compare($output[0],"0.9.1.102.shmz65.1.15", "<")) {
-  out("Prosody Package is out of date. Please upgrade prosody");
-  return false;
-}
 $first_install = db_e($db->getAll('SELECT * FROM xmpp_options'), '');
 
 //prosody creates this on startup but just to be safe we should as well
@@ -98,18 +88,6 @@ if(!empty($mod_info['xmpp']['dbversion']) && version_compare($mod_info['xmpp']['
         }
     }
 }
-
-// Start xmpp
-$pids = `pidof -x presence.php`;
-if ($pids) {
-	$allpids = explode(" ", $pids);
-	foreach ($allpids as $p) {
-		posix_kill($p, 9);
-	}
-}
-
-$app = __DIR__."/start-xmpp.sh";
-`$app &> /dev/null &`;
 
 global $amp_conf;
 if(file_exists($amp_conf['AMPBIN']."/freepbx_engine_hook_xmpp") && is_writable($amp_conf['AMPBIN']."/freepbx_engine_hook_xmpp")) {
