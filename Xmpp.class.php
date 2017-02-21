@@ -543,7 +543,7 @@ class Xmpp implements \BMO {
 
 		return $files;
 	}
-	public function startFreepbx($output) {
+	public function startFreepbx($output=null) {
 		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
 		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
 		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");

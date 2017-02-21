@@ -18,21 +18,29 @@ class Xmpp extends Modules{
 		$this->enabled = ($this->xmpp->getUserByID($user['id'])) ? true : false;
 	}
 
-	public function getNavItems() {
-		$out = array();
-		if(!$this->enabled) {
-			return $out;
+	public function getSimpleWidgetList() {
+		if (!$this->enabled) {
+			return array();
 		}
-		$out[] = array(
+
+		return array(
 			"rawname" => "xmpp",
-			"badge" => false,
+			"display" => _("XMPP"),
 			"icon" => "sf sf-xmpp-logo",
-			"hide" => true,
-			"menu" => array(
-				"html" => '<li><a class="new">'._("New XMPP").'</a></li><li class="breaker"><hr></li>'
+			"list" => array(
+				array(
+					"display" => "XMPP",
+					"description" => _("XMPP is a chat service")
+				)
 			)
 		);
-		return $out;
+	}
+
+	public function getSimpleWidgetDisplay($id) {
+		return array(
+			'title' => _("XMPP"),
+			'html' => $this->load_view(__DIR__."/views/widget.php",array())
+		);
 	}
 
 	function getStaticSettings() {
