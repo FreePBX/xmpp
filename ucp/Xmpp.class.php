@@ -37,6 +37,9 @@ class Xmpp extends Modules{
 	}
 
 	public function getSimpleWidgetDisplay($id) {
+		if (!$this->enabled) {
+			return array();
+		}
 		return array(
 			'title' => _("XMPP"),
 			'html' => $this->load_view(__DIR__."/views/widget.php",array())
