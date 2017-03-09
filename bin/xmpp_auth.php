@@ -27,6 +27,15 @@ if(!empty($argv[1])) {
 			case 'setpass':
 				echo $xmpp->setPass($username, $password) ? 1 : 0;
 			break;
+			case 'jsonauth':
+				if($xmpp->auth($username, $params[2])) {
+					$data = FreePBX::Userman()->getUserByUsername($username);
+					unset($data['password']);
+					echo json_encode(array("status" => true, "data" => $data));
+				} else {
+					echo json_encode(array("status" => false));
+				}
+			break;
 			default:
 				echo 0;
 			break;

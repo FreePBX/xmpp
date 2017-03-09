@@ -7,85 +7,60 @@ var XmppC = UCPMC.extend({
 		this.typing = {};
 		this.enabled = false;
 		this.connecting = false;
+		this.online = false;
+		this.initalizing = {};
 		var Xmpp = this;
 		$(document).on("chatWindowAdded", function(event, windowId, module, object) {
 			if (module == "Xmpp") {
+				Xmpp.initalizing[object.data("from")] = false;
 				object.on("click", function() {
 					object.find(".title-bar").css("background-color", "");
 				});
-				object.find("textarea").keyup(function(event) {
+				var ea = object.find("textarea").emojioneArea()[0].emojioneArea;
+				ea.on("keyup", function(editor, event) {
 					if (event.keyCode == 13) {
-						var message = $(this).val();
-						Xmpp.sendMessage(windowId, decodeURIComponent(windowId), message);
-						$(this).val("");
+						Xmpp.sendMessage(windowId, object.data("from"), ea.getText());
+						ea.setText(" ");
 					}
 				});
-				object.find("textarea").bind("input propertychange", function(event) {
-						Xmpp.sendState(decodeURIComponent(windowId), "composing");
-						if (typeof Xmpp.typing[decodeURIComponent(windowId)] !== "undefined") {
-							clearTimeout(Xmpp.typing[decodeURIComponent(windowId)]);
-							delete Xmpp.typing[decodeURIComponent(windowId)];
+				ea.on("input propertychange", function(event) {
+						Xmpp.sendState(object.data("from"), "composing");
+						if (typeof Xmpp.typing[object.data("from")] !== "undefined") {
+							clearTimeout(Xmpp.typing[object.data("from")]);
+							delete Xmpp.typing[object.data("from")];
 						}
-						Xmpp.typing[decodeURIComponent(windowId)] = setTimeout( function() {
-							Xmpp.sendState(decodeURIComponent(windowId), "paused");
+						Xmpp.typing[object.data("from")] = setTimeout( function() {
+							Xmpp.sendState(object.data("from"), "paused");
 						}, 1000);
 				});
 				object.find(".cancelExpand").click(function() {
-					Xmpp.sendState(decodeURIComponent(windowId), "gone");
+					Xmpp.sendState(object.data("from"), "gone");
 				});
 			}
-		});
-
-		//Logged In
-		$(document).bind("logIn", function( event ) {
-			$("#xmpp-menu a.new").on("click", function() {
-				if (Xmpp.socket === null || !Xmpp.socket.connected) {
-					alert(_("There is currently no connection to a valid server"));
-				} else {
-					UCP.showDialog(_("Send Message"),
-						"<label>From:</label> " + Xmpp.jid.user + "<br><label for=\"XmppTo\">To:</label><select class=\"form-control Tokenize Fill\" id=\"XmppTo\" multiple></select><button class=\"btn btn-default\" id=\"initiateXmpp\" style=\"margin-left: 72px;\">Initiate</button>",
-						170,
-						250,
-						function() {
-							$("#XmppTo").tokenize({ maxElements: 1, datas: "index.php?quietmode=1&module=xmpp&command=contacts" });
-							$("#initiateXmpp").click(function() {
-								setTimeout(function() {
-									var val = ($("#XmppTo").val() !== null) ? $("#XmppTo").val()[0] : "";
-									Xmpp.initiateChat(val);
-								}, 50);
-							});
-							$("#XmppTo").keypress(function(event) {
-								if (event.keyCode == 13) {
-									setTimeout(function() {
-										var val = ($("#XmppTo").val() !== null) ? $("#XmppTo").val()[0] : "";
-										Xmpp.initiateChat(val);
-									}, 50);
-								}
-							});
-						}
-					);
-				}
-			});
 		});
 
 		$(window).bind("presenceStateChange", function() {
 			Xmpp.sendEvent("setPresence", Presencestate.menu.presence);
 		});
 	},
-	settingsDisplay: function() {
-
-	},
-	settingsHide: function() {
-
-	},
-	poll: function(data) {
-
-	},
-	display: function(event) {
-
-	},
-	hide: function(event) {
-
+	displaySimpleWidget: function(widget_type_id) {
+		var clone = $(".widget-extra-menu[data-module=xmpp][data-widget_type_id="+widget_type_id+"] .clone"),
+				roster = $(".widget-extra-menu[data-module=xmpp][data-widget_type_id="+widget_type_id+"] .roster"),
+				$this = this;
+		$.each(this.roster, function(k,v) {
+			var user = clone.clone();
+			user.removeClass("hidden clone").addClass("user").attr("data-jid",v.user).data("jid",v.user);
+			user.find(".name").text(v.name);
+			user.find("i").css("color",(v.show == "available") ? "green" : "grey");
+			user.click(function() {
+				if(!$this.initalizing[v.user]) {
+					$this.initalizing[v.user] = true;
+					$this.initiateChat(v.user);
+				}
+			});
+			roster.append(user);
+		});
+		$(".widget-extra-menu[data-module=xmpp][data-widget_type_id="+widget_type_id+"] .status span").text((this.online ? _("Connected") : _("Offline")));
 	},
 	contactClickInitiate: function(user) {
 		this.initiateChat(decodeURIComponent(user));
@@ -109,16 +84,21 @@ var XmppC = UCPMC.extend({
 	initiateChat: function(to) {
 		var Xmpp = this,
 				user = to.split("@");
-		user[1] = (typeof user[1] !== "undefined") ? user[1] : Xmpp.jid.domain;
+		user[1] = (typeof user[1] !== "undefined") ? user[1] : Xmpp.jid._domain;
 		if (to === "") {
 			alert(_("Need a valid recipient"));
 			return false;
-		} else if (user[0] == this.jid.user && user[1] == this.jid.domain) {
+		} else if (user[0] == this.jid.user && user[1] == this.jid._domain) {
 			alert(_("Recursively sending to yourself is not allowed!"));
 			return;
 		}
-		UCP.addChat("Xmpp", encodeURIComponent(user[0] + "@" + user[1]), Xmpp.icon, Xmpp.jid.user + "@" + user[1], this.replaceContact(user[0] + "@" + user[1]));
-		UCP.closeDialog();
+		if(!$(".message-box [data-id='"+encodeURIComponent(user[0] + "@" + user[1])+"']").length) {
+			UCP.addChat("Xmpp", encodeURIComponent(user[0] + "@" + user[1]), Xmpp.icon, user[0] + "@" + user[1], Xmpp.jid.user + "@" + user[1]);
+			UCP.closeDialog();
+		} else {
+			Xmpp.initalizing[user[0] + "@" + user[1]] = false;
+		}
+
 	},
 	sendState: function(to, state) {
 		switch (to) {
@@ -164,13 +144,8 @@ var XmppC = UCPMC.extend({
 		});
 	},
 	sendEvent: function(key, value) {
-		var Xmpp = this;
 		if (this.socket !== null && this.socket.connected) {
 			this.socket.emit(key, value);
-		} else if (this.socket !== null) {
-			this.socket.on("connect", function(data) {
-				Xmpp.socket.emit(key, value);
-			});
 		}
 	},
 	disconnect: function() {
@@ -193,7 +168,7 @@ var XmppC = UCPMC.extend({
 			});
 		}
 		$(".message-box[data-module='Xmpp'] .response textarea").prop("disabled", true);
-		$("#nav-btn-xmpp i").css("color", "red");
+		$(".custom-widget[data-widget_rawname=xmpp] a i").css("color", "red");
 		Xmpp.connecting = false;
 	},
 	login: function() {
@@ -231,37 +206,37 @@ var XmppC = UCPMC.extend({
 					Xmpp.sendEvent("login",{ username: username, password: password });
 					Xmpp.socket.on("disconnect", function(socket) {
 						$(".message-box[data-module='Xmpp'] .response textarea").prop("disabled", true);
-						$("#nav-btn-xmpp i").css("color", "red");
+						$(".custom-widget[data-widget_rawname=xmpp] a i").css("color", "red");
 					});
 					Xmpp.socket.on("connect", function(socket) {
 						Xmpp.sendEvent("login",{ username: username, password: password });
 					});
 					Xmpp.socket.on("prompt", function() {
-						UCP.showDialog(_("XMPP Credentials"), _("Please enter your username and password to login to the XMPP server")+"<br/><label>" + _("Username") + ":<br/>" +
-							"<input type=\"text\" class=\"form-control\" name=\"username\" value=\"\"></label></br>" +
-							"<label>" + _("Password") + ":<br/>" +
-							"<input type=\"password\" class=\"form-control\" name=\"password\" value=\"\"></label></br>" +
-							"<button class=\"btn btn-default\" style=\"margin-left: 87px;\" onclick=\"UCP.Modules.Xmpp.login();return false;\">"+_("Login")+"</button>",
-						240);
+						console.log("prompt");
+						UCP.showDialog(_("XMPP Credentials"), _("Please enter your username and password to login to the XMPP server")+"<br/><label>" + _("Username") + ":</label><br/>" +
+							'<input type="text" class="form-control" name="username" value=""></br>' +
+							"<label>" + _("Password") + ":</label><br/>" +
+							'<input type="password" class="form-control" name="password" value=""></br>',
+							'<button class="btn btn-default" onclick="UCP.Modules.Xmpp.login();return false;">'+_("Login")+"</button>"
+						);
 					});
 					Xmpp.socket.on("online", function(data) {
+						Xmpp.online = true;
 						$(document).bind("logOut", function( event ) {
 							Xmpp.sendEvent("logout");
 						});
-						$("#nav-btn-xmpp").removeClass("hidden");
-						UCP.calibrateMenus();
 						Xmpp.jid = data.jid;
 						$(".message-box[data-module='Xmpp'] .response textarea").prop("disabled", false);
-						$("#nav-btn-xmpp i").css("color", "green");
-						if (typeof Presencestate !== "undefined" && typeof Presencestate.menu.presence !== "undefined") {
-							Xmpp.sendEvent("setPresence", Presencestate.menu.presence);
+						$(".custom-widget[data-widget_rawname=xmpp] a i").css("color", "green");
+						if (typeof UCP.Modules.Presencestate !== "undefined" && typeof UCP.Modules.Presencestate.menu.presence !== "undefined") {
+							Xmpp.sendEvent("setPresence", UCP.Modules.Presencestate.menu.presence);
 						}
 					});
 					Xmpp.socket.on("roster", function(data) {
 						$.each(data, function(i, v) {
 							Xmpp.roster[v.user] = v;
 							if (v.subscription == "to" || v.subscription == "both") {
-								Xmpp.sendEvent("getPresence", v.user);
+								//Xmpp.sendEvent("getPresence", v.user);
 							} else if (v.subscription == "from") {
 								//console.log(v);
 							} else if (v.subscription == "none") {
@@ -292,7 +267,13 @@ var XmppC = UCPMC.extend({
 						if (typeof Xmpp.roster[contact] !== "undefined") {
 							Xmpp.roster[contact].show = data.show;
 							Xmpp.roster[contact].status = data.status;
-							if ((contact != Xmpp.jid.user + "@" + Xmpp.jid.domain) && data.show != "unavailable") {
+							if ((contact != Xmpp.jid.user + "@" + Xmpp.jid._domain) && data.show != "unavailable") {
+								console.log("online");
+							} else if ((contact != Xmpp.jid.user + "@" + Xmpp.jid._domain) && data.show == "unavailable") {
+								console.log("offline");
+							}
+							/*
+							if ((contact != Xmpp.jid.user + "@" + Xmpp.jid._domain) && data.show != "unavailable") {
 								if (!$('#xmpp-menu .contact[data-contact="' + encodeURIComponent(contact) + '"]').length) {
 									$("#xmpp-menu .breaker").after("<li class=\"contact\" data-contact=\"" + encodeURIComponent(contact) + "\"><a data-contact=\"" + encodeURIComponent(contact) + "\"><i class=\"fa fa-circle\"></i>" + Xmpp.replaceContact(contact) + "</a></li>");
 									h = $("#xmpp-menu").outerHeight() + 30;
@@ -317,7 +298,7 @@ var XmppC = UCPMC.extend({
 										el.find("i").css("color", "yellow");
 									break;
 								}
-							} else if ((contact != Xmpp.jid.user + "@" + Xmpp.jid.domain) && data.show == "unavailable") {
+							} else if ((contact != Xmpp.jid.user + "@" + Xmpp.jid._domain) && data.show == "unavailable") {
 								if ($('#xmpp-menu .contact[data-contact="' + encodeURIComponent(contact) + '"]').length > 0) {
 									$('#xmpp-menu .contact[data-contact="' + encodeURIComponent(contact) + '"]').fadeOut("fast", function() {
 										$(this).remove();
@@ -327,22 +308,27 @@ var XmppC = UCPMC.extend({
 									});
 								}
 							}
+							*/
 						}
 					});
 					Xmpp.socket.on("offline", function(data) {
+						Xmpp.online = false;
 						$(".message-box[data-module='Xmpp'] .response textarea").prop("disabled", true);
-						$("#nav-btn-xmpp i").css("color", "red");
+						$(".custom-widget[data-widget_rawname=xmpp] a i").css("color", "red");
 					});
 					Xmpp.socket.on("message", function(data) {
 						var fhost = data.from.host.split("/"),
 								thost = data.to.host.split("/"),
-								windowid = encodeURIComponent(data.from.username + "@" + fhost[0]),
-								Notification = new Notify(sprintf(_("New Message from %s"), Xmpp.replaceContact(data.from.username)), {
+								hostdisplay = (Xmpp.jid._domain != fhost) ? "@" + fhost[0] : '',
+								fjid = data.from.username + "@" + fhost[0],
+								tjid = data.to.username + "@" + thost[0],
+								windowid = encodeURIComponent(data.from.username + "@" + Xmpp.jid._domain),
+								Notification = new Notify(sprintf(_("New Message from %s"), Xmpp.replaceContact(UCP.Modules.Xmpp.roster[fjid].name)), {
 							body: emojione.unifyUnicode(data.message),
 							icon: "modules/Sms/assets/images/comment.png",
 							timeout: 3
 						});
-						UCP.addChat("Xmpp", windowid, Xmpp.icon, Xmpp.replaceContact(data.from.username + "@" + fhost[0]), data.to.username + "@" + thost[0], Xmpp.replaceContact(data.from.username + "@" + thost[0]), data.id, data.message, false, false, 'in');
+						UCP.addChat("Xmpp", windowid, Xmpp.icon, data.from.username + "@" + fhost[0], data.to.username + "@" + thost[0], data.from.username + "@" + fhost[0], data.id, data.message, false, false, 'in');
 						if (UCP.notify) {
 							Notification.show();
 						}
