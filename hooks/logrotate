@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if true ; then
+	cat <<- EOF > /etc/logrotate.d/freepbx-xmpp
+	/var/log/asterisk/xmpp_err.log
+	/var/log/asterisk/xmpp_forever.log
+	/var/log/asterisk/xmpp_out.log{
+		size 100M
+		missingok
+		rotate 7
+		notifempty
+		sharedscripts
+		create 0640 asterisk asterisk
+	}
+	EOF
+fi

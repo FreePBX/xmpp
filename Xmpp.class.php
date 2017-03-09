@@ -3,8 +3,16 @@
 namespace FreePBX\modules;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
+//progress bar
+use Symfony\Component\Console\Helper\ProgressBar;
 class Xmpp implements \BMO {
 	private $dirty = false;
+
+	private $nodever = "0.12.18";
+	private $npmver = "2.15.11";
+	private $mongover = "2.4.14";
+	private $foreverroot = "/tmp";
+	private $nodeloc = "/tmp";
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -13,194 +21,152 @@ class Xmpp implements \BMO {
 		$this->freepbx = $freepbx;
 		$this->db = $freepbx->Database;
 		$this->userman = $freepbx->Userman;
+		$this->foreverroot = $this->freepbx->Config->get('ASTVARLIBDIR') . "/xmpp";
+		$this->nodeloc = __DIR__."/node";
+		if(!file_exists($this->nodeloc."/logs")) {
+			mkdir($this->nodeloc."/logs");
+		}
 	}
 
 	public function doConfigPageInit($page) {
 	}
 
 	public function install() {
+		$output = exec("mongod --version"); //v0.10.29
+		$output = str_replace("v","",trim($output));
+		if(empty($output)) {
+			out(_("MongoDB is not installed"));
+			return false;
+		}
+		if(version_compare($output,$this->mongodb,"<")) {
+			out(sprintf(_("MongoDB version is: %s requirement is %s"),$output,$this->mongodbver));
+			return false;
+		}
 
+		$output = exec("node --version"); //v0.10.29
+		$output = str_replace("v","",trim($output));
+		if(empty($output)) {
+			out(_("Node is not installed"));
+			return false;
+		}
+		if(version_compare($output,$this->nodever,"<")) {
+			out(sprintf(_("Node version is: %s requirement is %s"),$output,$this->nodever));
+			return false;
+		}
+
+		$output = exec("npm --version"); //v0.10.29
+		$output = trim($output);
+		if(empty($output)) {
+			out(_("Node Package Manager is not installed"));
+			return false;
+		}
+		if(version_compare($output,$this->npmver,"<")) {
+			out(sprintf(_("NPM version is: %s requirement is %s"),$output,$this->npmver));
+			return false;
+		}
+
+		if(file_exists('/usr/bin/prosody') || file_exists('/usr/bin/prosodyctl')) {
+			out(_("Prosody is no longer used and conflicts with this package. Please remove it before continuing"));
+			return false;
+		}
+
+		$cwd = getcwd();
+		$webuser = \FreePBX::Freepbx_conf()->get('AMPASTERISKWEBUSER');
+		chdir($this->nodeloc);
+		putenv("PATH=/bin:/usr/bin:/sbin");
+		putenv("USER=".$webuser);
+		$web = posix_getpwnam($webuser);
+		$home = trim($web['dir']);
+		if (!is_dir($home)) {
+			// Well, that's handy. It doesn't exist. Let's use ASTSPOOLDIR instead, because
+			// that should exist and be writable.
+			$home = \FreePBX::Freepbx_conf()->get('ASTSPOOLDIR');
+			if (!is_dir($home)) {
+				// OK, I give up.
+				throw new \Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
+			}
+		}
+
+		putenv("HOME=".$home);
+		putenv("FOREVER_ROOT=".$this->foreverroot);
+		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
+		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
+		putenv("ASTLOGDIR=".$astlogdir);
+		putenv("SHELL=/bin/bash");
+		outn(_("Installing/Updating Required Libraries. This may take a while..."));
+		file_put_contents($this->nodeloc."/logs/install.log","");
+
+		$handle = popen("npm update 2>&1", "r");
+		$log = fopen($this->nodeloc."/logs/install.log", "a");
+		while (($buffer = fgets($handle, 4096)) !== false) {
+			//out(trim($buffer));
+			fwrite($log,$buffer);
+			outn(".");
+		}
+		fclose($log);
+		out("");
+		out(_("Finished updating libraries!"));
+		if(!file_exists($this->nodeloc."/node_modules/forever/bin/forever")) {
+			out("");
+			out(sprintf(_("There was an error installing. Please review the install log. (%s)"),$this->nodeloc."/logs/install.log"));
+			return false;
+		}
+
+		if(!file_exists($varlibdir.'/xmpp')) {
+			mkdir($varlibdir.'/xmpp');
+		}
+
+		//need forever to be executable. it's sooo cutable
+		if(!is_executable($this->nodeloc."/node_modules/forever/bin/forever")) {
+			chmod($this->nodeloc."/node_modules/forever/bin/forever",0755);
+		}
+
+		if($this->freepbx->Modules->checkStatus("sysadmin")) {
+			touch("/var/spool/asterisk/incron/xmpp.logrotate");
+		}
+
+		$data = $this->getServiceStatus();
+		$stopped = false;
+		if(!empty($data)) {
+			outn(_("Stopping old running processes..."));
+			$this->stopFreepbx();
+			out(_("Done"));
+			$stopped = true;
+		}
+
+		//If we are root then start it as asterisk, otherwise we arent root so start it as the web user (all we can do really)
+		//Only run if licensed
+		if($stopped) {
+			outn(_("Starting new Xmpp Process..."));
+			$started = $this->startFreepbx();
+			if(!$started) {
+				out(_("Failed!"));
+			} else {
+				out(_("Started!"));
+			}
+		}
+
+		$sql = 'DROP TABLES prosody';
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
 	}
+
 	public function uninstall() {
+		outn(_("Stopping old running processes..."));
+		$this->stopFreepbx();
+		out(_("Done"));
+		exec("rm -Rf ".$this->nodeloc."/node_modules");
+
 		$sql = 'DROP TABLES xmpp_users, xmpp_options';
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
-
-		$sql = 'TRUNCATE prosody';
-		$sth = $this->db->prepare($sql);
-		$sth->execute();
 	}
+
 	public function backup(){
 
 	}
 	public function restore($backup){
 
-	}
-	public function genConfig() {
-		global $amp_conf; //database stuff is set in freepbx.conf
-		$c = '';
-		//modules
-		$c .= 'modules_enabled = {
-			"admin_adhoc";
-			"admin_telnet";
-			"bosh";
-			"dialback";
-			"disco";
-			"groups";
-			"legacyauth";
-			"pep";
-			"ping";
-			"posix";
-			"private";
-			"roster";
-			"saslauth";
-			"tls";
-		};' . PHP_EOL;
-		//settings
-		$c .= 'data_path = "/usr/com/prosody"' . PHP_EOL;
-		$c .= 'authentication = "freepbx"' . PHP_EOL;
-		$c .= 'allow_unencrypted_plain_auth = true' . PHP_EOL;
-		$c .= 'use_libevent = false' . PHP_EOL;
-		$c .= 'freepbx_auth_command = "'.$amp_conf['AMPBIN'].'/xmpp_auth.php"' . PHP_EOL;
-		$c .= 'freepbx_auth_timeout = 2' . PHP_EOL;
-		$c .= 'freepbx_auth_processes = 1' . PHP_EOL;
-		$c .= 'storage = "sql"' . PHP_EOL;
-		$c .= 'log = { ';
-		//$c .= 'debug = "'.$amp_conf['ASTLOGDIR'].'/prosody_debug.log",';
-		$c .= 'error = "'.$amp_conf['ASTLOGDIR'].'/prosody.log"';
-		$c .= ' }' . PHP_EOL;
-		$c .= 'ssl = { ';
-			$c .= 'key = "/etc/pki/tls/private/prosody.key",';
-			$c .= 'certificate = "/etc/pki/tls/certs/prosody.crt"';
-			$c .= ' }' . PHP_EOL;
-		$c .= 'pidfile = "/var/run/prosody/prosody.pid";' . PHP_EOL;
-
-		//virtual host
-		$c .= 'sql = { '
-			. 'driver = "MySQL'
-			. '", database = "' . $amp_conf['AMPDBNAME']
-			. '", username = "' . $amp_conf['AMPDBUSER']
-			. '", password = "' . $amp_conf['AMPDBPASS']
-			. '", host = "' . $amp_conf['AMPDBHOST']
-			. '" }' . PHP_EOL;
-
-		$args = $this->getAllOptions();
-		$c .= 'VirtualHost "' . $args['domain'] . '"' . PHP_EOL;
-		$c .= 'groups_file = "'.$amp_conf['ASTETCDIR'].'/prosody_groups.txt"' . PHP_EOL;
-		$c .= 'Component "conf.' . $args['domain'] . '" "muc"' . PHP_EOL;
-		$c .= 'Component "asterisk.' . $args['domain'] . '"' . PHP_EOL;
-		$c .= '  component_secret = "asterisk"' . PHP_EOL;
-		$c .= '  validate_from_addresses = false' . PHP_EOL;
-
-		$conf['prosody_additional.conf'] = $c;
-		//add/update users
-		$users = $this->getAllUsers();
-		if (!empty($users)) {
-			$grp = '[user]' . PHP_EOL;
-			foreach ($users as $u) {
-				if (!$u['username']) {
-					// Don't act on empty users
-					continue;
-				}
-				$grp .= $u['username'] . '@' . $args['domain'] .  PHP_EOL;
-			}
-			//write out shared roster
-			$conf['prosody_groups.txt'] = $grp;
-		}
-		return $conf;
-	}
-
-	public function writeConfig($conf){
-		global $amp_conf; //database stuff is set in freepbx.conf
-
-		//unlike other fpbx modules, we dont want to re-generate configs if we dont need to
-		//hence we track if we really need to regenerate them or not and act accordingly
-		$opts = $this->getAllOptions();
-
-		// If it's not dirty make sure the file is really there since
-		// we need to know if it's there for the parsing that comes next
-		$pfd = $this->freepbx->Config->get('ASTETCDIR') . '/prosody_additional.conf';
-		if ($opts['dirty'] == 'false' && !file_exists($pfd)) {
-			$opts['dirty'] = 'true';
-		}
-
-		// If it's not dirty (and the file exists) let's make sure the DB credentials
-		// have not changed since if they have we need to regenerate
-		//
-		if ($opts['dirty'] == 'false') {
-			$str = file_get_contents($pfd);
-			$puname = 'username = "' . $amp_conf['AMPDBUSER'] . '"';
-			$ppass  = 'password = "' . $amp_conf['AMPDBPASS'] . '"';
-			$pdb    = 'database = "' . $amp_conf['AMPDBNAME'] . '"';
-
-			if (strpos($str, $puname) === false || strpos($str, $ppass) === false || strpos($str, $pdb) === false) {
-				$opts['dirty'] = 'true';
-			}
-		}
-
-		if ($opts['dirty'] == 'false') {
-			//nothing to do!
-			return true;
-		}
-		foreach($conf as $file => $contents) {
-			$this->freepbx->WriteConfig->writeConfig($file, $contents, false);
-		}
-
-		/*
-		* update the hostname in the database
-		*
-		* This is a risky move as we dont have any control over
-		* whtat happens in the table or a spec file/change log for changes in schema
-		* However, once the VirtualHost (i.e. what we call domain) is changed, it is
-		* no longer posible to remove user from deleted host. As a result, for every
-		* time we change the domain, we would have a bunch of stale users that we cant
-		* remove. Instead, we convert them in to "usefull" entires using a direct DB
-		* manipulation. Not the most elegent, but hey - it works.
-		*
-		*/
-		try {
-			$sql = 'UPDATE prosody SET host = :host';
-			$sth = $this->db->prepare($sql);
-			$sth->execute(array(":host" => $opts['domain']));
-
-			if (function_exists('sysadmin_restart_xmpp')) {
-				sysadmin_restart_xmpp();
-				sleep(5); //sleep for 5! come on....
-			}
-
-			//remove posibly stale users
-			$sql = 'SELECT * FROM prosody WHERE store = "accounts"';
-			$sth = $this->db->prepare($sql);
-			$sth->execute();
-			$listed= $sth->fetch(\PDO::FETCH_ASSOC);
-			if (!empty($listed)) {
-				foreach ($listed as $l) {
-					$l['delete'] = false;
-
-					//run some test to see if we need to delete this user
-					if ($l['host'] != $opts['domain']) {
-						$l['delete'] = true;
-					}
-
-					//no point in running the next test if we already decided were deleting the user, so only run it conditionally
-					if ($l['delete'] == false) {
-						$l['delete'] = true; //test
-						if ($users) {
-							foreach ($users as $u) {
-								if ($l['user'] == strtolower($u['username'])) {//prosody saves all users as lowercase
-									$l['delete'] = false;
-									break;
-								}
-							}
-						}
-					}
-				}
-			}
-		} catch(\Exception $e) {
-			return false;
-		}
-		//mark xmpp as clean
-		$this->saveOption('dirty', 'false');
 	}
 
 	public function usermanShowPage() {
@@ -509,36 +475,27 @@ class Xmpp implements \BMO {
 	}
 
 	public function dashboardService() {
-		$services = array(
-			array(
-				'title' => 'Prosody (XMPP)',
-				'type' => 'unknown',
-				'tooltip' => _("Unknown"),
-				'order' => 999,
-				'command' => __DIR__."/check-prosody.sh",
-			),
-			array(
-				'title' => 'XMPP Presence',
-				'type' => 'unknown',
-				'tooltip' => _("Unknown"),
-				'order' => 999,
-				'command' => __DIR__."/check-xmpp.sh"
-			)
-		);
-		foreach($services as &$service) {
-			$output = '';
-			exec($service['command']." 2>&1", $output, $ret);
-			if ($ret === 0) {
-				$service = array_merge($service, $this->genAlertGlyphicon('ok', $output[0]));
-			} elseif ($ret === 1) {
-				$service = array_merge($service, $this->genAlertGlyphicon('warning', $output[0]));
-			} else {
-				$service = array_merge($service, $this->genAlertGlyphicon('error', $output[0]));
-			}
-
+		if(!file_exists($this->nodeloc."/node_modules/forever")) {
+			$service = array_merge($service, $this->genAlertGlyphicon('critical', _("XMPP is damaged. Please reinstall.")));
+			return array($service);
 		}
 
-		return $services;
+		$service = array(
+			'title' => _('Xmpp Daemon'),
+			'type' => 'unknown',
+			'tooltip' => _("Unknown"),
+			'order' => 999,
+			'glyph-class' => ''
+		);
+		$data = $this->getServiceStatus();
+		if(!empty($data)) {
+			$uptime = $this->get_date_diff(time(), (int)round($data['ctime']/1000));
+			$service = array_merge($service, $this->genAlertGlyphicon('ok', sprintf(_("Running (Uptime: %s)"),$uptime)));
+		} else {
+			$service = array_merge($service, $this->genAlertGlyphicon('critical', _("Xmpp is not running")));
+		}
+
+		return array($service);
 	}
 
 	private function genAlertGlyphicon($res, $tt = null) {
@@ -567,7 +524,6 @@ class Xmpp implements \BMO {
 	}
 	public function chownFreepbx() {
 		$moduledir = __DIR__;
-		exec('mkdir -p /usr/com/prosody');
 		$files = array();
 		$files[] = array('type' => 'file',
 			'path' => $moduledir.'/bin/xmpp_auth.php',
@@ -575,76 +531,282 @@ class Xmpp implements \BMO {
 		$files[] = array('type' => 'file',
 			'path' => $moduledir.'/presence.php',
 			'perms' => 0755);
-		$files[] = array('type' => 'file',
-			'path' => $moduledir.'/check-prosody.sh',
-			'perms' => 0755);
-		$files[] = array('type' => 'file',
-			'path' => $moduledir.'/check-xmpp.sh',
-			'perms' => 0755);
-		$files[] = array('type' => 'file',
-			'path' => $moduledir.'/start-xmpp.sh',
-			'perms' => 0755);
-		$files[] = array('type' => 'file',
-			'path' => '/var/log/prosody',
-			'perms' => 0777);
-		$files[] = array('type' => 'file',
-			'path' => '/usr/com/prosody',
-			'owner' => 'prosody',
-			'group' => 'prosody',
-			'perms' => 0775);
-		$files[] = array('type' => 'file',
-			'path' => '/etc/pki/tls/private/prosody.key',
-			'owner' => 'prosody',
-			'group' => 'prosody',
-			'perms' => 0664);
-		$files[] = array('type' => 'file',
-			'path' => '/etc/pki/tls/certs/prosody.crt',
-			'owner' => 'prosody',
-			'group' => 'prosody',
-			'perms' => 0664);
 		$files[] = array('type' => 'rdir',
 			'path' => '/tmp/.jaxl',
-			'perms' => 0777,
-			'owner' => 'asterisk',
-			'group' => 'asterisk',
-		);
+			'perms' => 0777);
+		$files[] = array('type' => 'execdir',
+			'path' => __DIR__.'/node/node_modules/forever/bin',
+			'perms' => 0755);
+		$files[] = array('type' => 'rdir',
+			'path' => $this->foreverroot,
+			'perms' => 0775);
 
 		return $files;
 	}
 	public function startFreepbx($output) {
-		$script = __DIR__."/start-xmpp.sh";
-		if(!file_exists($script)) {
+		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
+		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
+		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
+
+		if(!file_exists($this->nodeloc."/node_modules/forever")) {
+			if(is_object($output)) {
+				$output->writeln("<error>"._("Xmpp is damaged. Please reinstall.")."</error>");
+			}
+			return false;
+		}
+
+		if(!is_executable($this->nodeloc."/node_modules/forever")) {
+			if(is_object($output)) {
+				$output->writeln("<error>"._("Unable to launch Xmpp monitor")."</error>");
+			}
+			return false;
+		}
+
+		$data = $this->getServiceStatus();
+		if(!empty($data)) {
+			$uptime = $this->get_date_diff(time(), (int)round($data['ctime']/1000));
+			$output->writeln(sprintf(_("Xmpp Server has already been running on PID %s for %s"),$data['pid'],$uptime));
 			return true;
 		}
 
-		$output->writeln(_("Running XMPP Hooks"));
-		$output->writeln(_("Starting XMPP Server"));
-		$process = new Process("$script &> /dev/null");
+		$cmds = array(
+			'cd '.$this->nodeloc,
+			'mkdir -p '.$this->foreverroot,
+			'mkdir -p logs',
+			'export FOREVER_ROOT='.$this->foreverroot,
+			'export ASTLOGDIR='.$astlogdir,
+			'export HOME='.$this->getHomeDir()
+		);
+
+		$cmds[] = 'npm start';
+		$command = implode(" && ", $cmds);
+		if (posix_getuid() == 0) {
+			$command = 'runuser -l asterisk -c "'.$command.'"';
+		}
+		$process = new Process($command);
+
 		$process->run();
+
 		// executes after the command finishes
+		if(is_object($output)) {
+			$output->writeln(_("Starting XMPP Server..."));
+		}
 		if ($process->isSuccessful()) {
-			$output->writeln(_("XMPP Server Started"));
+			if(is_object($output)) {
+				$progress = new ProgressBar($output, 0);
+				$progress->setFormat('[%bar%] %elapsed%');
+				$progress->start();
+			}
+			$i = 0;
+			while($i < 100) {
+				$data = $this->getServiceStatus();
+				if(!empty($data)) {
+					if(is_object($output)) {
+						$progress->finish();
+					}
+					break;
+				}
+				if(is_object($output)) {
+					$progress->setProgress($i);
+				}
+				$i++;
+				usleep(100000);
+			}
+			if(is_object($output)) {
+				$output->writeln("");
+			}
+			if(!empty($data)) {
+				if(is_object($output)) {
+					$output->writeln(sprintf(_("Started XMPP Server. PID is %s"),$data['pid']));
+				}
+				return true;
+			}
+			if(is_object($output)) {
+				$output->write("<error>".sprintf(_("Failed to run: '%s'")."</error>",$command));
+			}
 		} else {
-			$output->writeln(sprintf(_("XMPP Server Start Failed: %s"),$process->getErrorOutput()));
+			if(is_object($output)) {
+				$output->writeln("<error>".sprintf(_("Failed: %s")."</error>",$process->getErrorOutput()));
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Stop FreePBX for fwconsole hook
+	 * @param object $output The output object.
+	 */
+	public function stopFreepbx($output=null) {
+		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
+		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
+		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
+		if(!file_exists($this->nodeloc."/node_modules/forever")) {
+			if(is_object($output)) {
+				$output->writeln("<error>"._("xmpp is damaged. Please reinstall.")."</error>");
+			}
+			return false;
+		}
+
+		if(!is_executable($this->nodeloc."/node_modules/forever")) {
+			if(is_object($output)) {
+				$output->writeln("<error>"._("Unable to launch xmpp monitor")."</error>");
+			}
+			return false;
+		}
+
+		$data = $this->getServiceStatus();
+		if(empty($data)) {
+			if(is_object($output)) {
+				$output->writeln("<error>"._("xmpp Server is not running")."</error>");
+			}
+			return false;
+		}
+
+		$cmds = array(
+			'cd '.$this->nodeloc,
+			'mkdir -p '.$this->foreverroot,
+			'mkdir -p logs',
+			'export FOREVER_ROOT='.$this->foreverroot,
+			'export ASTLOGDIR='.$astlogdir,
+			'export HOME='.$this->getHomeDir()
+		);
+
+		array_pop($cmds);
+		$cmds[] = 'npm stop';
+		$command = implode(" && ", $cmds);
+		if (posix_getuid() == 0) {
+			$process = new Process('runuser -l asterisk -c "'.$command.'"');
+		} else {
+			$process = new Process($command);
+		}
+
+		// executes after the command finishes
+		if(is_object($output)) {
+			$output->writeln(_("Stopping xmpp Server"));
+		}
+
+		$process->run();
+
+		$data = $this->getServiceStatus();
+		if (empty($data) && $process->isSuccessful()) {
+			if(is_object($output)) {
+				$output->writeln(_("Stopped xmpp Server"));
+			}
+		} else {
+			if(is_object($output)) {
+				$output->writeln("<error>".sprintf(_("xmpp Server Failed: %s")."</error>",$process->getErrorOutput()));
+			}
+			return false;
 		}
 		return true;
 	}
-	public function stopFreepbx($output) {
-		$script = __DIR__."/start-xmpp.sh";
-		if(!file_exists($script)) {
-			return true;
-		}
 
-		$pids = `pidof -x presence.php`;
-
-		if ($pids) {
-			$allpids = explode(" ", $pids);
-			foreach ($allpids as $p) {
-				posix_kill($p, 9);
+	public function getHomeDir() {
+		$webuser = \FreePBX::Freepbx_conf()->get('AMPASTERISKWEBUSER');
+		$web = posix_getpwnam($webuser);
+		$home = trim($web['dir']);
+		if (!is_dir($home)) {
+			// Well, that's handy. It doesn't exist. Let's use ASTSPOOLDIR instead, because
+			// that should exist and be writable.
+			$home = \FreePBX::Freepbx_conf()->get('ASTSPOOLDIR');
+			if (!is_dir($home)) {
+				// OK, I give up.
+				throw new \Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
 			}
-			$output->writeln(_("XMPP Server Stopped"));
-		} else {
-			$output->writeln(_("XMPP Server was not running"));
 		}
+		return $home;
+	}
+
+	private function getServiceStatus() {
+		foreach(glob($this->foreverroot."/sock/*.sock") as $file) {
+			$sock = @stream_socket_client('unix://'.$file, $errno, $errstr);
+			if($sock === false) {
+				continue;
+			}
+			fwrite($sock, '["data", {}]'."\r\n");
+			$info = fread($sock, 16384)."\n";
+			$children = json_decode($info,true);
+			if(!is_array($children)) {
+				//strange?
+				continue;
+			}
+			array_shift($children);
+			foreach($children as $child) {
+				if($child['running']) {
+					return $child;
+				}
+			}
+			fclose($sock);
+		}
+		return false;
+	}
+
+	/**
+	 * Get human readable time difference between 2 dates
+	 *
+	 * Return difference between 2 dates in year, month, hour, minute or second
+	 * The $precision caps the number of time units used: for instance if
+	 * $time1 - $time2 = 3 days, 4 hours, 12 minutes, 5 seconds
+	 * - with precision = 1 : 3 days
+	 * - with precision = 2 : 3 days, 4 hours
+	 * - with precision = 3 : 3 days, 4 hours, 12 minutes
+	 *
+	 * From: http://www.if-not-true-then-false.com/2010/php-calculate-real-differences-between-two-dates-or-timestamps/
+	 *
+	 * @param mixed $time1 a time (string or timestamp)
+	 * @param mixed $time2 a time (string or timestamp)
+	 * @param integer $precision Optional precision
+	 * @return string time difference
+	 */
+	private function get_date_diff( $time1, $time2, $precision = 2 ) {
+		// If not numeric then convert timestamps
+		if( !is_int( $time1 ) ) {
+			$time1 = strtotime( $time1 );
+		}
+		if( !is_int( $time2 ) ) {
+			$time2 = strtotime( $time2 );
+		}
+		// If time1 > time2 then swap the 2 values
+		if( $time1 > $time2 ) {
+			list( $time1, $time2 ) = array( $time2, $time1 );
+		}
+		// Set up intervals and diffs arrays
+		$intervals = array( 'year', 'month', 'day', 'hour', 'minute', 'second' );
+		$diffs = array();
+		foreach( $intervals as $interval ) {
+			// Create temp time from time1 and interval
+			$ttime = strtotime( '+1 ' . $interval, $time1 );
+			// Set initial values
+			$add = 1;
+			$looped = 0;
+			// Loop until temp time is smaller than time2
+			while ( $time2 >= $ttime ) {
+				// Create new temp time from time1 and interval
+				$add++;
+				$ttime = strtotime( "+" . $add . " " . $interval, $time1 );
+				$looped++;
+			}
+			$time1 = strtotime( "+" . $looped . " " . $interval, $time1 );
+			$diffs[ $interval ] = $looped;
+		}
+		$count = 0;
+		$times = array();
+		foreach( $diffs as $interval => $value ) {
+			// Break if we have needed precission
+			if( $count >= $precision ) {
+				break;
+			}
+			// Add value and interval if value is bigger than 0
+			if( $value > 0 ) {
+				if( $value != 1 ){
+					$interval .= "s";
+				}
+				// Add value and interval to times array
+				$times[] = $value . " " . $interval;
+				$count++;
+			}
+		}
+		// Return string with times
+		return implode( ", ", $times );
 	}
 }

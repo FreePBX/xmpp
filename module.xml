@@ -13,7 +13,6 @@
 	</menuitems>
 	<depends>
 		<phpversion>5.3.0</phpversion>
-		<file>/usr/bin/prosody</file>
 		<module>userman ge 13</module>
 	</depends>
 	<changelog>
