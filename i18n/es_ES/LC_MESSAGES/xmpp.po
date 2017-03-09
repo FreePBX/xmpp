@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-08 15:18-0700\n"
-"PO-Revision-Date: 2016-06-07 08:31+0200\n"
+"PO-Revision-Date: 2016-12-11 06:32+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish <http://weblate.freepbx.org/projects/fpbxc/xmpp/es_ES/"
-">\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/xmpp/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -81,6 +81,8 @@ msgid ""
 "Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
 "your PBX be installed."
 msgstr ""
+"Administrar y configurar un servidor XMPP Prosody y requiere la RPM Prosody "
+"instalada en su PBX ."
 
 #: ucp/assets/js/global.js:155
 msgid "Me"
@@ -119,7 +121,7 @@ msgstr ""
 
 #: ucp/assets/js/global.js:117
 msgid "Recursively sending to yourself is not allowed!"
-msgstr ""
+msgstr "Recursivamente el envío a sí mismo no está permitido!"
 
 #: Xmpp.class.php:556
 msgid "Reset"
@@ -127,7 +129,7 @@ msgstr "Reinicio"
 
 #: Xmpp.class.php:620
 msgid "Running XMPP Hooks"
-msgstr ""
+msgstr "Ejecutando ganchos XMPP"
 
 #: ucp/assets/js/global.js:45
 msgid "Send Message"
