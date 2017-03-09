@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-08 15:18-0700\n"
+"POT-Creation-Date: 2017-03-09 15:53-0800\n"
 "PO-Revision-Date: 2016-10-08 12:20+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
-"Language-Team: Persian (Iran) "
-"<http://weblate.freepbx.org/projects/freepbx/xmpp/fa_IR/>\n"
-"Language: fa_IR\n"
+"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
+"xmpp/fa_IR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -26,20 +26,27 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s در حال تایپ کردن است..."
 
-#: install.php:84
+#: install.php:74
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr "افزودن %s به مدیریت کاربران"
 
-#: xmpp.i18n.php:6 xmpp.i18n.php:12
+#: xmpp.i18n.php:6
 msgid "Admin"
 msgstr "مدیر"
 
-#: install.php:48
+#: Xmpp.class.php:117 Xmpp.class.php:758
+#, php-format
+msgid ""
+"Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
+"Aborting"
+msgstr ""
+
+#: install.php:38
 msgid "Cannot create xmpp tables"
 msgstr "عدم ایجاد جداول xmpp"
 
-#: install.php:77
+#: install.php:67
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "تغییر کاربر %s به %s"
@@ -48,7 +55,7 @@ msgstr "تغییر کاربر %s به %s"
 msgid "Delete"
 msgstr "حذف"
 
-#: install.php:70
+#: install.php:60
 msgid "Detected Blank username, removing"
 msgstr "نام کاربری خالی تشخیص داده شد، در حال حذف کردن"
 
@@ -60,6 +67,11 @@ msgstr "دامنه"
 msgid "Domain XMPP will serve"
 msgstr "دامنه ای که سرویس XMPP را فراهم می کند"
 
+#: Xmpp.class.php:42 Xmpp.class.php:69 Xmpp.class.php:90 Xmpp.class.php:164
+#: Xmpp.class.php:188 Xmpp.class.php:613
+msgid "Done"
+msgstr ""
+
 #: views/userman_hook.php:37
 msgid "Enable XMPP for this user"
 msgstr "فعال سازی سرویس XMPP برای این کاربر"
@@ -68,9 +80,43 @@ msgstr "فعال سازی سرویس XMPP برای این کاربر"
 msgid "Enabled"
 msgstr "فعال"
 
+#: Xmpp.class.php:609
+msgid "Failed"
+msgstr ""
+
+#: Xmpp.class.php:669
+#, php-format
+msgid "Failed to run: '%s'"
+msgstr ""
+
+#: Xmpp.class.php:174
+msgid "Failed!"
+msgstr ""
+
+#: Xmpp.class.php:673
+#, php-format
+msgid "Failed: %s"
+msgstr ""
+
+#: Xmpp.class.php:139
+msgid "Finished updating libraries!"
+msgstr ""
+
 #: views/userman_hook.php:27
 msgid "Inherit"
 msgstr "موروثی"
+
+#: Xmpp.class.php:59
+msgid "Installing/Updating MongoDB..."
+msgstr ""
+
+#: Xmpp.class.php:81
+msgid "Installing/Updating NodeJS..."
+msgstr ""
+
+#: Xmpp.class.php:127
+msgid "Installing/Updating Required Libraries. This may take a while..."
+msgstr ""
 
 #: ucp/assets/js/global.js:244
 msgid "Login"
@@ -86,9 +132,23 @@ msgstr "مدیریت و تنظیم سرور XMPP Prosodyکه باید نسخه R
 msgid "Me"
 msgstr "من"
 
-#: install.php:53
+#: install.php:43
 msgid "Migrating Token Users to User Manager"
 msgstr "مهاجرت توکن کاربران به مدیریت کاربران"
+
+#: Xmpp.class.php:53 Xmpp.class.php:65
+msgid "MongoDB is not installed"
+msgstr ""
+
+#: Xmpp.class.php:56
+#, php-format
+msgid "MongoDB version is: %s requirement is %s"
+msgstr ""
+
+#: Xmpp.class.php:100
+#, php-format
+msgid "NPM version is: %s requirement is %s"
+msgstr ""
 
 #: ucp/assets/js/global.js:114
 msgid "Need a valid recipient"
@@ -107,6 +167,19 @@ msgstr "XMPP جدید"
 msgid "No"
 msgstr "خیر"
 
+#: Xmpp.class.php:96
+msgid "Node Package Manager is not installed"
+msgstr ""
+
+#: Xmpp.class.php:75 Xmpp.class.php:87
+msgid "Node is not installed"
+msgstr ""
+
+#: Xmpp.class.php:78
+#, php-format
+msgid "Node version is: %s requirement is %s"
+msgstr ""
+
 #: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr "رمز عبور"
@@ -115,17 +188,28 @@ msgstr "رمز عبور"
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr "لطفا برای ورود به سرور XMPP کلمه عبور و نام کاربری را وارد کنید"
 
+#: Xmpp.class.php:37
+msgid ""
+"Prosody is no longer used and conflicts with this package. Please remove it "
+"before continuing"
+msgstr ""
+
 #: ucp/assets/js/global.js:117
 msgid "Recursively sending to yourself is not allowed!"
 msgstr "ارسال بازگشتی به خود مجاز نیست!"
 
-#: Xmpp.class.php:556
+#: Xmpp.class.php:40
+msgid "Removing Prosody.."
+msgstr ""
+
+#: Xmpp.class.php:544
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: Xmpp.class.php:620
-msgid "Running XMPP Hooks"
-msgstr "اجرای هوک XMPP"
+#: Xmpp.class.php:524
+#, php-format
+msgid "Running (Uptime: %s)"
+msgstr ""
 
 #: ucp/assets/js/global.js:45
 msgid "Send Message"
@@ -135,17 +219,51 @@ msgstr "ارسال پیام"
 msgid "Start XMPP"
 msgstr "استارت سرویس XMPP"
 
-#: Xmpp.class.php:621
-msgid "Starting XMPP Server"
-msgstr "راه اندازی سرور XMPP"
+#: Xmpp.class.php:664
+#, php-format
+msgid "Started XMPP Server. PID is %s"
+msgstr ""
 
-#: Xmpp.class.php:561
+#: Xmpp.class.php:176
+msgid "Started!"
+msgstr ""
+
+#: Xmpp.class.php:606
+msgid "Starting MongoDB Server..."
+msgstr ""
+
+#: Xmpp.class.php:636
+msgid "Starting XMPP Server..."
+msgstr ""
+
+#: Xmpp.class.php:171
+msgid "Starting new Xmpp Process..."
+msgstr ""
+
+#: Xmpp.class.php:737
+msgid "Stopped xmpp Server"
+msgstr ""
+
+#: Xmpp.class.php:162 Xmpp.class.php:186
+msgid "Stopping old running processes..."
+msgstr ""
+
+#: Xmpp.class.php:729
+msgid "Stopping xmpp Server"
+msgstr ""
+
+#: Xmpp.class.php:549
 msgid "Submit"
 msgstr "ثبت"
 
 #: ucp/assets/js/global.js:43
 msgid "There is currently no connection to a valid server"
 msgstr "در حال حاضر ارتباطی با یک سرور معتبر برقرار نیست"
+
+#: Xmpp.class.php:142
+#, php-format
+msgid "There was an error installing. Please review the install log. (%s)"
+msgstr ""
 
 #: views/userman_hook.php:9
 #, php-format
@@ -158,16 +276,30 @@ msgstr ""
 "در \"%s\" با استفاده از \"&lt;username&gt;@%s\" وارد شده و پس از کلیک کردن "
 "بر روی گزینه بله، کلمه عبور را تغییر دهد"
 
-#: install.php:96
+#: install.php:86
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr "نمی توان %s را به مدیریت کاربران اضافه کرد"
 
-#: Xmpp.class.php:516 Xmpp.class.php:523
+#: Xmpp.class.php:591
+msgid "Unable to launch Xmpp monitor"
+msgstr ""
+
+#: Xmpp.class.php:696
+msgid "Unable to launch xmpp monitor"
+msgstr ""
+
+#: Xmpp.class.php:46
+msgid ""
+"Unable to remove Prosody, it is no longer used and conflicts with this "
+"package. Please remove it before continuing"
+msgstr ""
+
+#: Xmpp.class.php:517
 msgid "Unknown"
 msgstr "ناشناخته"
 
-#: install.php:87
+#: install.php:77
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr "کاربر %s وجود دارد، بروزرسانی تغییرات"
@@ -176,7 +308,7 @@ msgstr "کاربر %s وجود دارد، بروزرسانی تغییرات"
 msgid "Username"
 msgstr "نام کاربری"
 
-#: install.php:79
+#: install.php:69
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "نام کاربری %s تلاقی دارد تغییر %s حذف %s"
@@ -193,30 +325,65 @@ msgstr "XMPP"
 msgid "XMPP Credentials"
 msgstr "مجوزهای XMPP"
 
-#: Xmpp.class.php:628
-#, php-format
-msgid "XMPP Server Start Failed: %s"
-msgstr "راه اندازی سرور XMPP با خطا مواجه شد: %s"
-
-#: Xmpp.class.php:626
-msgid "XMPP Server Started"
-msgstr "سرور XMPP راه اندازی شد"
-
-#: Xmpp.class.php:645
-msgid "XMPP Server Stopped"
-msgstr "سرور XMPP متوقف شد"
-
-#: Xmpp.class.php:647
-msgid "XMPP Server was not running"
-msgstr "سرور XMPP در حال اجرا نیست"
+#: Xmpp.class.php:510
+msgid "XMPP is damaged. Please reinstall."
+msgstr ""
 
 #: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
 msgstr "تنظیمات XMPP/Jabber"
 
+#: Xmpp.class.php:515
+msgid "Xmpp Daemon"
+msgstr ""
+
+#: Xmpp.class.php:599
+#, php-format
+msgid "Xmpp Server has already been running on PID %s for %s"
+msgstr ""
+
+#: Xmpp.class.php:584
+msgid "Xmpp is damaged. Please reinstall."
+msgstr ""
+
+#: Xmpp.class.php:526
+msgid "Xmpp is not running"
+msgstr ""
+
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "بله"
+
+#: Xmpp.class.php:741
+#, php-format
+msgid "xmpp Server Failed: %s"
+msgstr ""
+
+#: Xmpp.class.php:704
+msgid "xmpp Server is not running"
+msgstr ""
+
+#: Xmpp.class.php:689
+msgid "xmpp is damaged. Please reinstall."
+msgstr ""
+
+#~ msgid "Running XMPP Hooks"
+#~ msgstr "اجرای هوک XMPP"
+
+#~ msgid "Starting XMPP Server"
+#~ msgstr "راه اندازی سرور XMPP"
+
+#~ msgid "XMPP Server Start Failed: %s"
+#~ msgstr "راه اندازی سرور XMPP با خطا مواجه شد: %s"
+
+#~ msgid "XMPP Server Started"
+#~ msgstr "سرور XMPP راه اندازی شد"
+
+#~ msgid "XMPP Server Stopped"
+#~ msgstr "سرور XMPP متوقف شد"
+
+#~ msgid "XMPP Server was not running"
+#~ msgstr "سرور XMPP در حال اجرا نیست"
 
 #~ msgid "Missing User Manager Module!"
 #~ msgstr "ماژول مدیریت کاربر یافت نشد!"
