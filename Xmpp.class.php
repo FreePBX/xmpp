@@ -32,26 +32,62 @@ class Xmpp implements \BMO {
 	}
 
 	public function install() {
-		$output = exec("mongod --version"); //v0.10.29
-		$output = str_replace("v","",trim($output));
-		if(empty($output)) {
-			out(_("MongoDB is not installed"));
+		$sysadmin = $this->freepbx->Modules->checkStatus("sysadmin");
+		if(!$sysadmin && (file_exists('/usr/bin/prosody') || file_exists('/usr/bin/prosodyctl'))) {
+			out(_("Prosody is no longer used and conflicts with this package. Please remove it before continuing"));
 			return false;
+		} elseif($sysadmin && (file_exists('/usr/bin/prosody') || file_exists('/usr/bin/prosodyctl'))) {
+			outn(_("Removing Prosody.."));
+			$this->removeProsody();
+			out(_("Done"));
 		}
-		if(version_compare($output,$this->mongodb,"<")) {
-			out(sprintf(_("MongoDB version is: %s requirement is %s"),$output,$this->mongodbver));
+
+		if((file_exists('/usr/bin/prosody') || file_exists('/usr/bin/prosodyctl'))) {
+			out(_("Unable to remove Prosody, it is no longer used and conflicts with this package. Please remove it before continuing"));
 			return false;
 		}
 
-		$output = exec("node --version"); //v0.10.29
+		$output = exec("mongod --version 2>/dev/null ");
 		$output = str_replace("v","",trim($output));
-		if(empty($output)) {
+		if(empty($output) && !$sysadmin) {
+			out(_("MongoDB is not installed"));
+			return false;
+		} elseif(version_compare($output,$this->mongodb,"<") && !$sysadmin) {
+			out(sprintf(_("MongoDB version is: %s requirement is %s"),$output,$this->mongodbver));
+			return false;
+		} elseif($sysadmin && (empty($output) || version_compare($output,$this->mongodb,"<"))) {
+			outn(_("Installing/Updating MongoDB..."));
+			$this->installMongo();
+
+			$output = exec("mongod --version 2>/dev/null ");
+			$output = str_replace("v","",trim($output));
+			if(empty($output) || version_compare($output,$this->mongodb,"<")) {
+				out(_("MongoDB is not installed"));
+				return false;
+			}
+
+			out(_("Done"));
+		}
+
+		$output = exec("node --version 2>/dev/null "); //v0.10.29
+		$output = str_replace("v","",trim($output));
+		if(empty($output) && !$sysadmin) {
 			out(_("Node is not installed"));
 			return false;
-		}
-		if(version_compare($output,$this->nodever,"<")) {
+		} elseif(version_compare($output,$this->nodever,"<") && !$sysadmin) {
 			out(sprintf(_("Node version is: %s requirement is %s"),$output,$this->nodever));
 			return false;
+		} elseif($sysadmin && (empty($output) || version_compare($output,$this->nodever,"<"))) {
+			outn(_("Installing/Updating NodeJS..."));
+			$this->installNode();
+
+			$output = exec("node --version");
+			$output = str_replace("v","",trim($output));
+			if(empty($output) || version_compare($output,$this->nodever,"<")) {
+				out(_("Node is not installed"));
+				return false;
+			}
+			out(_("Done"));
 		}
 
 		$output = exec("npm --version"); //v0.10.29
@@ -62,11 +98,6 @@ class Xmpp implements \BMO {
 		}
 		if(version_compare($output,$this->npmver,"<")) {
 			out(sprintf(_("NPM version is: %s requirement is %s"),$output,$this->npmver));
-			return false;
-		}
-
-		if(file_exists('/usr/bin/prosody') || file_exists('/usr/bin/prosodyctl')) {
-			out(_("Prosody is no longer used and conflicts with this package. Please remove it before continuing"));
 			return false;
 		}
 
@@ -569,6 +600,19 @@ class Xmpp implements \BMO {
 			return true;
 		}
 
+		$process = new Process("ps -edaf | grep mongo | grep -v grep");
+		$process->run();
+		if (!$process->isSuccessful()) {
+			$output->writeln(_("Starting MongoDB Server..."));
+			if($this->startMongoServer($output)) {
+				$output->writeln("");
+				$output->writeln("<error>"._("Failed")."</error>");
+				return false;
+			}
+			$output->writeln("");
+			$output->writeln(_("Done"));
+		}
+
 		$cmds = array(
 			'cd '.$this->nodeloc,
 			'mkdir -p '.$this->foreverroot,
@@ -808,5 +852,56 @@ class Xmpp implements \BMO {
 		}
 		// Return string with times
 		return implode( ", ", $times );
+	}
+
+	private function startMongoServer($output) {
+		touch("/var/spool/asterisk/incron/xmpp.mongodb-start");
+		$process = new Process("ps -edaf | grep mongo | grep -v grep");
+		$process->run();
+		$i = 0;
+		if(is_object($output)) {
+			$progress = new ProgressBar($output, 0);
+			$progress->setFormat('[%bar%] %elapsed%');
+			$progress->start();
+		}
+		while(!$process->isSuccessful() && $i < 30) {
+			$process = new Process("ps -edaf | grep mongo | grep -v grep");
+			$process->run();
+			$i++;
+			if(is_object($output)) {
+				$progress->setProgress($i);
+			}
+			sleep(1);
+		}
+		if(is_object($output)) {
+			$progress->finish();
+		}
+	}
+
+	private function installMongo() {
+		touch("/var/spool/asterisk/incron/xmpp.mongodb-install");
+		sleep(1);
+		while(file_exists("/dev/shm/yumwrapper/yum.lock")) {
+			outn(".");
+			sleep(1);
+		}
+	}
+
+	private function installNode() {
+		touch("/var/spool/asterisk/incron/xmpp.node-install");
+		sleep(1);
+		while(file_exists("/dev/shm/yumwrapper/yum.lock")) {
+			outn(".");
+			sleep(1);
+		}
+	}
+
+	private function removeProsody() {
+		touch("/var/spool/asterisk/incron/xmpp.prosody-removal");
+		sleep(1);
+		while(file_exists("/dev/shm/yumwrapper/yum.lock")) {
+			outn(".");
+			sleep(1);
+		}
 	}
 }
