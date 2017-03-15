@@ -3,7 +3,7 @@ var XmppC = UCPMC.extend({
 		this.socket = null;
 		this.jid = null;
 		this.roster = {};
-		this.icon = "sf sf-xmpp-logo";
+		this.icon = "fa fa-comments-o";
 		this.typing = {};
 		this.enabled = false;
 		this.connecting = false;
@@ -93,7 +93,8 @@ var XmppC = UCPMC.extend({
 			return;
 		}
 		if(!$(".message-box [data-id='"+encodeURIComponent(user[0] + "@" + user[1])+"']").length) {
-			UCP.addChat("Xmpp", encodeURIComponent(user[0] + "@" + user[1]), Xmpp.icon, user[0] + "@" + user[1], Xmpp.jid.user + "@" + user[1]);
+			var name = Xmpp.roster[user[0] + "@" + user[1]].name;
+			UCP.addChat("Xmpp", encodeURIComponent(user[0] + "@" + user[1]), Xmpp.icon, user[0] + "@" + user[1], Xmpp.jid.user + "@" + user[1], '<div class="from"><strong>F:</strong> '+name+'</div><br/><div class="to"><strong>T:</strong> '+Xmpp.jid.user+'</div>');
 			UCP.closeDialog();
 		} else {
 			Xmpp.initalizing[user[0] + "@" + user[1]] = false;
@@ -132,7 +133,7 @@ var XmppC = UCPMC.extend({
 	sendMessage: function(windowId, to, message) {
 		var Xmpp = this,
 				id = Math.floor((Math.random() * 100000) + 1);
-		UCP.addChatMessage(windowId, _("Me"), id, message, false, false, 'out');
+		UCP.addChatMessage(windowId, id, message, false, false, 'out');
 		if (typeof Xmpp.typing[decodeURIComponent(windowId)] !== "undefined") {
 			clearTimeout(Xmpp.typing[decodeURIComponent(windowId)]);
 			delete Xmpp.typing[decodeURIComponent(windowId)];
@@ -323,12 +324,13 @@ var XmppC = UCPMC.extend({
 								fjid = data.from.username + "@" + fhost[0],
 								tjid = data.to.username + "@" + thost[0],
 								windowid = encodeURIComponent(data.from.username + "@" + Xmpp.jid._domain),
-								Notification = new Notify(sprintf(_("New Message from %s"), Xmpp.replaceContact(UCP.Modules.Xmpp.roster[fjid].name)), {
+								name = Xmpp.roster[fjid].name,
+								Notification = new Notify(sprintf(_("New Message from %s"), name), {
 							body: emojione.unifyUnicode(data.message),
 							icon: "modules/Sms/assets/images/comment.png",
 							timeout: 3
 						});
-						UCP.addChat("Xmpp", windowid, Xmpp.icon, data.from.username + "@" + fhost[0], data.to.username + "@" + thost[0], data.from.username + "@" + fhost[0], data.id, data.message, false, false, 'in');
+						UCP.addChat("Xmpp", windowid, Xmpp.icon, data.from.username + "@" + fhost[0], data.to.username + "@" + thost[0], '<div class="from"><strong>F:</strong> '+name+'</div><br/><div class="to"><strong>T:</strong> '+data.to.username+'</div>', data.id, data.message, false, false, 'in');
 						if (UCP.notify) {
 							Notification.show();
 						}

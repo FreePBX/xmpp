@@ -25,12 +25,12 @@ class Xmpp extends Modules{
 
 		return array(
 			"rawname" => "xmpp",
-			"display" => _("XMPP"),
-			"icon" => "sf sf-xmpp-logo",
+			"display" => _("Chat"),
+			"icon" => "fa fa-comments-o",
 			"list" => array(
 				array(
-					"display" => "XMPP",
-					"description" => _("XMPP is a chat service")
+					"display" => _("Chat"),
+					"description" => _("Chat service")
 				)
 			)
 		);
@@ -41,7 +41,7 @@ class Xmpp extends Modules{
 			return array();
 		}
 		return array(
-			'title' => _("XMPP"),
+			'title' => _("Chat"),
 			'html' => $this->load_view(__DIR__."/views/widget.php",array())
 		);
 	}

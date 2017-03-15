@@ -1,12 +1,12 @@
 <div class="panel panel-info">
 	<div class="panel-heading">
 		<div class="panel-title">
-			<a href="#" data-toggle="collapse" data-target="#moreinfo-xmpp"><i class="glyphicon glyphicon-info-sign"></i></a>&nbsp;&nbsp;&nbsp;<?php echo _("What is XMPP")?>
+			<a href="#" data-toggle="collapse" data-target="#moreinfo-xmpp"><i class="glyphicon glyphicon-info-sign"></i></a>&nbsp;&nbsp;&nbsp;<?php echo _("What is Chat")?>
 		</div>
 	</div>
 	<!--At some point we can probably kill this... Maybe make is a 1 time panel that may be dismissed-->
 	<div class="panel-body collapse" id="moreinfo-xmpp">
-		<p><?php echo sprintf(_('This section will add this user to XMPP. The user can then login to the XMPP server at "%s" using "&lt;username&gt;@%s" You will need to redefine the users password after clicking Yes'),$domain,$domain)?></p>
+		<p><?php echo sprintf(_('This section will add this user to the Chat service. The Chat service is a local XMPP server that runs on your machine. The user can then login to the XMPP server at "%s" using "&lt;username&gt;@%s"'),$domain,$domain)?></p>
 	</div>
 </div>
 <div class="element-container">

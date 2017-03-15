@@ -206,7 +206,7 @@ class Xmpp implements \BMO {
 				case 'showgroup':
 					return array(
 						array(
-							"title" => "XMPP",
+							"title" => _("Chat"),
 							"rawname" => "xmpp",
 							"content" => load_view(__DIR__.'/views/userman_hook.php',array("mode" => "group", "enabled" => ($this->userman->getModuleSettingByGID($_REQUEST['group'],'xmpp','enable')), "domain"=>$this->getOption("domain")))
 						)
@@ -216,7 +216,7 @@ class Xmpp implements \BMO {
 					$enabled = $this->userman->getModuleSettingByID($_REQUEST['user'],'xmpp','enable',true);
 					return array(
 						array(
-							"title" => "XMPP",
+							"title" => _("Chat"),
 							"rawname" => "xmpp",
 							"content" => load_view(__DIR__.'/views/userman_hook.php',array("mode" => "user", "enabled" => $enabled, "domain"=>$this->getOption("domain")))
 						)
@@ -227,7 +227,7 @@ class Xmpp implements \BMO {
 					$mode = ($_REQUEST['action'] == 'addgroup') ? 'group' : 'user';
 					return array(
 						array(
-							"title" => "XMPP",
+							"title" => _("Chat"),
 							"rawname" => "xmpp",
 							"content" => load_view(__DIR__.'/views/userman_hook.php',array("mode" => $mode, "enabled" => ($_REQUEST['action'] == 'adduser' ? null : false), "domain"=>$this->getOption("domain")))
 						)
