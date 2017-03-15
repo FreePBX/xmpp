@@ -9,19 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-09 15:53-0800\n"
+"POT-Creation-Date: 2017-03-14 17:28-0700\n"
 "PO-Revision-Date: 2016-12-16 01:43+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
 "freepbx/xmpp/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: ucp/assets/js/global.js:356
+#: ucp/assets/js/global.js:344
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s está escrevendo..."
@@ -50,6 +50,19 @@ msgstr "Não é possível criar tabelas xmpp"
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "Alterando usuário %s para %s"
+
+#: Xmpp.class.php:209 Xmpp.class.php:219 Xmpp.class.php:230
+#: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
+msgid "Chat"
+msgstr ""
+
+#: ucp/Xmpp.class.php:33
+msgid "Chat service"
+msgstr ""
+
+#: ucp/views/widget.php:5
+msgid "Connected"
+msgstr ""
 
 #: page.xmpp.php:20
 msgid "Delete"
@@ -118,7 +131,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:244
+#: ucp/assets/js/global.js:221
 msgid "Login"
 msgstr "Login"
 
@@ -129,10 +142,6 @@ msgid ""
 msgstr ""
 "Gerencie e configure um servidor XMPP Prosody e requer que o RPM Prosody do "
 "seu PBX seja instalado."
-
-#: ucp/assets/js/global.js:155
-msgid "Me"
-msgstr "Eu"
 
 #: install.php:43
 msgid "Migrating Token Users to User Manager"
@@ -152,18 +161,14 @@ msgstr ""
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:114
+#: ucp/assets/js/global.js:89
 msgid "Need a valid recipient"
 msgstr "Precisa de um destinatário válido"
 
-#: ucp/assets/js/global.js:340
+#: ucp/assets/js/global.js:328
 #, perl-format
 msgid "New Message from %s"
 msgstr "Nova Mensagem de %s"
-
-#: ucp/Xmpp.class.php:32
-msgid "New XMPP"
-msgstr "Novo XMPP"
 
 #: views/userman_hook.php:24
 msgid "No"
@@ -182,11 +187,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:242
+#: ucp/assets/js/global.js:219
 msgid "Password"
 msgstr "Senha"
 
-#: ucp/assets/js/global.js:240
+#: ucp/assets/js/global.js:217
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr "Digite seu nome de usuário e senha para fazer login no servidor XMPP"
 
@@ -196,7 +201,7 @@ msgid ""
 "before continuing"
 msgstr ""
 
-#: ucp/assets/js/global.js:117
+#: ucp/assets/js/global.js:92
 msgid "Recursively sending to yourself is not allowed!"
 msgstr "O envio recursivo para si mesmo não é permitido!"
 
@@ -212,14 +217,6 @@ msgstr "Reiniciar"
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
-
-#: ucp/assets/js/global.js:45
-msgid "Send Message"
-msgstr "Enviar Mensagem"
-
-#: ucp/assets/js/global.js:97
-msgid "Start XMPP"
-msgstr "Iniciar XMPP"
 
 #: Xmpp.class.php:664
 #, php-format
@@ -242,6 +239,10 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
+#: ucp/views/widget.php:5
+msgid "Status"
+msgstr ""
+
 #: Xmpp.class.php:737
 msgid "Stopped xmpp Server"
 msgstr ""
@@ -258,10 +259,6 @@ msgstr ""
 msgid "Submit"
 msgstr "Enviar"
 
-#: ucp/assets/js/global.js:43
-msgid "There is currently no connection to a valid server"
-msgstr "Não existe atualmente nenhuma conexão a um servidor válido"
-
 #: Xmpp.class.php:142
 #, php-format
 msgid "There was an error installing. Please review the install log. (%s)"
@@ -270,13 +267,10 @@ msgstr ""
 #: views/userman_hook.php:9
 #, php-format
 msgid ""
-"This section will add this user to XMPP. The user can then login to the XMPP "
-"server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
-"users password after clicking Yes"
+"This section will add this user to the Chat service. The Chat service is a "
+"local XMPP server that runs on your machine. The user can then login to the "
+"XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
-"Esta seção adicionará este usuário ao XMPP. O usuário pode então fazer login "
-"no servidor XMPP em \"%s\" usando \"&lt;nomedeusuario&gt;@%s\" Você "
-"precisará redefinir a senha do usuário após clicar em Sim"
 
 #: install.php:86
 #, php-format
@@ -306,7 +300,11 @@ msgstr "Desconhecido"
 msgid "User %s already exists, updating instead"
 msgstr "O usuário %s já existe, no lugar de atualizar"
 
-#: ucp/assets/js/global.js:240
+#: ucp/views/widget.php:8
+msgid "User List"
+msgstr ""
+
+#: ucp/assets/js/global.js:217
 msgid "Username"
 msgstr "Nome de Usuário"
 
@@ -316,14 +314,14 @@ msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "Conflito no Nome de Usuário %s alterando para %s apagando %s"
 
 #: views/userman_hook.php:4
-msgid "What is XMPP"
-msgstr "O que é XMPP"
+msgid "What is Chat"
+msgstr ""
 
 #: xmpp.i18n.php:4 xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:240
+#: ucp/assets/js/global.js:217
 msgid "XMPP Credentials"
 msgstr "Credenciais XMPP"
 
@@ -368,6 +366,33 @@ msgstr ""
 #: Xmpp.class.php:689
 msgid "xmpp is damaged. Please reinstall."
 msgstr ""
+
+#~ msgid "Me"
+#~ msgstr "Eu"
+
+#~ msgid "New XMPP"
+#~ msgstr "Novo XMPP"
+
+#~ msgid "Send Message"
+#~ msgstr "Enviar Mensagem"
+
+#~ msgid "Start XMPP"
+#~ msgstr "Iniciar XMPP"
+
+#~ msgid "There is currently no connection to a valid server"
+#~ msgstr "Não existe atualmente nenhuma conexão a um servidor válido"
+
+#~ msgid ""
+#~ "This section will add this user to XMPP. The user can then login to the "
+#~ "XMPP server at \"%s\" using \"&lt;username&gt;@%s\" You will need to "
+#~ "redefine the users password after clicking Yes"
+#~ msgstr ""
+#~ "Esta seção adicionará este usuário ao XMPP. O usuário pode então fazer "
+#~ "login no servidor XMPP em \"%s\" usando \"&lt;nomedeusuario&gt;@%s\" Você "
+#~ "precisará redefinir a senha do usuário após clicar em Sim"
+
+#~ msgid "What is XMPP"
+#~ msgstr "O que é XMPP"
 
 #~ msgid "Running XMPP Hooks"
 #~ msgstr "Executando Ganchos XMPP"

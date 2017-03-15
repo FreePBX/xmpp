@@ -9,19 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-09 15:53-0800\n"
+"POT-Creation-Date: 2017-03-14 17:28-0700\n"
 "PO-Revision-Date: 2016-10-08 12:20+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
 "xmpp/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: ucp/assets/js/global.js:356
+#: ucp/assets/js/global.js:344
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s در حال تایپ کردن است..."
@@ -50,6 +50,19 @@ msgstr "عدم ایجاد جداول xmpp"
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "تغییر کاربر %s به %s"
+
+#: Xmpp.class.php:209 Xmpp.class.php:219 Xmpp.class.php:230
+#: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
+msgid "Chat"
+msgstr ""
+
+#: ucp/Xmpp.class.php:33
+msgid "Chat service"
+msgstr ""
+
+#: ucp/views/widget.php:5
+msgid "Connected"
+msgstr ""
 
 #: page.xmpp.php:20
 msgid "Delete"
@@ -118,7 +131,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:244
+#: ucp/assets/js/global.js:221
 msgid "Login"
 msgstr "ورود"
 
@@ -127,10 +140,6 @@ msgid ""
 "Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
 "your PBX be installed."
 msgstr "مدیریت و تنظیم سرور XMPP Prosodyکه باید نسخه RPM آن نصب شود."
-
-#: ucp/assets/js/global.js:155
-msgid "Me"
-msgstr "من"
 
 #: install.php:43
 msgid "Migrating Token Users to User Manager"
@@ -150,18 +159,14 @@ msgstr ""
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:114
+#: ucp/assets/js/global.js:89
 msgid "Need a valid recipient"
 msgstr "گیرنده باید معتبر باشد"
 
-#: ucp/assets/js/global.js:340
+#: ucp/assets/js/global.js:328
 #, perl-format
 msgid "New Message from %s"
 msgstr "پیام جدید از %s"
-
-#: ucp/Xmpp.class.php:32
-msgid "New XMPP"
-msgstr "XMPP جدید"
 
 #: views/userman_hook.php:24
 msgid "No"
@@ -180,11 +185,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:242
+#: ucp/assets/js/global.js:219
 msgid "Password"
 msgstr "رمز عبور"
 
-#: ucp/assets/js/global.js:240
+#: ucp/assets/js/global.js:217
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr "لطفا برای ورود به سرور XMPP کلمه عبور و نام کاربری را وارد کنید"
 
@@ -194,7 +199,7 @@ msgid ""
 "before continuing"
 msgstr ""
 
-#: ucp/assets/js/global.js:117
+#: ucp/assets/js/global.js:92
 msgid "Recursively sending to yourself is not allowed!"
 msgstr "ارسال بازگشتی به خود مجاز نیست!"
 
@@ -210,14 +215,6 @@ msgstr "بازنشانی"
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
-
-#: ucp/assets/js/global.js:45
-msgid "Send Message"
-msgstr "ارسال پیام"
-
-#: ucp/assets/js/global.js:97
-msgid "Start XMPP"
-msgstr "استارت سرویس XMPP"
 
 #: Xmpp.class.php:664
 #, php-format
@@ -240,6 +237,10 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
+#: ucp/views/widget.php:5
+msgid "Status"
+msgstr ""
+
 #: Xmpp.class.php:737
 msgid "Stopped xmpp Server"
 msgstr ""
@@ -256,10 +257,6 @@ msgstr ""
 msgid "Submit"
 msgstr "ثبت"
 
-#: ucp/assets/js/global.js:43
-msgid "There is currently no connection to a valid server"
-msgstr "در حال حاضر ارتباطی با یک سرور معتبر برقرار نیست"
-
 #: Xmpp.class.php:142
 #, php-format
 msgid "There was an error installing. Please review the install log. (%s)"
@@ -268,13 +265,10 @@ msgstr ""
 #: views/userman_hook.php:9
 #, php-format
 msgid ""
-"This section will add this user to XMPP. The user can then login to the XMPP "
-"server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
-"users password after clicking Yes"
+"This section will add this user to the Chat service. The Chat service is a "
+"local XMPP server that runs on your machine. The user can then login to the "
+"XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
-"این بخش این کاربر را به XMPP اضافه می کند. سپس کاربر می تواند به سرور XMPP "
-"در \"%s\" با استفاده از \"&lt;username&gt;@%s\" وارد شده و پس از کلیک کردن "
-"بر روی گزینه بله، کلمه عبور را تغییر دهد"
 
 #: install.php:86
 #, php-format
@@ -304,7 +298,11 @@ msgstr "ناشناخته"
 msgid "User %s already exists, updating instead"
 msgstr "کاربر %s وجود دارد، بروزرسانی تغییرات"
 
-#: ucp/assets/js/global.js:240
+#: ucp/views/widget.php:8
+msgid "User List"
+msgstr ""
+
+#: ucp/assets/js/global.js:217
 msgid "Username"
 msgstr "نام کاربری"
 
@@ -314,14 +312,14 @@ msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "نام کاربری %s تلاقی دارد تغییر %s حذف %s"
 
 #: views/userman_hook.php:4
-msgid "What is XMPP"
-msgstr "سرویس XMPP چیست"
+msgid "What is Chat"
+msgstr ""
 
 #: xmpp.i18n.php:4 xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:240
+#: ucp/assets/js/global.js:217
 msgid "XMPP Credentials"
 msgstr "مجوزهای XMPP"
 
@@ -366,6 +364,33 @@ msgstr ""
 #: Xmpp.class.php:689
 msgid "xmpp is damaged. Please reinstall."
 msgstr ""
+
+#~ msgid "Me"
+#~ msgstr "من"
+
+#~ msgid "New XMPP"
+#~ msgstr "XMPP جدید"
+
+#~ msgid "Send Message"
+#~ msgstr "ارسال پیام"
+
+#~ msgid "Start XMPP"
+#~ msgstr "استارت سرویس XMPP"
+
+#~ msgid "There is currently no connection to a valid server"
+#~ msgstr "در حال حاضر ارتباطی با یک سرور معتبر برقرار نیست"
+
+#~ msgid ""
+#~ "This section will add this user to XMPP. The user can then login to the "
+#~ "XMPP server at \"%s\" using \"&lt;username&gt;@%s\" You will need to "
+#~ "redefine the users password after clicking Yes"
+#~ msgstr ""
+#~ "این بخش این کاربر را به XMPP اضافه می کند. سپس کاربر می تواند به سرور "
+#~ "XMPP در \"%s\" با استفاده از \"&lt;username&gt;@%s\" وارد شده و پس از "
+#~ "کلیک کردن بر روی گزینه بله، کلمه عبور را تغییر دهد"
+
+#~ msgid "What is XMPP"
+#~ msgstr "سرویس XMPP چیست"
 
 #~ msgid "Running XMPP Hooks"
 #~ msgstr "اجرای هوک XMPP"

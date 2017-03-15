@@ -9,19 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-09 15:53-0800\n"
+"POT-Creation-Date: 2017-03-14 17:28-0700\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
 "ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: ucp/assets/js/global.js:356
+#: ucp/assets/js/global.js:344
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s が入力中…"
@@ -50,6 +50,19 @@ msgstr "xmppテーブルを作成できませんでした"
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "ユーザー %s から %s に変更中"
+
+#: Xmpp.class.php:209 Xmpp.class.php:219 Xmpp.class.php:230
+#: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
+msgid "Chat"
+msgstr ""
+
+#: ucp/Xmpp.class.php:33
+msgid "Chat service"
+msgstr ""
+
+#: ucp/views/widget.php:5
+msgid "Connected"
+msgstr ""
 
 #: page.xmpp.php:20
 msgid "Delete"
@@ -118,7 +131,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:244
+#: ucp/assets/js/global.js:221
 msgid "Login"
 msgstr ""
 
@@ -127,10 +140,6 @@ msgid ""
 "Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
 "your PBX be installed."
 msgstr ""
-
-#: ucp/assets/js/global.js:155
-msgid "Me"
-msgstr "自分"
 
 #: install.php:43
 msgid "Migrating Token Users to User Manager"
@@ -150,18 +159,14 @@ msgstr ""
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:114
+#: ucp/assets/js/global.js:89
 msgid "Need a valid recipient"
 msgstr "有効な受信者を指定してください"
 
-#: ucp/assets/js/global.js:340
+#: ucp/assets/js/global.js:328
 #, perl-format
 msgid "New Message from %s"
 msgstr "%s より新規メッセージ"
-
-#: ucp/Xmpp.class.php:32
-msgid "New XMPP"
-msgstr "新規XMPP"
 
 #: views/userman_hook.php:24
 msgid "No"
@@ -180,11 +185,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:242
+#: ucp/assets/js/global.js:219
 msgid "Password"
 msgstr ""
 
-#: ucp/assets/js/global.js:240
+#: ucp/assets/js/global.js:217
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
@@ -194,7 +199,7 @@ msgid ""
 "before continuing"
 msgstr ""
 
-#: ucp/assets/js/global.js:117
+#: ucp/assets/js/global.js:92
 msgid "Recursively sending to yourself is not allowed!"
 msgstr ""
 
@@ -210,14 +215,6 @@ msgstr ""
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
-
-#: ucp/assets/js/global.js:45
-msgid "Send Message"
-msgstr "メッセージを送信"
-
-#: ucp/assets/js/global.js:97
-msgid "Start XMPP"
-msgstr "XMPPを起動"
 
 #: Xmpp.class.php:664
 #, php-format
@@ -240,6 +237,10 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
+#: ucp/views/widget.php:5
+msgid "Status"
+msgstr ""
+
 #: Xmpp.class.php:737
 msgid "Stopped xmpp Server"
 msgstr ""
@@ -256,10 +257,6 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: ucp/assets/js/global.js:43
-msgid "There is currently no connection to a valid server"
-msgstr "有効なサーバーに接続していません"
-
 #: Xmpp.class.php:142
 #, php-format
 msgid "There was an error installing. Please review the install log. (%s)"
@@ -268,9 +265,9 @@ msgstr ""
 #: views/userman_hook.php:9
 #, php-format
 msgid ""
-"This section will add this user to XMPP. The user can then login to the XMPP "
-"server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
-"users password after clicking Yes"
+"This section will add this user to the Chat service. The Chat service is a "
+"local XMPP server that runs on your machine. The user can then login to the "
+"XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
 
 #: install.php:86
@@ -301,7 +298,11 @@ msgstr "不明"
 msgid "User %s already exists, updating instead"
 msgstr "ユーザー %s は既に存在するため、更新します"
 
-#: ucp/assets/js/global.js:240
+#: ucp/views/widget.php:8
+msgid "User List"
+msgstr ""
+
+#: ucp/assets/js/global.js:217
 msgid "Username"
 msgstr ""
 
@@ -311,14 +312,14 @@ msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "ユーザー名が衝突: %s を %s に変更して %s を削除します"
 
 #: views/userman_hook.php:4
-msgid "What is XMPP"
+msgid "What is Chat"
 msgstr ""
 
 #: xmpp.i18n.php:4 xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:240
+#: ucp/assets/js/global.js:217
 msgid "XMPP Credentials"
 msgstr ""
 
@@ -363,6 +364,21 @@ msgstr ""
 #: Xmpp.class.php:689
 msgid "xmpp is damaged. Please reinstall."
 msgstr ""
+
+#~ msgid "Me"
+#~ msgstr "自分"
+
+#~ msgid "New XMPP"
+#~ msgstr "新規XMPP"
+
+#~ msgid "Send Message"
+#~ msgstr "メッセージを送信"
+
+#~ msgid "Start XMPP"
+#~ msgstr "XMPPを起動"
+
+#~ msgid "There is currently no connection to a valid server"
+#~ msgstr "有効なサーバーに接続していません"
 
 #~ msgid "Missing User Manager Module!"
 #~ msgstr "ユーザー管理モジュールはインストールされていません！"
