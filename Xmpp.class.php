@@ -177,7 +177,7 @@ class Xmpp implements \BMO {
 			}
 		}
 
-		$sql = 'DROP TABLES prosody';
+		$sql = 'DROP TABLE IF EXISTS `prosody`';
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 	}
@@ -188,7 +188,7 @@ class Xmpp implements \BMO {
 		out(_("Done"));
 		exec("rm -Rf ".$this->nodeloc."/node_modules");
 
-		$sql = 'DROP TABLES xmpp_users, xmpp_options';
+		$sql = 'DROP TABLE IF EXISTS `xmpp_users`, `xmpp_options`';
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 	}
