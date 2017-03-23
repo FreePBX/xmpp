@@ -56,7 +56,7 @@ lock 300  # Wait for up to 5 mins.
 # Remove anything in the current output logfile
 echo TITLE $(date +%s) prosody > $logfile
 echo START $(date +%s) remove prosody
-TMPOUT=$(/usr/bin/stdbuf -i0 -o0 -e0 /bin/rpm -e --nodeps prosody -y 2>&1 | tee $currentfile)
+TMPOUT=$(/usr/bin/stdbuf -i0 -o0 -e0 /bin/rpm -e --nodeps prosody 2>&1 | tee $currentfile)
 EXITVAL=$?
 echo STOP $(date +%s) remove prosody $EXITVAL $(echo "$TMPOUT"|base64 -w0)
 echo FINISH $(date +%s)

@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>13.0.15.2</version>
+	<version>13.0.15.3</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -16,6 +16,7 @@
 		<module>userman ge 13</module>
 	</depends>
 	<changelog>
+		*13.0.15.3* No -y option on rpm
 		*13.0.15.2* Remove Prosody another way
 		*13.0.15.1* FREEPBX-14384
 		*13.0.15* Replace Prosody with Lets Chat
