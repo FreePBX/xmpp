@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-14 17:28-0700\n"
+"POT-Creation-Date: 2017-03-28 14:57-0700\n"
 "PO-Revision-Date: 2016-10-08 12:20+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: ucp/assets/js/global.js:344
+#: ucp/assets/js/global.js:352
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s در حال تایپ کردن است..."
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:221
+#: ucp/assets/js/global.js:229
 msgid "Login"
 msgstr "ورود"
 
@@ -163,7 +163,7 @@ msgstr ""
 msgid "Need a valid recipient"
 msgstr "گیرنده باید معتبر باشد"
 
-#: ucp/assets/js/global.js:328
+#: ucp/assets/js/global.js:336
 #, perl-format
 msgid "New Message from %s"
 msgstr "پیام جدید از %s"
@@ -185,11 +185,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:219
+#: ucp/assets/js/global.js:227
 msgid "Password"
 msgstr "رمز عبور"
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr "لطفا برای ورود به سرور XMPP کلمه عبور و نام کاربری را وارد کنید"
 
@@ -302,7 +302,7 @@ msgstr "کاربر %s وجود دارد، بروزرسانی تغییرات"
 msgid "User List"
 msgstr ""
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Username"
 msgstr "نام کاربری"
 
@@ -319,7 +319,7 @@ msgstr ""
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "XMPP Credentials"
 msgstr "مجوزهای XMPP"
 

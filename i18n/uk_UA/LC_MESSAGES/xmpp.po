@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-14 17:28-0700\n"
+"POT-Creation-Date: 2017-03-28 14:57-0700\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -22,7 +22,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: ucp/assets/js/global.js:344
+#: ucp/assets/js/global.js:352
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s друкує..."
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:221
+#: ucp/assets/js/global.js:229
 msgid "Login"
 msgstr "Ввійти"
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "Need a valid recipient"
 msgstr "Потрібен дійсний одержувач"
 
-#: ucp/assets/js/global.js:328
+#: ucp/assets/js/global.js:336
 #, perl-format
 msgid "New Message from %s"
 msgstr "Нове повідомлення від %s"
@@ -188,11 +188,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:219
+#: ucp/assets/js/global.js:227
 msgid "Password"
 msgstr "Пароль"
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 "Будь ласка, введіть ім'я користувача та пароль для входу на сервер XMPP"
@@ -306,7 +306,7 @@ msgstr "Користувач %s вже існує, оновлення заміс
 msgid "User List"
 msgstr ""
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Username"
 msgstr "Ім'я користувача"
 
@@ -324,7 +324,7 @@ msgstr ""
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "XMPP Credentials"
 msgstr "Посвідчення XMPP"
 

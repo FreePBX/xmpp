@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-14 17:28-0700\n"
+"POT-Creation-Date: 2017-03-28 14:57-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ucp/assets/js/global.js:344
+#: ucp/assets/js/global.js:352
 #, perl-format
 msgid "%s is typing..."
 msgstr ""
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:221
+#: ucp/assets/js/global.js:229
 msgid "Login"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Need a valid recipient"
 msgstr ""
 
-#: ucp/assets/js/global.js:328
+#: ucp/assets/js/global.js:336
 #, perl-format
 msgid "New Message from %s"
 msgstr ""
@@ -193,11 +193,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:219
+#: ucp/assets/js/global.js:227
 msgid "Password"
 msgstr ""
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
@@ -311,7 +311,7 @@ msgstr ""
 msgid "User List"
 msgstr ""
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Username"
 msgstr ""
 
@@ -329,7 +329,7 @@ msgstr ""
 msgid "XMPP"
 msgstr ""
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "XMPP Credentials"
 msgstr ""
 

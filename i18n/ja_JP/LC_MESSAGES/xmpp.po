@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-14 17:28-0700\n"
+"POT-Creation-Date: 2017-03-28 14:57-0700\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: ucp/assets/js/global.js:344
+#: ucp/assets/js/global.js:352
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s が入力中…"
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:221
+#: ucp/assets/js/global.js:229
 msgid "Login"
 msgstr ""
 
@@ -163,7 +163,7 @@ msgstr ""
 msgid "Need a valid recipient"
 msgstr "有効な受信者を指定してください"
 
-#: ucp/assets/js/global.js:328
+#: ucp/assets/js/global.js:336
 #, perl-format
 msgid "New Message from %s"
 msgstr "%s より新規メッセージ"
@@ -185,11 +185,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:219
+#: ucp/assets/js/global.js:227
 msgid "Password"
 msgstr ""
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr "ユーザー %s は既に存在するため、更新します"
 msgid "User List"
 msgstr ""
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "Username"
 msgstr ""
 
@@ -319,7 +319,7 @@ msgstr ""
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:217
+#: ucp/assets/js/global.js:225
 msgid "XMPP Credentials"
 msgstr ""
 
