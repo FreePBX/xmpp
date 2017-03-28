@@ -43,9 +43,9 @@ var XmppC = UCPMC.extend({
 			Xmpp.sendEvent("setPresence", Presencestate.menu.presence);
 		});
 	},
-	displaySimpleWidget: function(widget_type_id) {
-		var clone = $(".widget-extra-menu[data-module=xmpp][data-widget_type_id="+widget_type_id+"] .clone"),
-				roster = $(".widget-extra-menu[data-module=xmpp][data-widget_type_id="+widget_type_id+"] .roster"),
+	displaySimpleWidget: function(widget_id) {
+		var clone = $(".widget-extra-menu[data-id="+widget_id+"] .clone"),
+				roster = $(".widget-extra-menu[data-id="+widget_id+"] .roster"),
 				$this = this;
 		$.each(this.roster, function(k,v) {
 			var user = clone.clone();
@@ -60,7 +60,7 @@ var XmppC = UCPMC.extend({
 			});
 			roster.append(user);
 		});
-		$(".widget-extra-menu[data-module=xmpp][data-widget_type_id="+widget_type_id+"] .status span").text((this.online ? _("Connected") : _("Offline")));
+		$(".widget-extra-menu[data-id="+widget_id+"] .status span").text((this.online ? _("Connected") : _("Offline")));
 	},
 	contactClickInitiate: function(user) {
 		this.initiateChat(decodeURIComponent(user));
@@ -178,6 +178,9 @@ var XmppC = UCPMC.extend({
 		}
 		UCP.closeDialog();
 	},
+	addSimpleWidget: function(widget_id) {
+		this.connect();
+	},
 	connect: function(username, password) {
 		var Xmpp = this;
 
@@ -193,9 +196,14 @@ var XmppC = UCPMC.extend({
 			Xmpp.enabled = Xmpp.staticsettings.enabled;
 		}
 
-		if (Xmpp.connecting || !this.enabled) {
+		if (Xmpp.connecting || !this.enabled || Xmpp.socket) {
 			return;
 		}
+
+		if(!$(".custom-widget[data-widget_rawname=xmpp]").length) {
+			return;
+		}
+
 		Xmpp.connecting = true;
 		try {
 			UCP.wsconnect("xmpp", function(socket) {
