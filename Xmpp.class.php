@@ -623,6 +623,12 @@ class Xmpp implements \BMO {
 				$z = trim($z);
 				posix_kill($z, 9);
 			}
+
+			exec("pgrep -f letschat",$o);
+			foreach($o as $z) {
+				$z = trim($z);
+				posix_kill($z, 9);
+			}
 		}
 
 		$data = $this->freepbx->Pm2->getStatus("xmpp");
