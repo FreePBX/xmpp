@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-12 14:01-0400\n"
+"POT-Creation-Date: 2017-04-12 15:20-0400\n"
 "PO-Revision-Date: 2016-12-16 01:43+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -51,7 +51,7 @@ msgstr "Não é possível criar tabelas xmpp"
 msgid "Changing user %s to %s"
 msgstr "Alterando usuário %s para %s"
 
-#: Xmpp.class.php:650
+#: Xmpp.class.php:656
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:631
+#: Xmpp.class.php:637
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -247,11 +247,11 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
-#: Xmpp.class.php:646
+#: Xmpp.class.php:652
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:638
+#: Xmpp.class.php:644
 msgid "Stopping Chat Server"
 msgstr ""
 
