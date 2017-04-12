@@ -638,9 +638,9 @@ class Xmpp implements \BMO {
 			$output->writeln(_("Stopping Chat Server"));
 		}
 
-		$this->freepbx->Pm2->stop("ucpnode");
+		$this->freepbx->Pm2->stop("xmpp");
 
-		$data = $this->freepbx->Pm2->getStatus("ucpnode");
+		$data = $this->freepbx->Pm2->getStatus("xmpp");
 		if (empty($data) || $data['pm2_env']['status'] != 'online') {
 			if(is_object($output)) {
 				$output->writeln(_("Stopped Chat Server"));
