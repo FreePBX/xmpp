@@ -143,18 +143,18 @@ class Xmpp implements \BMO {
 			touch("/var/spool/asterisk/incron/xmpp.logrotate");
 		}
 
+		$sql = 'DROP TABLE IF EXISTS `prosody`';
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
+
 		outn(_("Starting new Xmpp Process..."));
 		$this->stopFreepbx();
 		$started = $this->startFreepbx();
 		if(!$started) {
 			out(_("Failed!"));
 		} else {
-			out(_("Started!"));
+			out(sprintf(_("Started with PID %s!"),$started));
 		}
-
-		$sql = 'DROP TABLE IF EXISTS `prosody`';
-		$sth = $this->db->prepare($sql);
-		$sth->execute();
 	}
 
 	public function uninstall() {
@@ -555,7 +555,7 @@ class Xmpp implements \BMO {
 		}
 
 
-		$status = $this->freepbx->Pm2()->getStatus("xmpp");
+		$status = $this->freepbx->Pm2->getStatus("xmpp");
 		switch($status['pm2_env']['status']) {
 			case 'online':
 				if(is_object($output)) {
@@ -567,7 +567,8 @@ class Xmpp implements \BMO {
 				if(is_object($output)) {
 					$output->writeln(_("Starting Chat Server..."));
 				}
-				$this->freepbx->Pm2()->start("xmpp",__DIR__."/node/node_modules/lets-chat/app.js");
+				$this->freepbx->Pm2->start("xmpp",__DIR__."/node/node_modules/lets-chat/app.js");
+				$this->freepbx->Pm2->reset("xmpp");
 				if(is_object($output)) {
 					$progress = new ProgressBar($output, 0);
 					$progress->setFormat('[%bar%] %elapsed%');
@@ -575,7 +576,7 @@ class Xmpp implements \BMO {
 				}
 				$i = 0;
 				while($i < 100) {
-					$data = $this->freepbx->Pm2()->getStatus("xmpp");
+					$data = $this->freepbx->Pm2->getStatus("xmpp");
 					if(!empty($data) && $data['pm2_env']['status'] == 'online') {
 						if(is_object($output)) {
 							$progress->finish();
@@ -624,7 +625,7 @@ class Xmpp implements \BMO {
 			}
 		}
 
-		$data = $this->freepbx->Pm2()->getStatus("xmpp");
+		$data = $this->freepbx->Pm2->getStatus("xmpp");
 		if(empty($data) || $data['pm2_env']['status'] != 'online') {
 			if(is_object($output)) {
 				$output->writeln("<error>"._("Chat Server is not running")."</error>");
@@ -637,9 +638,9 @@ class Xmpp implements \BMO {
 			$output->writeln(_("Stopping Chat Server"));
 		}
 
-		$this->freepbx->Pm2()->stop("ucpnode");
+		$this->freepbx->Pm2->stop("ucpnode");
 
-		$data = $this->freepbx->Pm2()->getStatus("ucpnode");
+		$data = $this->freepbx->Pm2->getStatus("ucpnode");
 		if (empty($data) || $data['pm2_env']['status'] != 'online') {
 			if(is_object($output)) {
 				$output->writeln(_("Stopped Chat Server"));
