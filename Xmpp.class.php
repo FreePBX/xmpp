@@ -11,7 +11,6 @@ class Xmpp implements \BMO {
 	private $nodever = "0.12.18";
 	private $npmver = "2.15.11";
 	private $mongover = "2.4.14";
-	private $foreverroot = "/tmp";
 	private $nodeloc = "/tmp";
 
 	public function __construct($freepbx = null) {
@@ -21,7 +20,6 @@ class Xmpp implements \BMO {
 		$this->freepbx = $freepbx;
 		$this->db = $freepbx->Database;
 		$this->userman = $freepbx->Userman;
-		$this->foreverroot = $this->freepbx->Config->get('ASTVARLIBDIR') . "/xmpp";
 		$this->nodeloc = __DIR__."/node";
 		if(!file_exists($this->nodeloc."/logs")) {
 			mkdir($this->nodeloc."/logs");
@@ -119,7 +117,6 @@ class Xmpp implements \BMO {
 		}
 
 		putenv("HOME=".$home);
-		putenv("FOREVER_ROOT=".$this->foreverroot);
 		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
 		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
 		putenv("ASTLOGDIR=".$astlogdir);
@@ -137,44 +134,22 @@ class Xmpp implements \BMO {
 		fclose($log);
 		out("");
 		out(_("Finished updating libraries!"));
-		if(!file_exists($this->nodeloc."/node_modules/forever/bin/forever")) {
-			out("");
-			out(sprintf(_("There was an error installing. Please review the install log. (%s)"),$this->nodeloc."/logs/install.log"));
-			return false;
-		}
 
 		if(!file_exists($varlibdir.'/xmpp')) {
 			mkdir($varlibdir.'/xmpp');
-		}
-
-		//need forever to be executable. it's sooo cutable
-		if(!is_executable($this->nodeloc."/node_modules/forever/bin/forever")) {
-			chmod($this->nodeloc."/node_modules/forever/bin/forever",0755);
 		}
 
 		if($this->freepbx->Modules->checkStatus("sysadmin")) {
 			touch("/var/spool/asterisk/incron/xmpp.logrotate");
 		}
 
-		$data = $this->getServiceStatus();
-		$stopped = false;
-		if(!empty($data)) {
-			outn(_("Stopping old running processes..."));
-			$this->stopFreepbx();
-			out(_("Done"));
-			$stopped = true;
-		}
-
-		//If we are root then start it as asterisk, otherwise we arent root so start it as the web user (all we can do really)
-		//Only run if licensed
-		if($stopped) {
-			outn(_("Starting new Xmpp Process..."));
-			$started = $this->startFreepbx();
-			if(!$started) {
-				out(_("Failed!"));
-			} else {
-				out(_("Started!"));
-			}
+		outn(_("Starting new Xmpp Process..."));
+		$this->stopFreepbx();
+		$started = $this->startFreepbx();
+		if(!$started) {
+			out(_("Failed!"));
+		} else {
+			out(_("Started!"));
 		}
 
 		$sql = 'DROP TABLE IF EXISTS `prosody`';
@@ -191,6 +166,10 @@ class Xmpp implements \BMO {
 		$sql = 'DROP TABLE IF EXISTS `xmpp_users`, `xmpp_options`';
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
+		try {
+			$this->freepbx->Pm2->delete("xmpp");
+		} catch(\Exception $e) {}
+
 	}
 
 	public function backup(){
@@ -506,11 +485,6 @@ class Xmpp implements \BMO {
 	}
 
 	public function dashboardService() {
-		if(!file_exists($this->nodeloc."/node_modules/forever")) {
-			$service = array_merge($service, $this->genAlertGlyphicon('critical', _("XMPP is damaged. Please reinstall.")));
-			return array($service);
-		}
-
 		$service = array(
 			'title' => _('Xmpp Daemon'),
 			'type' => 'unknown',
@@ -518,9 +492,9 @@ class Xmpp implements \BMO {
 			'order' => 999,
 			'glyph-class' => ''
 		);
-		$data = $this->getServiceStatus();
-		if(!empty($data)) {
-			$uptime = $this->get_date_diff(time(), (int)round($data['ctime']/1000));
+		$data = $this->freepbx->Pm2->getStatus("xmpp");
+		if(!empty($data) && $data['pm2_env']['status'] == 'online') {
+			$uptime = $data['pm2_env']['created_at_human_diff'];
 			$service = array_merge($service, $this->genAlertGlyphicon('ok', sprintf(_("Running (Uptime: %s)"),$uptime)));
 		} else {
 			$service = array_merge($service, $this->genAlertGlyphicon('critical', _("Xmpp is not running")));
@@ -565,113 +539,68 @@ class Xmpp implements \BMO {
 		$files[] = array('type' => 'rdir',
 			'path' => '/tmp/.jaxl',
 			'perms' => 0777);
-		$files[] = array('type' => 'execdir',
-			'path' => __DIR__.'/node/node_modules/forever/bin',
-			'perms' => 0755);
-		$files[] = array('type' => 'rdir',
-			'path' => $this->foreverroot,
-			'perms' => 0775);
 
 		return $files;
 	}
 	public function startFreepbx($output=null) {
-		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
-		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
-		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
-
-		if(!file_exists($this->nodeloc."/node_modules/forever")) {
-			if(is_object($output)) {
-				$output->writeln("<error>"._("Xmpp is damaged. Please reinstall.")."</error>");
-			}
-			return false;
-		}
-
-		if(!is_executable($this->nodeloc."/node_modules/forever")) {
-			if(is_object($output)) {
-				$output->writeln("<error>"._("Unable to launch Xmpp monitor")."</error>");
-			}
-			return false;
-		}
-
-		$data = $this->getServiceStatus();
-		if(!empty($data)) {
-			$uptime = $this->get_date_diff(time(), (int)round($data['ctime']/1000));
-			$output->writeln(sprintf(_("Xmpp Server has already been running on PID %s for %s"),$data['pid'],$uptime));
-			return true;
-		}
-
+		$sysadmin = $this->freepbx->Modules->checkStatus("sysadmin");
 		$process = new Process("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
-		if (!$process->isSuccessful()) {
-			$output->writeln(_("Starting MongoDB Server..."));
-			if($this->startMongoServer($output)) {
-				$output->writeln("");
-				$output->writeln("<error>"._("Failed")."</error>");
-				return false;
-			}
-			$output->writeln("");
-			$output->writeln(_("Done"));
-		}
-
-		$cmds = array(
-			'cd '.$this->nodeloc,
-			'mkdir -p '.$this->foreverroot,
-			'mkdir -p logs',
-			'export FOREVER_ROOT='.$this->foreverroot,
-			'export ASTLOGDIR='.$astlogdir,
-			'export HOME='.$this->getHomeDir()
-		);
-
-		$cmds[] = 'npm start';
-		$command = implode(" && ", $cmds);
-		if (posix_getuid() == 0) {
-			$command = 'runuser -l asterisk -c "'.$command.'"';
-		}
-		$process = new Process($command);
-
-		$process->run();
-
-		// executes after the command finishes
-		if(is_object($output)) {
-			$output->writeln(_("Starting XMPP Server..."));
-		}
-		if ($process->isSuccessful()) {
+		if(!$process->isSuccessful() && $sysadmin) {
+			$this->startMongoServer();
+		} elseif(!$process->isSuccessful() && !$sysadmin) {
 			if(is_object($output)) {
-				$progress = new ProgressBar($output, 0);
-				$progress->setFormat('[%bar%] %elapsed%');
-				$progress->start();
+				$output->writeln(_("MongoDB is not running"));
 			}
-			$i = 0;
-			while($i < 100) {
-				$data = $this->getServiceStatus();
+		}
+
+
+		$status = $this->freepbx->Pm2()->getStatus("xmpp");
+		switch($status['pm2_env']['status']) {
+			case 'online':
+				if(is_object($output)) {
+					$output->writeln(sprintf(_("Chat Server has already been running on PID %s for %s"),$status['pid'],$status['pm2_env']['created_at_human_diff']));
+				}
+				return $status['pid'];
+			break;
+			default:
+				if(is_object($output)) {
+					$output->writeln(_("Starting Chat Server..."));
+				}
+				$this->freepbx->Pm2()->start("xmpp",__DIR__."/node/node_modules/lets-chat/app.js");
+				if(is_object($output)) {
+					$progress = new ProgressBar($output, 0);
+					$progress->setFormat('[%bar%] %elapsed%');
+					$progress->start();
+				}
+				$i = 0;
+				while($i < 100) {
+					$data = $this->freepbx->Pm2()->getStatus("xmpp");
+					if(!empty($data) && $data['pm2_env']['status'] == 'online') {
+						if(is_object($output)) {
+							$progress->finish();
+						}
+						break;
+					}
+					if(is_object($output)) {
+						$progress->setProgress($i);
+					}
+					$i++;
+					usleep(100000);
+				}
+				if(is_object($output)) {
+					$output->writeln("");
+				}
 				if(!empty($data)) {
 					if(is_object($output)) {
-						$progress->finish();
+						$output->writeln(sprintf(_("Started Chat Server. PID is %s"),$data['pid']));
 					}
-					break;
+					return $data['pid'];
 				}
 				if(is_object($output)) {
-					$progress->setProgress($i);
+					$output->write("<error>".sprintf(_("Failed to run: '%s'")."</error>",$command));
 				}
-				$i++;
-				usleep(100000);
-			}
-			if(is_object($output)) {
-				$output->writeln("");
-			}
-			if(!empty($data)) {
-				if(is_object($output)) {
-					$output->writeln(sprintf(_("Started XMPP Server. PID is %s"),$data['pid']));
-				}
-				return true;
-			}
-			if(is_object($output)) {
-				$output->write("<error>".sprintf(_("Failed to run: '%s'")."</error>",$command));
-			}
-		} else {
-			if(is_object($output)) {
-				$output->writeln("<error>".sprintf(_("Failed: %s")."</error>",$process->getErrorOutput()));
-			}
+			break;
 		}
 		return false;
 	}
@@ -681,177 +610,48 @@ class Xmpp implements \BMO {
 	 * @param object $output The output object.
 	 */
 	public function stopFreepbx($output=null) {
-		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
-		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
-		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
-		if(!file_exists($this->nodeloc."/node_modules/forever")) {
-			if(is_object($output)) {
-				$output->writeln("<error>"._("xmpp is damaged. Please reinstall.")."</error>");
+		exec("pgrep -f xmpp/node/node_modules/forever/bin/monitor",$o);
+		if($o) {
+			foreach($o as $z) {
+				$z = trim($z);
+				posix_kill($z, 9);
 			}
-			return false;
+
+			exec("pgrep -f lets-chat/app.js",$o);
+			foreach($o as $z) {
+				$z = trim($z);
+				posix_kill($z, 9);
+			}
 		}
 
-		if(!is_executable($this->nodeloc."/node_modules/forever")) {
+		$data = $this->freepbx->Pm2()->getStatus("xmpp");
+		if(empty($data) || $data['pm2_env']['status'] != 'online') {
 			if(is_object($output)) {
-				$output->writeln("<error>"._("Unable to launch xmpp monitor")."</error>");
+				$output->writeln("<error>"._("Chat Server is not running")."</error>");
 			}
 			return false;
-		}
-
-		$data = $this->getServiceStatus();
-		if(empty($data)) {
-			if(is_object($output)) {
-				$output->writeln("<error>"._("xmpp Server is not running")."</error>");
-			}
-			return false;
-		}
-
-		$cmds = array(
-			'cd '.$this->nodeloc,
-			'mkdir -p '.$this->foreverroot,
-			'mkdir -p logs',
-			'export FOREVER_ROOT='.$this->foreverroot,
-			'export ASTLOGDIR='.$astlogdir,
-			'export HOME='.$this->getHomeDir()
-		);
-
-		array_pop($cmds);
-		$cmds[] = 'npm stop';
-		$command = implode(" && ", $cmds);
-		if (posix_getuid() == 0) {
-			$process = new Process('runuser -l asterisk -c "'.$command.'"');
-		} else {
-			$process = new Process($command);
 		}
 
 		// executes after the command finishes
 		if(is_object($output)) {
-			$output->writeln(_("Stopping xmpp Server"));
+			$output->writeln(_("Stopping Chat Server"));
 		}
 
-		$process->run();
+		$this->freepbx->Pm2()->stop("ucpnode");
 
-		$data = $this->getServiceStatus();
-		if (empty($data) && $process->isSuccessful()) {
+		$data = $this->freepbx->Pm2()->getStatus("ucpnode");
+		if (empty($data) || $data['pm2_env']['status'] != 'online') {
 			if(is_object($output)) {
-				$output->writeln(_("Stopped xmpp Server"));
+				$output->writeln(_("Stopped Chat Server"));
 			}
 		} else {
 			if(is_object($output)) {
-				$output->writeln("<error>".sprintf(_("xmpp Server Failed: %s")."</error>",$process->getErrorOutput()));
+				$output->writeln("<error>".sprintf(_("Chat Server Failed: %s")."</error>",$process->getErrorOutput()));
 			}
 			return false;
 		}
+
 		return true;
-	}
-
-	public function getHomeDir() {
-		$webuser = \FreePBX::Freepbx_conf()->get('AMPASTERISKWEBUSER');
-		$web = posix_getpwnam($webuser);
-		$home = trim($web['dir']);
-		if (!is_dir($home)) {
-			// Well, that's handy. It doesn't exist. Let's use ASTSPOOLDIR instead, because
-			// that should exist and be writable.
-			$home = \FreePBX::Freepbx_conf()->get('ASTSPOOLDIR');
-			if (!is_dir($home)) {
-				// OK, I give up.
-				throw new \Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
-			}
-		}
-		return $home;
-	}
-
-	private function getServiceStatus() {
-		foreach(glob($this->foreverroot."/sock/*.sock") as $file) {
-			$sock = @stream_socket_client('unix://'.$file, $errno, $errstr);
-			if($sock === false) {
-				continue;
-			}
-			fwrite($sock, '["data", {}]'."\r\n");
-			$info = fread($sock, 16384)."\n";
-			$children = json_decode($info,true);
-			if(!is_array($children)) {
-				//strange?
-				continue;
-			}
-			array_shift($children);
-			foreach($children as $child) {
-				if($child['running']) {
-					return $child;
-				}
-			}
-			fclose($sock);
-		}
-		return false;
-	}
-
-	/**
-	 * Get human readable time difference between 2 dates
-	 *
-	 * Return difference between 2 dates in year, month, hour, minute or second
-	 * The $precision caps the number of time units used: for instance if
-	 * $time1 - $time2 = 3 days, 4 hours, 12 minutes, 5 seconds
-	 * - with precision = 1 : 3 days
-	 * - with precision = 2 : 3 days, 4 hours
-	 * - with precision = 3 : 3 days, 4 hours, 12 minutes
-	 *
-	 * From: http://www.if-not-true-then-false.com/2010/php-calculate-real-differences-between-two-dates-or-timestamps/
-	 *
-	 * @param mixed $time1 a time (string or timestamp)
-	 * @param mixed $time2 a time (string or timestamp)
-	 * @param integer $precision Optional precision
-	 * @return string time difference
-	 */
-	private function get_date_diff( $time1, $time2, $precision = 2 ) {
-		// If not numeric then convert timestamps
-		if( !is_int( $time1 ) ) {
-			$time1 = strtotime( $time1 );
-		}
-		if( !is_int( $time2 ) ) {
-			$time2 = strtotime( $time2 );
-		}
-		// If time1 > time2 then swap the 2 values
-		if( $time1 > $time2 ) {
-			list( $time1, $time2 ) = array( $time2, $time1 );
-		}
-		// Set up intervals and diffs arrays
-		$intervals = array( 'year', 'month', 'day', 'hour', 'minute', 'second' );
-		$diffs = array();
-		foreach( $intervals as $interval ) {
-			// Create temp time from time1 and interval
-			$ttime = strtotime( '+1 ' . $interval, $time1 );
-			// Set initial values
-			$add = 1;
-			$looped = 0;
-			// Loop until temp time is smaller than time2
-			while ( $time2 >= $ttime ) {
-				// Create new temp time from time1 and interval
-				$add++;
-				$ttime = strtotime( "+" . $add . " " . $interval, $time1 );
-				$looped++;
-			}
-			$time1 = strtotime( "+" . $looped . " " . $interval, $time1 );
-			$diffs[ $interval ] = $looped;
-		}
-		$count = 0;
-		$times = array();
-		foreach( $diffs as $interval => $value ) {
-			// Break if we have needed precission
-			if( $count >= $precision ) {
-				break;
-			}
-			// Add value and interval if value is bigger than 0
-			if( $value > 0 ) {
-				if( $value != 1 ){
-					$interval .= "s";
-				}
-				// Add value and interval to times array
-				$times[] = $value . " " . $interval;
-				$count++;
-			}
-		}
-		// Return string with times
-		return implode( ", ", $times );
 	}
 
 	private function startMongoServer($output) {
