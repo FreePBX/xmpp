@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-12 15:20-0400\n"
+"POT-Creation-Date: 2017-04-12 21:10-0400\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -36,7 +36,7 @@ msgstr "Додайте %s у Диспетчері Користувачів"
 msgid "Admin"
 msgstr "Адміністратор"
 
-#: Xmpp.class.php:115
+#: Xmpp.class.php:115 Xmpp.class.php:772
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -52,17 +52,17 @@ msgstr "Неможливо створити таблиці XMPP"
 msgid "Changing user %s to %s"
 msgstr "Зміна користувача %s на %s"
 
-#: Xmpp.class.php:656
+#: Xmpp.class.php:677
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:562
+#: Xmpp.class.php:583
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:637
+#: Xmpp.class.php:658
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr "Домен"
 msgid "Domain XMPP will serve"
 msgstr "Домен XMPP служитиме"
 
-#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:163
+#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:184
 msgid "Done"
 msgstr ""
 
@@ -94,16 +94,16 @@ msgstr "Ввімкнути XMPP для цього користувача"
 msgid "Enabled"
 msgstr "Ввімкнути"
 
-#: Xmpp.class.php:602
+#: Xmpp.class.php:623
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
 
-#: Xmpp.class.php:154
+#: Xmpp.class.php:175
 msgid "Failed!"
 msgstr ""
 
-#: Xmpp.class.php:136
+#: Xmpp.class.php:157
 msgid "Finished updating libraries!"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Installing/Updating NodeJS..."
 msgstr ""
 
-#: Xmpp.class.php:124
+#: Xmpp.class.php:119
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:553
+#: Xmpp.class.php:574
 msgid "MongoDB is not running"
 msgstr ""
 
@@ -214,11 +214,11 @@ msgstr "Рекурсивне надсилання до себе не припу�
 msgid "Removing Prosody.."
 msgstr ""
 
-#: Xmpp.class.php:518
+#: Xmpp.class.php:539
 msgid "Reset"
 msgstr "Скинути"
 
-#: Xmpp.class.php:498
+#: Xmpp.class.php:519
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
@@ -231,37 +231,37 @@ msgstr "Надіслати повідомлення"
 msgid "Start XMPP"
 msgstr "Запуск XMPP"
 
-#: Xmpp.class.php:597
+#: Xmpp.class.php:618
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
 
-#: Xmpp.class.php:156
+#: Xmpp.class.php:177
 #, php-format
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:568
+#: Xmpp.class.php:589
 msgid "Starting Chat Server..."
 msgstr ""
 
-#: Xmpp.class.php:150
+#: Xmpp.class.php:171
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
-#: Xmpp.class.php:652
+#: Xmpp.class.php:673
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:644
+#: Xmpp.class.php:665
 msgid "Stopping Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:161
+#: Xmpp.class.php:182
 msgid "Stopping old running processes..."
 msgstr ""
 
-#: Xmpp.class.php:523
+#: Xmpp.class.php:544
 msgid "Submit"
 msgstr "Застосувати"
 
@@ -292,7 +292,7 @@ msgid ""
 "package. Please remove it before continuing"
 msgstr ""
 
-#: Xmpp.class.php:491
+#: Xmpp.class.php:512
 msgid "Unknown"
 msgstr "Невідомо"
 
@@ -327,11 +327,11 @@ msgstr "Посвідчення XMPP"
 msgid "XMPP/Jabber Settings"
 msgstr "Налаштування XMPP/Jabber"
 
-#: Xmpp.class.php:489
+#: Xmpp.class.php:510
 msgid "Xmpp Daemon"
 msgstr ""
 
-#: Xmpp.class.php:500
+#: Xmpp.class.php:521
 msgid "Xmpp is not running"
 msgstr ""
 
