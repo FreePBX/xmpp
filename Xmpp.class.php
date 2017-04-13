@@ -116,20 +116,41 @@ class Xmpp implements \BMO {
 			}
 		}
 
-		putenv("HOME=".$home);
-		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
-		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
-		putenv("ASTLOGDIR=".$astlogdir);
-		putenv("SHELL=/bin/bash");
 		outn(_("Installing/Updating Required Libraries. This may take a while..."));
+		if (php_sapi_name() == "cli") {
+			out("The following messages are ONLY FOR DEBUGGING. Ignore anything that says 'WARN' or is just a warning");
+		}
+
+		$command = $this->generateRunAsAsteriskCommand('npm-cache -v');
+		$process = new Process($command);
+		try {
+			$process->mustRun();
+		} catch (ProcessFailedException $e) {
+			$command = $this->generateRunAsAsteriskCommand('npm install -g npm-cache 2>&1');
+			exec($command);
+		}
+
+		$command = $this->generateRunAsAsteriskCommand('npm-cache -v');
+		$process = new Process($command);
+		try {
+			$process->mustRun();
+		} catch (ProcessFailedException $e) {
+			out($e->getMessage());
+			return false;
+		}
+
 		file_put_contents($this->nodeloc."/logs/install.log","");
 
-		$handle = popen("npm update 2>&1", "r");
+		$command = $this->generateRunAsAsteriskCommand('npm-cache install 2>&1');
+		$handle = popen($command, "r");
 		$log = fopen($this->nodeloc."/logs/install.log", "a");
 		while (($buffer = fgets($handle, 4096)) !== false) {
-			//out(trim($buffer));
 			fwrite($log,$buffer);
-			outn(".");
+			if (php_sapi_name() == "cli") {
+				outn($buffer);
+			} else {
+				outn(".");
+			}
 		}
 		fclose($log);
 		out("");
@@ -710,5 +731,47 @@ class Xmpp implements \BMO {
 			outn(".");
 			sleep(1);
 		}
+	}
+
+	private function generateRunAsAsteriskCommand($command) {
+		$webuser = $this->freepbx->Config->get('AMPASTERISKWEBUSER');
+		$webgroup = $this->freepbx->Config->get('AMPASTERISKWEBGROUP');
+		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
+		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
+		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
+
+		$cmds = array(
+			'cd '.$this->nodeloc,
+			'mkdir -p '.$this->nodeloc.'/logs',
+			'export HOME="'.$this->getHomeDir().'"',
+			'echo "prefix = ~/.node" > ~/.npmrc',
+			'export ASTLOGDIR="'.$astlogdir.'"',
+			'export PATH="$HOME/.node/bin:$PATH"',
+			'export NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"',
+			'export MANPATH="$HOME/.node/share/man:$MANPATH"'
+		);
+		$cmds[] = $command;
+		$final = implode(" && ", $cmds);
+
+		if (posix_getuid() == 0) {
+			$final = "runuser -l asterisk -c '".$final."'";
+		}
+		return $final;
+	}
+
+	public function getHomeDir() {
+		$webuser = \FreePBX::Freepbx_conf()->get('AMPASTERISKWEBUSER');
+		$web = posix_getpwnam($webuser);
+		$home = trim($web['dir']);
+		if (!is_dir($home)) {
+			// Well, that's handy. It doesn't exist. Let's use ASTSPOOLDIR instead, because
+			// that should exist and be writable.
+			$home = \FreePBX::Freepbx_conf()->get('ASTSPOOLDIR');
+			if (!is_dir($home)) {
+				// OK, I give up.
+				throw new \Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
+			}
+		}
+		return $home;
 	}
 }
