@@ -1,4 +1,4 @@
-startMongoServer<?php
+<?php
 // vim: set ai ts=4 sw=4 ft=php:
 namespace FreePBX\modules;
 use Symfony\Component\Process\Exception\ProcessFailedException;
