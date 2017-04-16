@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>13.0.16.5</version>
+	<version>13.0.16.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,6 +17,7 @@
 		<module>pm2 ge 13.0.3</module>
 	</depends>
 	<changelog>
+		*13.0.16.6* Fix starting mongoDB
 		*13.0.16.5* Fixed Writing to the home directory as root
 		*13.0.16.4* Logrotate fixes
 		*13.0.16* Utilize new pm2 module

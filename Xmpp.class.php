@@ -1,4 +1,4 @@
-<?php
+startMongoServer<?php
 // vim: set ai ts=4 sw=4 ft=php:
 namespace FreePBX\modules;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -568,7 +568,7 @@ class Xmpp implements \BMO {
 		$process = new Process("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
 		if(!$process->isSuccessful() && $sysadmin) {
-			$this->startMongoServer();
+			$this->startMongoServer($output);
 		} elseif(!$process->isSuccessful() && !$sysadmin) {
 			if(is_object($output)) {
 				$output->writeln(_("MongoDB is not running"));

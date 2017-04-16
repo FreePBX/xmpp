@@ -11,7 +11,7 @@ if true ; then
 		sharedscripts
 		create 0640 asterisk asterisk
 		postrotate
-		/usr/sbin/fwconsole pm2 --reload-logs
+		/usr/sbin/fwconsole pm2 --reload-logs -q
 		endscript
 	}
 	EOF
