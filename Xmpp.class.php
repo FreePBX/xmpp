@@ -156,10 +156,6 @@ class Xmpp implements \BMO {
 		out("");
 		out(_("Finished updating libraries!"));
 
-		if(!file_exists($varlibdir.'/xmpp')) {
-			mkdir($varlibdir.'/xmpp');
-		}
-
 		if($this->freepbx->Modules->checkStatus("sysadmin")) {
 			touch("/var/spool/asterisk/incron/xmpp.logrotate");
 		}
@@ -737,7 +733,6 @@ class Xmpp implements \BMO {
 		$webuser = $this->freepbx->Config->get('AMPASTERISKWEBUSER');
 		$webgroup = $this->freepbx->Config->get('AMPASTERISKWEBGROUP');
 		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
-		$varlibdir = $this->freepbx->Config->get("ASTVARLIBDIR");
 		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
 
 		$cmds = array(
