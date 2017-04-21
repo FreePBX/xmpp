@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-12 21:10-0400\n"
+"POT-Creation-Date: 2017-04-21 12:30-0400\n"
 "PO-Revision-Date: 2016-12-16 01:43+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -35,7 +35,7 @@ msgstr "Adicionando %s ao Gerenciador de Usuários"
 msgid "Admin"
 msgstr "Administrador"
 
-#: Xmpp.class.php:115 Xmpp.class.php:772
+#: Xmpp.class.php:115 Xmpp.class.php:767
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -51,17 +51,17 @@ msgstr "Não é possível criar tabelas xmpp"
 msgid "Changing user %s to %s"
 msgstr "Alterando usuário %s para %s"
 
-#: Xmpp.class.php:677
+#: Xmpp.class.php:673
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:583
+#: Xmpp.class.php:579
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:658
+#: Xmpp.class.php:654
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -81,7 +81,7 @@ msgstr "Domínio"
 msgid "Domain XMPP will serve"
 msgstr "O domínio XMPP servirá"
 
-#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:184
+#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:180
 msgid "Done"
 msgstr ""
 
@@ -93,12 +93,12 @@ msgstr "Habilitar XMPP para este usuário"
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: Xmpp.class.php:623
+#: Xmpp.class.php:619
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
 
-#: Xmpp.class.php:175
+#: Xmpp.class.php:171
 msgid "Failed!"
 msgstr ""
 
@@ -146,7 +146,7 @@ msgstr "Migrando Token de Usuários para o Gerenciador de Usuários"
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:574
+#: Xmpp.class.php:570
 msgid "MongoDB is not running"
 msgstr ""
 
@@ -212,11 +212,11 @@ msgstr "O envio recursivo para si mesmo não é permitido!"
 msgid "Removing Prosody.."
 msgstr ""
 
-#: Xmpp.class.php:539
+#: Xmpp.class.php:535
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: Xmpp.class.php:519
+#: Xmpp.class.php:515
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
@@ -229,37 +229,37 @@ msgstr "Enviar Mensagem"
 msgid "Start XMPP"
 msgstr "Iniciar XMPP"
 
-#: Xmpp.class.php:618
+#: Xmpp.class.php:614
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
 
-#: Xmpp.class.php:177
+#: Xmpp.class.php:173
 #, php-format
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:589
+#: Xmpp.class.php:585
 msgid "Starting Chat Server..."
 msgstr ""
 
-#: Xmpp.class.php:171
+#: Xmpp.class.php:167
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
-#: Xmpp.class.php:673
+#: Xmpp.class.php:669
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:665
+#: Xmpp.class.php:661
 msgid "Stopping Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:182
+#: Xmpp.class.php:178
 msgid "Stopping old running processes..."
 msgstr ""
 
-#: Xmpp.class.php:544
+#: Xmpp.class.php:540
 msgid "Submit"
 msgstr "Enviar"
 
@@ -289,7 +289,7 @@ msgid ""
 "package. Please remove it before continuing"
 msgstr ""
 
-#: Xmpp.class.php:512
+#: Xmpp.class.php:508
 msgid "Unknown"
 msgstr "Desconhecido"
 
@@ -323,11 +323,11 @@ msgstr "Credenciais XMPP"
 msgid "XMPP/Jabber Settings"
 msgstr "Configurações XMPP/Jabber"
 
-#: Xmpp.class.php:510
+#: Xmpp.class.php:506
 msgid "Xmpp Daemon"
 msgstr ""
 
-#: Xmpp.class.php:521
+#: Xmpp.class.php:517
 msgid "Xmpp is not running"
 msgstr ""
 
