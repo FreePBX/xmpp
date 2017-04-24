@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-21 12:30-0400\n"
+"POT-Creation-Date: 2017-04-24 17:28-0400\n"
 "PO-Revision-Date: 2016-12-16 01:43+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -35,7 +35,7 @@ msgstr "Adicionando %s ao Gerenciador de Usuários"
 msgid "Admin"
 msgstr "Administrador"
 
-#: Xmpp.class.php:115 Xmpp.class.php:767
+#: Xmpp.class.php:115 Xmpp.class.php:766
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
