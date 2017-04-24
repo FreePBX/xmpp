@@ -14,9 +14,10 @@
 	<depends>
 		<phpversion>5.3.0</phpversion>
 		<module>userman ge 13</module>
-		<module>pm2 ge 13.0.3</module>
+		<module>pm2 ge 13.0.3.4</module>
 	</depends>
 	<changelog>
+		*13.0.16.8* Dont write into npmrc file
 		*13.0.16.7* FREEPBX-14620 invalid directory permissions
 		*13.0.16.6* Fix starting mongoDB
 		*13.0.16.5* Fixed Writing to the home directory as root

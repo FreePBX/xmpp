@@ -739,7 +739,6 @@ class Xmpp implements \BMO {
 			'cd '.$this->nodeloc,
 			'mkdir -p '.$this->nodeloc.'/logs',
 			'export HOME="'.$this->getHomeDir().'"',
-			'echo "prefix = ~/.node" > ~/.npmrc',
 			'export ASTLOGDIR="'.$astlogdir.'"',
 			'export PATH="$HOME/.node/bin:$PATH"',
 			'export NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"',
