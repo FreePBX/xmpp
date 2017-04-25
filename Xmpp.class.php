@@ -730,27 +730,7 @@ class Xmpp implements \BMO {
 	}
 
 	private function generateRunAsAsteriskCommand($command) {
-		$webuser = $this->freepbx->Config->get('AMPASTERISKWEBUSER');
-		$webgroup = $this->freepbx->Config->get('AMPASTERISKWEBGROUP');
-		$webroot = $this->freepbx->Config->get("AMPWEBROOT");
-		$astlogdir = $this->freepbx->Config->get("ASTLOGDIR");
-
-		$cmds = array(
-			'cd '.$this->nodeloc,
-			'mkdir -p '.$this->nodeloc.'/logs',
-			'export HOME="'.$this->getHomeDir().'"',
-			'export ASTLOGDIR="'.$astlogdir.'"',
-			'export PATH="$HOME/.node/bin:$PATH"',
-			'export NODE_PATH="$HOME/.node/lib/node_modules:$NODE_PATH"',
-			'export MANPATH="$HOME/.node/share/man:$MANPATH"'
-		);
-		$cmds[] = $command;
-		$final = implode(" && ", $cmds);
-
-		if (posix_getuid() == 0) {
-			$final = "runuser -l asterisk -c '".$final."'";
-		}
-		return $final;
+		return $this->freepbx->Pm2->generateRunAsAsteriskCommand($command,$this->nodeloc);
 	}
 
 	public function getHomeDir() {
