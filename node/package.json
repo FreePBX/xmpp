@@ -4,14 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "forever": "^0.15.3",
     "lets-chat": "http://mirror.freepbx.org/npm/lets-chat-0.4.81.tgz"
   },
   "devDependencies": {},
-  "scripts": {
-    "start": "node_modules/forever/bin/forever start -a --workingDir node_modules/lets-chat -l /var/log/asterisk/xmpp_forever.log -o /var/log/asterisk/xmpp_out.log -e /var/log/asterisk/xmpp_err.log --spinSleepTime 1000 --uid 'xmpp' node_modules/lets-chat/app.js",
-    "stop": "node_modules/forever/bin/forever stopall"
-  },
   "author": "",
-  "license": "ISC"
+  "license": "Commercial",
+	"private": true
 }
