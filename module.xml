@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>14.0.1beta4</version>
+	<version>14.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -16,6 +16,7 @@
 		<module>userman ge 13</module>
 	</depends>
 	<changelog>
+		*14.0.1* Utilize pm2
 		*14.0.1beta1* Use entirely new engine
 	</changelog>
 	<supported>

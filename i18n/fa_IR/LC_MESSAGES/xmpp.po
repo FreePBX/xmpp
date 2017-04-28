@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-28 14:57-0700\n"
+"POT-Creation-Date: 2017-04-28 09:58-0700\n"
 "PO-Revision-Date: 2016-10-08 12:20+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -35,7 +35,7 @@ msgstr "افزودن %s به مدیریت کاربران"
 msgid "Admin"
 msgstr "مدیر"
 
-#: Xmpp.class.php:117 Xmpp.class.php:758
+#: Xmpp.class.php:115 Xmpp.class.php:746
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -51,9 +51,23 @@ msgstr "عدم ایجاد جداول xmpp"
 msgid "Changing user %s to %s"
 msgstr "تغییر کاربر %s به %s"
 
-#: Xmpp.class.php:209 Xmpp.class.php:219 Xmpp.class.php:230
+#: Xmpp.class.php:205 Xmpp.class.php:215 Xmpp.class.php:226
 #: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
 msgid "Chat"
+msgstr ""
+
+#: Xmpp.class.php:673
+#, php-format
+msgid "Chat Server Failed: %s"
+msgstr ""
+
+#: Xmpp.class.php:579
+#, php-format
+msgid "Chat Server has already been running on PID %s for %s"
+msgstr ""
+
+#: Xmpp.class.php:654
+msgid "Chat Server is not running"
 msgstr ""
 
 #: ucp/Xmpp.class.php:33
@@ -80,8 +94,7 @@ msgstr "دامنه"
 msgid "Domain XMPP will serve"
 msgstr "دامنه ای که سرویس XMPP را فراهم می کند"
 
-#: Xmpp.class.php:42 Xmpp.class.php:69 Xmpp.class.php:90 Xmpp.class.php:164
-#: Xmpp.class.php:188 Xmpp.class.php:613
+#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:180
 msgid "Done"
 msgstr ""
 
@@ -93,25 +106,16 @@ msgstr "فعال سازی سرویس XMPP برای این کاربر"
 msgid "Enabled"
 msgstr "فعال"
 
-#: Xmpp.class.php:609
-msgid "Failed"
-msgstr ""
-
-#: Xmpp.class.php:669
+#: Xmpp.class.php:619
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
 
-#: Xmpp.class.php:174
+#: Xmpp.class.php:171
 msgid "Failed!"
 msgstr ""
 
-#: Xmpp.class.php:673
-#, php-format
-msgid "Failed: %s"
-msgstr ""
-
-#: Xmpp.class.php:139
+#: Xmpp.class.php:157
 msgid "Finished updating libraries!"
 msgstr ""
 
@@ -119,15 +123,15 @@ msgstr ""
 msgid "Inherit"
 msgstr "موروثی"
 
-#: Xmpp.class.php:59
+#: Xmpp.class.php:57
 msgid "Installing/Updating MongoDB..."
 msgstr ""
 
-#: Xmpp.class.php:81
+#: Xmpp.class.php:79
 msgid "Installing/Updating NodeJS..."
 msgstr ""
 
-#: Xmpp.class.php:127
+#: Xmpp.class.php:119
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
@@ -145,16 +149,20 @@ msgstr "مدیریت و تنظیم سرور XMPP Prosodyکه باید نسخه R
 msgid "Migrating Token Users to User Manager"
 msgstr "مهاجرت توکن کاربران به مدیریت کاربران"
 
-#: Xmpp.class.php:53 Xmpp.class.php:65
+#: Xmpp.class.php:51 Xmpp.class.php:63
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:56
+#: Xmpp.class.php:570
+msgid "MongoDB is not running"
+msgstr ""
+
+#: Xmpp.class.php:54
 #, php-format
 msgid "MongoDB version is: %s requirement is %s"
 msgstr ""
 
-#: Xmpp.class.php:100
+#: Xmpp.class.php:98
 #, php-format
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
@@ -172,15 +180,15 @@ msgstr "پیام جدید از %s"
 msgid "No"
 msgstr "خیر"
 
-#: Xmpp.class.php:96
+#: Xmpp.class.php:94
 msgid "Node Package Manager is not installed"
 msgstr ""
 
-#: Xmpp.class.php:75 Xmpp.class.php:87
+#: Xmpp.class.php:73 Xmpp.class.php:85
 msgid "Node is not installed"
 msgstr ""
 
-#: Xmpp.class.php:78
+#: Xmpp.class.php:76
 #, php-format
 msgid "Node version is: %s requirement is %s"
 msgstr ""
@@ -193,7 +201,7 @@ msgstr "رمز عبور"
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr "لطفا برای ورود به سرور XMPP کلمه عبور و نام کاربری را وارد کنید"
 
-#: Xmpp.class.php:37
+#: Xmpp.class.php:35
 msgid ""
 "Prosody is no longer used and conflicts with this package. Please remove it "
 "before continuing"
@@ -203,37 +211,34 @@ msgstr ""
 msgid "Recursively sending to yourself is not allowed!"
 msgstr "ارسال بازگشتی به خود مجاز نیست!"
 
-#: Xmpp.class.php:40
+#: Xmpp.class.php:38
 msgid "Removing Prosody.."
 msgstr ""
 
-#: Xmpp.class.php:544
+#: Xmpp.class.php:535
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: Xmpp.class.php:524
+#: Xmpp.class.php:515
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
 
-#: Xmpp.class.php:664
+#: Xmpp.class.php:614
 #, php-format
-msgid "Started XMPP Server. PID is %s"
+msgid "Started Chat Server. PID is %s"
 msgstr ""
 
-#: Xmpp.class.php:176
-msgid "Started!"
+#: Xmpp.class.php:173
+#, php-format
+msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:606
-msgid "Starting MongoDB Server..."
+#: Xmpp.class.php:585
+msgid "Starting Chat Server..."
 msgstr ""
 
-#: Xmpp.class.php:636
-msgid "Starting XMPP Server..."
-msgstr ""
-
-#: Xmpp.class.php:171
+#: Xmpp.class.php:167
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
@@ -241,26 +246,21 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: Xmpp.class.php:737
-msgid "Stopped xmpp Server"
+#: Xmpp.class.php:669
+msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:162 Xmpp.class.php:186
+#: Xmpp.class.php:661
+msgid "Stopping Chat Server"
+msgstr ""
+
+#: Xmpp.class.php:178
 msgid "Stopping old running processes..."
 msgstr ""
 
-#: Xmpp.class.php:729
-msgid "Stopping xmpp Server"
-msgstr ""
-
-#: Xmpp.class.php:549
+#: Xmpp.class.php:540
 msgid "Submit"
 msgstr "ثبت"
-
-#: Xmpp.class.php:142
-#, php-format
-msgid "There was an error installing. Please review the install log. (%s)"
-msgstr ""
 
 #: views/userman_hook.php:9
 #, php-format
@@ -275,21 +275,13 @@ msgstr ""
 msgid "Unable to add %s to User Manager"
 msgstr "نمی توان %s را به مدیریت کاربران اضافه کرد"
 
-#: Xmpp.class.php:591
-msgid "Unable to launch Xmpp monitor"
-msgstr ""
-
-#: Xmpp.class.php:696
-msgid "Unable to launch xmpp monitor"
-msgstr ""
-
-#: Xmpp.class.php:46
+#: Xmpp.class.php:44
 msgid ""
 "Unable to remove Prosody, it is no longer used and conflicts with this "
 "package. Please remove it before continuing"
 msgstr ""
 
-#: Xmpp.class.php:517
+#: Xmpp.class.php:508
 msgid "Unknown"
 msgstr "ناشناخته"
 
@@ -323,47 +315,21 @@ msgstr "XMPP"
 msgid "XMPP Credentials"
 msgstr "مجوزهای XMPP"
 
-#: Xmpp.class.php:510
-msgid "XMPP is damaged. Please reinstall."
-msgstr ""
-
 #: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
 msgstr "تنظیمات XMPP/Jabber"
 
-#: Xmpp.class.php:515
+#: Xmpp.class.php:506
 msgid "Xmpp Daemon"
 msgstr ""
 
-#: Xmpp.class.php:599
-#, php-format
-msgid "Xmpp Server has already been running on PID %s for %s"
-msgstr ""
-
-#: Xmpp.class.php:584
-msgid "Xmpp is damaged. Please reinstall."
-msgstr ""
-
-#: Xmpp.class.php:526
+#: Xmpp.class.php:517
 msgid "Xmpp is not running"
 msgstr ""
 
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "بله"
-
-#: Xmpp.class.php:741
-#, php-format
-msgid "xmpp Server Failed: %s"
-msgstr ""
-
-#: Xmpp.class.php:704
-msgid "xmpp Server is not running"
-msgstr ""
-
-#: Xmpp.class.php:689
-msgid "xmpp is damaged. Please reinstall."
-msgstr ""
 
 #~ msgid "Me"
 #~ msgstr "من"
