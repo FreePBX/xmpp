@@ -46,6 +46,11 @@ $mail_data['change_your_notification'] = sprintf(_('Change your notification pre
 if (empty($sender) || empty($receiver)) {
 	die();
 }
+// Check if the user has the mail notifications enabled
+if (!\FreePBX::Userman()->getCombinedModuleSettingByID($receiver['id'], 'Xmpp', 'mail')) {
+	die();
+}
+
 
 $data = \FreePBX::Contactmanager()->getImageByID($sender['id'], $sender['email'], $sender['type']);
 
