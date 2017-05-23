@@ -14,8 +14,8 @@ class Xmpp extends Modules{
 	function __construct($Modules) {
 		$this->Modules = $Modules;
 		$this->xmpp = $this->UCP->FreePBX->Xmpp;
-		$user = $this->UCP->User->getUser();
-		$this->enabled = ($this->xmpp->getUserByID($user['id'])) ? true : false;
+		$this->user = $this->UCP->User->getUser();
+		$this->enabled = ($this->xmpp->getUserByID($this->user['id'])) ? true : false;
 	}
 
 	public function getSimpleWidgetList() {
@@ -50,6 +50,26 @@ class Xmpp extends Modules{
 		return array('enabled' => $this->enabled);
 	}
 
+	function getDisplay() {
+		if($this->enabled){
+			$vars = array();
+			$vars['enabled'] = $this->UCP->FreePBX->Userman->getCombinedModuleSettingByID($this->user['id'], $this->module, 'mail');
+			return $this->load_view(__DIR__.'/views/settings.php', $vars);
+		}
+	}
+	//Left Menu
+	public function getMenuItems() {
+		$menu = array();
+		if($this->enabled){
+			$menu = array(
+				"rawname" => "xmpp",
+				"name" => _("Xmpp"),
+				"badge" => false
+			);
+		}
+		return $menu;
+	}
+
 	/**
 	* Determine what commands are allowed
 	*
@@ -62,6 +82,9 @@ class Xmpp extends Modules{
 	function ajaxRequest($command, $settings) {
 		switch($command) {
 			case 'contacts':
+				return true;
+			break;
+			case 'mail':
 				return true;
 			break;
 			default:
@@ -99,6 +122,14 @@ class Xmpp extends Modules{
 					}
 				}
 			}
+			break;
+			case 'mail':
+				$this->UCP->FreePBX->Userman->setModuleSettingByID($this->user['id'],$this->module,'mail',$_POST['xmpp-mails-enable']);
+				$return[] = array(
+					"module" => $this->module,
+					"value" => $_POST['xmpp-mails-enable']
+				);
+				echo $return;
 			break;
 		}
 		return $return;
