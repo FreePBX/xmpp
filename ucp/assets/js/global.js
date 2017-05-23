@@ -38,23 +38,7 @@ var XmppC = UCPMC.extend({
 
 		//Logged In
 		$(document).bind("logIn", function( event ) {
-			$("#xmpp-mails-enable").change(function() { 
-				var mailsNotification = ($(this).is(":checked")) ? 1 : 0;
-				$.post( "?quietmode=1&module=xmpp&command=mail", {"xmpp-mails-enable": mailsNotification}, function( data ) {
-					if (data.status) {
-						$("#message").addClass("alert-success");
-						$("#message").text(_("Your settings have been saved"));
-						$("#message").fadeIn( "slow", function() {
-							setTimeout(function() { $("#message").fadeOut("slow"); }, 2000);
-					});
-					} else {
-						$("#message").addClass("alert-error");
-						$("#message").text(data.message);
-						return false;
-					}
-				});	
-			});
-			$("#xmpp-menu a.new").on("click", function() {
+      $("#xmpp-menu a.new").on("click", function() {
 				if (Xmpp.socket === null || !Xmpp.socket.connected) {
 					alert(_("There is currently no connection to a valid server"));
 				} else {
@@ -98,7 +82,22 @@ var XmppC = UCPMC.extend({
 
 	},
 	display: function(event) {
-
+    $("#xmpp-mails-enable").change(function() {
+				var mailsNotification = ($(this).is(":checked")) ? 1 : 0;
+				$.post( "?quietmode=1&module=xmpp&command=mail", {"xmpp-mails-enable": mailsNotification}, function( data ) {
+					if (data.status) {
+						$("#message").addClass("alert-success");
+						$("#message").text(_("Your settings have been saved"));
+						$("#message").fadeIn( "slow", function() {
+							setTimeout(function() { $("#message").fadeOut("slow"); }, 2000);
+					});
+					} else {
+						$("#message").addClass("alert-error");
+						$("#message").text(data.message);
+						return false;
+					}
+				});
+			});
 	},
 	hide: function(event) {
 
