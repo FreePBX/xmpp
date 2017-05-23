@@ -548,6 +548,9 @@ class Xmpp implements \BMO {
 		$moduledir = __DIR__;
 		$files = array();
 		$files[] = array('type' => 'file',
+			'path' => $moduledir.'/bin/chatmailer.php',
+			'perms' => 0755);
+		$files[] = array('type' => 'file',
 			'path' => $moduledir.'/bin/xmpp_auth.php',
 			'perms' => 0755);
 		$files[] = array('type' => 'file',
