@@ -121,7 +121,7 @@ class Xmpp implements \BMO {
 			out("The following messages are ONLY FOR DEBUGGING. Ignore anything that says 'WARN' or is just a warning");
 		}
 
-		$this->pm2->installNodeDependencies($this->nodeloc,function($data) {
+		$this->freepbx->Pm2->installNodeDependencies($this->nodeloc,function($data) {
 			outn($data);
 		});
 		out("");
