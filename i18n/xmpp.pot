@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-28 09:58-0700\n"
+"POT-Creation-Date: 2017-06-07 14:59-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,11 @@ msgstr ""
 msgid "%s is typing..."
 msgstr ""
 
+#: bin/chatmailer.php:77
+#, php-format
+msgid "%s just mentioned you in the room %s but you're offline"
+msgstr ""
+
 #: install.php:74
 #, php-format
 msgid "Adding %s to User Manager"
@@ -33,7 +38,7 @@ msgid "Admin"
 msgstr ""
 
 #: Xmpp.class.php:115
-#: Xmpp.class.php:746
+#: Xmpp.class.php:720
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -44,31 +49,36 @@ msgstr ""
 msgid "Cannot create xmpp tables"
 msgstr ""
 
+#: bin/chatmailer.php:44
+#, php-format
+msgid "Change your notification preferences %s"
+msgstr ""
+
 #: install.php:67
 #, php-format
 msgid "Changing user %s to %s"
 msgstr ""
 
-#: Xmpp.class.php:205
-#: Xmpp.class.php:215
-#: Xmpp.class.php:226
+#: Xmpp.class.php:176
+#: Xmpp.class.php:186
+#: Xmpp.class.php:197
 #: ucp/Xmpp.class.php:28
 #: ucp/Xmpp.class.php:32
 #: ucp/Xmpp.class.php:44
 msgid "Chat"
 msgstr ""
 
-#: Xmpp.class.php:673
+#: Xmpp.class.php:647
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:579
+#: Xmpp.class.php:553
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:654
+#: Xmpp.class.php:628
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -99,7 +109,7 @@ msgstr ""
 #: Xmpp.class.php:40
 #: Xmpp.class.php:67
 #: Xmpp.class.php:88
-#: Xmpp.class.php:180
+#: Xmpp.class.php:151
 msgid "Done"
 msgstr ""
 
@@ -107,21 +117,29 @@ msgstr ""
 msgid "Enable XMPP for this user"
 msgstr ""
 
+#: ucp/views/settings.php:4
+msgid "Enable mail notifications"
+msgstr ""
+
 #: views/userman_hook.php:18
 msgid "Enabled"
 msgstr ""
 
-#: Xmpp.class.php:619
+#: Xmpp.class.php:593
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
 
-#: Xmpp.class.php:171
+#: Xmpp.class.php:142
 msgid "Failed!"
 msgstr ""
 
-#: Xmpp.class.php:157
+#: Xmpp.class.php:128
 msgid "Finished updating libraries!"
+msgstr ""
+
+#: bin/chatmailer.php:41
+msgid "If you think this e-mail was an error, please contact us at"
 msgstr ""
 
 #: views/userman_hook.php:27
@@ -159,7 +177,7 @@ msgstr ""
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:570
+#: Xmpp.class.php:544
 msgid "MongoDB is not running"
 msgstr ""
 
@@ -222,30 +240,30 @@ msgstr ""
 msgid "Removing Prosody.."
 msgstr ""
 
-#: Xmpp.class.php:535
+#: Xmpp.class.php:506
 msgid "Reset"
 msgstr ""
 
-#: Xmpp.class.php:515
+#: Xmpp.class.php:486
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
 
-#: Xmpp.class.php:614
+#: Xmpp.class.php:588
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
 
-#: Xmpp.class.php:173
+#: Xmpp.class.php:144
 #, php-format
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:585
+#: Xmpp.class.php:559
 msgid "Starting Chat Server..."
 msgstr ""
 
-#: Xmpp.class.php:167
+#: Xmpp.class.php:138
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
@@ -253,20 +271,24 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: Xmpp.class.php:669
+#: Xmpp.class.php:643
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:661
+#: Xmpp.class.php:635
 msgid "Stopping Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:178
+#: Xmpp.class.php:149
 msgid "Stopping old running processes..."
 msgstr ""
 
-#: Xmpp.class.php:540
+#: Xmpp.class.php:511
 msgid "Submit"
+msgstr ""
+
+#: bin/chatmailer.php:40
+msgid "This message was intended for"
 msgstr ""
 
 #: views/userman_hook.php:9
@@ -275,6 +297,10 @@ msgid ""
 "This section will add this user to the Chat service. The Chat service is a "
 "local XMPP server that runs on your machine. The user can then login to the "
 "XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
+msgstr ""
+
+#: bin/chatmailer.php:43
+msgid "Too many emails?"
 msgstr ""
 
 #: install.php:86
@@ -288,8 +314,14 @@ msgid ""
 "package. Please remove it before continuing"
 msgstr ""
 
-#: Xmpp.class.php:508
+#: Xmpp.class.php:479
 msgid "Unknown"
+msgstr ""
+
+#: ucp/views/settings.php:12
+msgid ""
+"Used to indicate that somebody wants notifications for offline messages from "
+"chat."
 msgstr ""
 
 #: install.php:77
@@ -327,14 +359,26 @@ msgstr ""
 msgid "XMPP/Jabber Settings"
 msgstr ""
 
-#: Xmpp.class.php:506
+#: ucp/Xmpp.class.php:66
+msgid "Xmpp"
+msgstr ""
+
+#: Xmpp.class.php:477
 msgid "Xmpp Daemon"
 msgstr ""
 
-#: Xmpp.class.php:517
+#: Xmpp.class.php:488
 msgid "Xmpp is not running"
 msgstr ""
 
 #: views/userman_hook.php:23
 msgid "Yes"
+msgstr ""
+
+#: bin/chatmailer.php:44
+msgid "here"
+msgstr ""
+
+#: bin/chatmailer.php:39
+msgid "mentioned you"
 msgstr ""
