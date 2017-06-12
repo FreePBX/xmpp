@@ -10,13 +10,12 @@ $xmpp = FreePBX::Xmpp();
 if(!empty($argv[1])) {
 	$params = explode(":",$argv[1],4);
 	$num = count($params);
-	if($num >= 3) {
+	if($num >= 2) {
 		$command = $params[0];
-		$username = $params[1];
-		$host = $params[2];
-		if($num == 4) {
-			$password = $params[3];
-		}
+		$cmd_data = json_decode(base64_decode($params[1]), true);
+		$username = $cmd_data['username'];
+		$password = $cmd_data['password'];
+
 		switch($command) {
 			case 'isuser':
 				echo $xmpp->isUser($username) ? 1 : 0;
@@ -28,7 +27,7 @@ if(!empty($argv[1])) {
 				echo $xmpp->setPass($username, $password) ? 1 : 0;
 			break;
 			case 'jsonauth':
-				if($xmpp->auth($username, $params[2])) {
+				if($xmpp->auth($username, $password)) {
 					$data = FreePBX::Userman()->getUserByUsername($username);
 					unset($data['password']);
 					echo json_encode(array("status" => true, "data" => $data));
@@ -37,7 +36,7 @@ if(!empty($argv[1])) {
 				}
 			break;
 			default:
-				echo 0;
+				echo json_encode(array("status" => false));
 			break;
 		}
 		exit();
