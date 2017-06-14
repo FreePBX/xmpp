@@ -10,6 +10,21 @@ var XmppC = UCPMC.extend({
 		this.online = false;
 		this.initalizing = {};
 		var Xmpp = this;
+		$(document).on("post-body.simplewidgetsettings", function(event, widget_id) {
+			$("#xmpp-mails-enable").change(function() {
+				var mailsNotification = ($(this).is(":checked")) ? 1 : 0;
+				$.post(UCP.ajaxUrl + "?module=xmpp&command=mail", {"xmpp-mails-enable" : mailsNotification}, function(res) {
+					if (!res.status) {
+						UCP.showAlert(res.message, 'danger', function() {
+							console.error('Error saving' + res.message);
+						});
+					} else {
+						return false;
+					}
+
+				});
+			});
+		});
 		$(document).on("chatWindowAdded", function(event, windowId, module, object) {
 			if (module == "Xmpp") {
 				Xmpp.initalizing[object.data("from")] = false;
