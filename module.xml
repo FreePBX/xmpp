@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>13.0.17.2</version>
+	<version>13.0.17.3</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,6 +17,7 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.17.3* This is needed otherwise authentication is broken
 		*13.0.17.2* Userman dep only works if fully defined
 		*13.0.17.1* Update to require pm2
 		*13.0.17* Add email script for offline notifications
