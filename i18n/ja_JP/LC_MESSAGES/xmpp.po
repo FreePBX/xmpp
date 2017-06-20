@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-07 14:59-0700\n"
+"POT-Creation-Date: 2017-06-20 11:53-0700\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: ucp/assets/js/global.js:352
+#: ucp/assets/js/global.js:367
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s が入力中…"
@@ -120,6 +120,10 @@ msgstr ""
 msgid "Enabled"
 msgstr "有効"
 
+#: ucp/Xmpp.class.php:149
+msgid "Error updating xmpp notifications"
+msgstr ""
+
 #: Xmpp.class.php:593
 #, php-format
 msgid "Failed to run: '%s'"
@@ -153,7 +157,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:229
+#: ucp/assets/js/global.js:244
 msgid "Login"
 msgstr ""
 
@@ -185,11 +189,11 @@ msgstr ""
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:89
+#: ucp/assets/js/global.js:104
 msgid "Need a valid recipient"
 msgstr "有効な受信者を指定してください"
 
-#: ucp/assets/js/global.js:336
+#: ucp/assets/js/global.js:351
 #, perl-format
 msgid "New Message from %s"
 msgstr "%s より新規メッセージ"
@@ -211,11 +215,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:227
+#: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr ""
 
-#: ucp/assets/js/global.js:225
+#: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
@@ -225,7 +229,7 @@ msgid ""
 "before continuing"
 msgstr ""
 
-#: ucp/assets/js/global.js:92
+#: ucp/assets/js/global.js:107
 msgid "Recursively sending to yourself is not allowed!"
 msgstr ""
 
@@ -326,7 +330,7 @@ msgstr "ユーザー %s は既に存在するため、更新します"
 msgid "User List"
 msgstr ""
 
-#: ucp/assets/js/global.js:225
+#: ucp/assets/js/global.js:240
 msgid "Username"
 msgstr ""
 
@@ -343,7 +347,7 @@ msgstr ""
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:225
+#: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
 msgstr ""
 
@@ -351,7 +355,7 @@ msgstr ""
 msgid "XMPP/Jabber Settings"
 msgstr ""
 
-#: ucp/Xmpp.class.php:66
+#: ucp/Xmpp.class.php:82
 msgid "Xmpp"
 msgstr ""
 
@@ -361,6 +365,10 @@ msgstr ""
 
 #: Xmpp.class.php:488
 msgid "Xmpp is not running"
+msgstr ""
+
+#: ucp/Xmpp.class.php:147
+msgid "Xmpp mail notifications has been updated!"
 msgstr ""
 
 #: views/userman_hook.php:23

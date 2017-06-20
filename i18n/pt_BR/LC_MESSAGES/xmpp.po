@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-07 14:59-0700\n"
+"POT-Creation-Date: 2017-06-20 11:53-0700\n"
 "PO-Revision-Date: 2016-12-16 01:43+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: ucp/assets/js/global.js:352
+#: ucp/assets/js/global.js:367
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s está escrevendo..."
@@ -120,6 +120,10 @@ msgstr ""
 msgid "Enabled"
 msgstr "Habilitado"
 
+#: ucp/Xmpp.class.php:149
+msgid "Error updating xmpp notifications"
+msgstr ""
+
 #: Xmpp.class.php:593
 #, php-format
 msgid "Failed to run: '%s'"
@@ -153,7 +157,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:229
+#: ucp/assets/js/global.js:244
 msgid "Login"
 msgstr "Login"
 
@@ -187,11 +191,11 @@ msgstr ""
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:89
+#: ucp/assets/js/global.js:104
 msgid "Need a valid recipient"
 msgstr "Precisa de um destinatário válido"
 
-#: ucp/assets/js/global.js:336
+#: ucp/assets/js/global.js:351
 #, perl-format
 msgid "New Message from %s"
 msgstr "Nova Mensagem de %s"
@@ -213,11 +217,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:227
+#: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr "Senha"
 
-#: ucp/assets/js/global.js:225
+#: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr "Digite seu nome de usuário e senha para fazer login no servidor XMPP"
 
@@ -227,7 +231,7 @@ msgid ""
 "before continuing"
 msgstr ""
 
-#: ucp/assets/js/global.js:92
+#: ucp/assets/js/global.js:107
 msgid "Recursively sending to yourself is not allowed!"
 msgstr "O envio recursivo para si mesmo não é permitido!"
 
@@ -328,7 +332,7 @@ msgstr "O usuário %s já existe, no lugar de atualizar"
 msgid "User List"
 msgstr ""
 
-#: ucp/assets/js/global.js:225
+#: ucp/assets/js/global.js:240
 msgid "Username"
 msgstr "Nome de Usuário"
 
@@ -345,7 +349,7 @@ msgstr ""
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:225
+#: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
 msgstr "Credenciais XMPP"
 
@@ -353,7 +357,7 @@ msgstr "Credenciais XMPP"
 msgid "XMPP/Jabber Settings"
 msgstr "Configurações XMPP/Jabber"
 
-#: ucp/Xmpp.class.php:66
+#: ucp/Xmpp.class.php:82
 msgid "Xmpp"
 msgstr ""
 
@@ -363,6 +367,10 @@ msgstr ""
 
 #: Xmpp.class.php:488
 msgid "Xmpp is not running"
+msgstr ""
+
+#: ucp/Xmpp.class.php:147
+msgid "Xmpp mail notifications has been updated!"
 msgstr ""
 
 #: views/userman_hook.php:23
