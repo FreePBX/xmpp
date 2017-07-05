@@ -587,7 +587,17 @@ class Xmpp implements \BMO {
 				if(is_object($output)) {
 					$output->writeln(_("Starting Chat Server..."));
 				}
-				$this->freepbx->Pm2->start("xmpp",__DIR__."/node/node_modules/lets-chat/app.js");
+				$xmppConfig = array();
+				$xmppConfig['LCB_AUTH_PROVIDERS'] = array('freepbx-auth');
+				$xmppConfig['LCB_XMPP_ENABLE'] = true;
+				$xmppConfig['LCB_XMPP_PORT'] = 5222;
+				$xmppConfig['LCB_XMPP_DOMAIN'] = '0.0.0.0';
+				$xmppConfig['LCB_XMPP_ROOMCREATION'] = true;
+				$xmppConfig['LCB_PRIVATE_ENABLE'] = true;
+				$xmppConfig['LCB_PRIVATE_ROSTER'] = 'all';
+				$xmppConfig['LCB_PRIVATE_EXPIRE'] = false;
+				
+				$this->freepbx->Pm2->start("xmpp",__DIR__."/node/node_modules/lets-chat/app.js", $xmppConfig);
 				$this->freepbx->Pm2->reset("xmpp");
 				if(is_object($output)) {
 					$progress = new ProgressBar($output, 0);
