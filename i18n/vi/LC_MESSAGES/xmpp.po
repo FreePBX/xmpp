@@ -10,32 +10,35 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-07 17:44-0400\n"
-"PO-Revision-Date: 2017-05-23 17:54-0400\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-07-18 10:41+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/xmpp/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: ucp/assets/js/global.js:371
 #, perl-format
 msgid "%s is typing..."
-msgstr ""
+msgstr "%s đang đánh máy..."
 
 #: bin/chatmailer.php:77
 #, php-format
 msgid "%s just mentioned you in the room %s but you're offline"
-msgstr ""
+msgstr "%s vừa nhắc đến bạn trong phòng %s nhưng bạn đang ngoại tuyến"
 
 #: install.php:74
 #, php-format
 msgid "Adding %s to User Manager"
-msgstr ""
+msgstr "Đang thêm %s vào trình quản lý người dùng"
 
 #: xmpp.i18n.php:6
 msgid "Admin"
-msgstr ""
+msgstr "Quản trị viên"
 
 #: Xmpp.class.php:115 Xmpp.class.php:720
 #, php-format
@@ -43,42 +46,44 @@ msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
 "Aborting"
 msgstr ""
+"Asterisk home dir (%s) không tồn tại, và, ASTSPOOLDIR cũng không tồn tại. "
+"Đang hủy bỏ"
 
 #: install.php:38
 msgid "Cannot create xmpp tables"
-msgstr ""
+msgstr "Không thể tạo các bảng xmpp"
 
 #: bin/chatmailer.php:44
 #, php-format
 msgid "Change your notification preferences %s"
-msgstr ""
+msgstr "Thay đổi tùy chọn thông báo %s của bạn"
 
 #: install.php:67
 #, php-format
 msgid "Changing user %s to %s"
-msgstr ""
+msgstr "Đang thay đổi người dùng %s thành %s"
 
 #: Xmpp.class.php:647
 #, php-format
 msgid "Chat Server Failed: %s"
-msgstr ""
+msgstr "Chat Server đã gặp sự cố: %s"
 
 #: Xmpp.class.php:553
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
-msgstr ""
+msgstr "Chat Server đã đang chạy trên PID %s đối với %s"
 
 #: Xmpp.class.php:628
 msgid "Chat Server is not running"
-msgstr ""
+msgstr "Chat Server không chạy"
 
 #: page.xmpp.php:20
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #: install.php:60
 msgid "Detected Blank username, removing"
-msgstr ""
+msgstr "Những tên người dùng trống được phát hiện, đang xóa"
 
 #: views/xmpp.php:21
 msgid "Domain"
