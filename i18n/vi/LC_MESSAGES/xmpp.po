@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-07 17:44-0400\n"
-"PO-Revision-Date: 2017-07-18 10:41+0200\n"
+"PO-Revision-Date: 2017-07-18 16:43+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/xmpp/vi/>\n"
@@ -87,140 +87,148 @@ msgstr "Những tên người dùng trống được phát hiện, đang xóa"
 
 #: views/xmpp.php:21
 msgid "Domain"
-msgstr ""
+msgstr "Domain- định danh của website trên Internet"
 
 #: views/xmpp.php:33
 msgid "Domain XMPP will serve"
-msgstr ""
+msgstr "Domain XMPP sẽ phục vụ"
 
 #: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:151
 msgid "Done"
-msgstr ""
+msgstr "Đã xong"
 
 #: views/userman_hook.php:37
 msgid "Enable XMPP for this user"
-msgstr ""
+msgstr "Kích hoạt XMPP cho người dùng này"
 
 #: ucp/views/settings.php:4
 msgid "Enable mail notifications"
-msgstr ""
+msgstr "Kích hoạt thông báo mail"
 
 #: views/userman_hook.php:18
 msgid "Enabled"
-msgstr ""
+msgstr "Đã kích hoạt"
 
 #: Xmpp.class.php:593
 #, php-format
 msgid "Failed to run: '%s'"
-msgstr ""
+msgstr "Không thành công khi chạy: '%s'"
 
 #: Xmpp.class.php:142
 msgid "Failed!"
-msgstr ""
+msgstr "Không thành công!"
 
 #: Xmpp.class.php:128
 msgid "Finished updating libraries!"
-msgstr ""
+msgstr "Cập nhật các thư viện đã hoàn thành!"
 
 #: bin/chatmailer.php:41
 msgid "If you think this e-mail was an error, please contact us at"
-msgstr ""
+msgstr "Nếu bạn nghĩ email này là một lỗi, vui lòng liên lạc với chúng tôi tại"
 
 #: views/userman_hook.php:27
 msgid "Inherit"
-msgstr ""
+msgstr "Kế thừa"
 
 #: Xmpp.class.php:57
 msgid "Installing/Updating MongoDB..."
-msgstr ""
+msgstr "Đang cài đặt/ cập nhật MôngDB..."
 
 #: Xmpp.class.php:79
 msgid "Installing/Updating NodeJS..."
-msgstr ""
+msgstr "Đang cài đặt/cập nhật NodeJS..."
 
 #: Xmpp.class.php:119
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
+"Đang cài đặt/ Cập nhật các thư viện được yêu cầu. Điều này có thể tốn chút "
+"thời gian..."
 
 #: ucp/assets/js/global.js:259
 msgid "Login"
-msgstr ""
+msgstr "Đăng nhập"
 
 #: xmpp.i18n.php:8
 msgid ""
 "Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
 "your PBX be installed."
 msgstr ""
+"Quản lý và cấu hình XMPP Server Prosody và yêu cầu cài đặt Prosody RPM từ "
+"PBX của bạn."
 
 #: ucp/assets/js/global.js:170
 msgid "Me"
-msgstr ""
+msgstr "Me"
 
 #: install.php:43
 msgid "Migrating Token Users to User Manager"
-msgstr ""
+msgstr "Đang dịch chuyển Người dùng Token tới trình quản lý người dùng"
 
 #: Xmpp.class.php:51 Xmpp.class.php:63
 msgid "MongoDB is not installed"
-msgstr ""
+msgstr "MongoDB không được cài đặt"
 
 #: Xmpp.class.php:544
 msgid "MongoDB is not running"
-msgstr ""
+msgstr "MongoDB không chạy"
 
 #: Xmpp.class.php:54
 #, php-format
 msgid "MongoDB version is: %s requirement is %s"
-msgstr ""
+msgstr "Phiên bản của MongoDB là: %s yêu cầu là %s"
 
 #: Xmpp.class.php:98
 #, php-format
 msgid "NPM version is: %s requirement is %s"
-msgstr ""
+msgstr "Phiên bản NPM là: %s yêu cầu là %s"
 
 #: ucp/assets/js/global.js:129
 msgid "Need a valid recipient"
-msgstr ""
+msgstr "Cần một người nhận hợp lệ"
 
 #: ucp/assets/js/global.js:355
 #, perl-format
 msgid "New Message from %s"
-msgstr ""
+msgstr "Tin nhắn mới từ %s"
 
 #: ucp/Xmpp.class.php:32
 msgid "New XMPP"
-msgstr ""
+msgstr "XMPP mới"
 
 #: views/userman_hook.php:24
 msgid "No"
-msgstr ""
+msgstr "Không"
 
 #: Xmpp.class.php:94
 msgid "Node Package Manager is not installed"
-msgstr ""
+msgstr "Node Package Manager (Trình quản lý gói thư viện) không được cài đặt"
 
 #: Xmpp.class.php:73 Xmpp.class.php:85
 msgid "Node is not installed"
-msgstr ""
+msgstr "Node không được cài đặt"
 
 #: Xmpp.class.php:76
 #, php-format
 msgid "Node version is: %s requirement is %s"
-msgstr ""
+msgstr "Phiên bản Node là: %s yêu cầu là %s"
 
 #: ucp/assets/js/global.js:257
 msgid "Password"
-msgstr ""
+msgstr "Mật khẩu"
 
 #: ucp/assets/js/global.js:255
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
+"Vui lòng nhập tên người dùng của bạn và mật khẩu để đăng nhập vào máy chủ "
+"XMPP"
 
 #: Xmpp.class.php:35
 msgid ""
 "Prosody is no longer used and conflicts with this package. Please remove it "
 "before continuing"
 msgstr ""
+"Prosody không được sử dụng nữa và xung đột với gói này. Vui lòng xóa Prosody "
+"này trước khi tiếp tục"
 
 #: ucp/assets/js/global.js:132
 msgid "Recursively sending to yourself is not allowed!"
