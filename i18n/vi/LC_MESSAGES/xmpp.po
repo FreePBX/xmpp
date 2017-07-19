@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-07 17:44-0400\n"
-"PO-Revision-Date: 2017-07-18 16:43+0200\n"
+"PO-Revision-Date: 2017-07-18 21:36+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/xmpp/vi/>\n"
@@ -232,70 +232,70 @@ msgstr ""
 
 #: ucp/assets/js/global.js:132
 msgid "Recursively sending to yourself is not allowed!"
-msgstr ""
+msgstr "Không được phép gửi đệ quy đến chính bạn!"
 
 #: Xmpp.class.php:38
 msgid "Removing Prosody.."
-msgstr ""
+msgstr "Đang xóa Prosody.."
 
 #: Xmpp.class.php:506
 msgid "Reset"
-msgstr ""
+msgstr "Cài đặt lại"
 
 #: Xmpp.class.php:486
 #, php-format
 msgid "Running (Uptime: %s)"
-msgstr ""
+msgstr "Đang chạy ( thời gian chạy: %s)"
 
 #: ucp/assets/js/global.js:45
 msgid "Send Message"
-msgstr ""
+msgstr "Gửi tin nhắn"
 
 #: ucp/assets/js/global.js:112
 msgid "Start XMPP"
-msgstr ""
+msgstr "Khởi động XMPP"
 
 #: Xmpp.class.php:588
 #, php-format
 msgid "Started Chat Server. PID is %s"
-msgstr ""
+msgstr "Chat Server đã khởi động. PID là %s"
 
 #: Xmpp.class.php:144
 #, php-format
 msgid "Started with PID %s!"
-msgstr ""
+msgstr "Đã khởi động với PID %s!"
 
 #: Xmpp.class.php:559
 msgid "Starting Chat Server..."
-msgstr ""
+msgstr "Đang khởi động Chat Server..."
 
 #: Xmpp.class.php:138
 msgid "Starting new Xmpp Process..."
-msgstr ""
+msgstr "Đang khởi động tiến trình Xmpp mới..."
 
 #: Xmpp.class.php:643
 msgid "Stopped Chat Server"
-msgstr ""
+msgstr "Đã dừng Chat Server"
 
 #: Xmpp.class.php:635
 msgid "Stopping Chat Server"
-msgstr ""
+msgstr "Đang dừng Chat Server"
 
 #: Xmpp.class.php:149
 msgid "Stopping old running processes..."
-msgstr ""
+msgstr "Đang dừng các tiến trình cũ đang chạy..."
 
 #: Xmpp.class.php:511
 msgid "Submit"
-msgstr ""
+msgstr "Gửi đi"
 
 #: ucp/assets/js/global.js:43
 msgid "There is currently no connection to a valid server"
-msgstr ""
+msgstr "Hiện tại không có kết nối nào đến một máy chủ hợp lệ"
 
 #: bin/chatmailer.php:40
 msgid "This message was intended for"
-msgstr ""
+msgstr "Tin nhắn này dành cho"
 
 #: views/userman_hook.php:9
 #, php-format
@@ -304,86 +304,93 @@ msgid ""
 "server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
 "users password after clicking Yes"
 msgstr ""
+"Phần này sẽ thêm người dùng này vào XMPP. Người dùng sau đó có thể đăng nhập "
+"vào máy chủ XMPP tại \"%s\" sử dụng \"&lt;username&gt;@%s\". Bạn sẽ cần xác "
+"nhận lại mật khẩu người dùng sau khi nhấn Yes"
 
 #: bin/chatmailer.php:43
 msgid "Too many emails?"
-msgstr ""
+msgstr "Qúa nhiều email?"
 
 #: install.php:86
 #, php-format
 msgid "Unable to add %s to User Manager"
-msgstr ""
+msgstr "Không thể thêm %s vào Trình quản lý người dùng"
 
 #: Xmpp.class.php:44
 msgid ""
 "Unable to remove Prosody, it is no longer used and conflicts with this "
 "package. Please remove it before continuing"
 msgstr ""
+"Không thể xóa Prosody, nó không được sử dụng nữa và đã xung đột vói gói này. "
+"Vui lòng xóa nó trước khi tiếp tục"
 
 #: Xmpp.class.php:479
 msgid "Unknown"
-msgstr ""
+msgstr "Không xác định"
 
 #: ucp/views/settings.php:12
 msgid ""
 "Used to indicate that somebody wants notifications for offline messages from "
 "chat."
 msgstr ""
+"Được sử dụng để chỉ ra những người muốn nhận các thông báo tin nhắn offline "
+"từ Chat."
 
 #: install.php:77
 #, php-format
 msgid "User %s already exists, updating instead"
-msgstr ""
+msgstr "Người dùng %s đã tồn tại, đang cập nhật thay thế"
 
 #: ucp/assets/js/global.js:255
 msgid "Username"
-msgstr ""
+msgstr "Tên người dùng"
 
 #: install.php:69
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
-msgstr ""
+msgstr "Xung đột tên người dùng %s đang đổi thành %s đang xóa %s"
 
 #: views/userman_hook.php:4
 msgid "What is XMPP"
-msgstr ""
+msgstr "XMPP là gì"
 
 #: xmpp.i18n.php:4 xmpp.i18n.php:10
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: ucp/assets/js/global.js:255
 msgid "XMPP Credentials"
-msgstr ""
+msgstr "Các thông tin của XMPP"
 
 #: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
-msgstr ""
+msgstr "Các cài đặt XMPP/Jabber"
 
 #: ucp/Xmpp.class.php:55
 msgid "Xmpp"
-msgstr ""
+msgstr "Giao thức Xmpp"
 
 #: Xmpp.class.php:477
 msgid "Xmpp Daemon"
-msgstr ""
+msgstr "Giao thức Xmpp Daemon"
 
 #: Xmpp.class.php:488
 msgid "Xmpp is not running"
-msgstr ""
+msgstr "Xmpp không chạy"
 
 #: views/userman_hook.php:23
 msgid "Yes"
-msgstr ""
+msgstr "Có"
 
 #: ucp/assets/js/global.js:90
 msgid "Your settings have been saved"
-msgstr ""
+msgstr "Các cài đặt của bạn đã được lưu"
 
 #: bin/chatmailer.php:44
 msgid "here"
-msgstr ""
+msgstr "ở đây"
 
 #: bin/chatmailer.php:39
 msgid "mentioned you"
-msgstr ""
+msgstr "Bạn được nhắc đến"
