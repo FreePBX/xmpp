@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-07 17:44-0400\n"
+"POT-Creation-Date: 2017-08-21 14:42-0400\n"
 "PO-Revision-Date: 2017-07-19 09:23+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
-"Language-Team: Vietnamese "
-"<http://weblate.freepbx.org/projects/freepbx/xmpp/vi/>\n"
-"Language: vi\n"
+"Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/xmpp/"
+"vi/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -40,7 +40,7 @@ msgstr "Đang thêm %s vào trình quản lý người dùng"
 msgid "Admin"
 msgstr "Quản trị viên"
 
-#: Xmpp.class.php:115 Xmpp.class.php:720
+#: Xmpp.class.php:115 Xmpp.class.php:728
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -63,17 +63,17 @@ msgstr "Thay đổi tùy chọn thông báo %s của bạn"
 msgid "Changing user %s to %s"
 msgstr "Đang thay đổi người dùng %s thành %s"
 
-#: Xmpp.class.php:647
+#: Xmpp.class.php:655
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr "Chat Server đã gặp sự cố: %s"
 
-#: Xmpp.class.php:553
+#: Xmpp.class.php:561
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr "Chat Server đã đang chạy trên PID %s đối với %s"
 
-#: Xmpp.class.php:628
+#: Xmpp.class.php:636
 msgid "Chat Server is not running"
 msgstr "Chat Server không chạy"
 
@@ -109,7 +109,7 @@ msgstr "Kích hoạt thông báo mail"
 msgid "Enabled"
 msgstr "Đã kích hoạt"
 
-#: Xmpp.class.php:593
+#: Xmpp.class.php:601
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr "Không thành công khi chạy: '%s'"
@@ -168,9 +168,9 @@ msgstr "Đang dịch chuyển Người dùng Token tới trình quản lý ngư�
 msgid "MongoDB is not installed"
 msgstr "MongoDB không được cài đặt"
 
-#: Xmpp.class.php:544
-msgid "MongoDB is not running"
-msgstr "MongoDB không chạy"
+#: Xmpp.class.php:546 Xmpp.class.php:552
+msgid "MongoDB is not running. Please start it before starting XMPP"
+msgstr ""
 
 #: Xmpp.class.php:54
 #, php-format
@@ -255,7 +255,7 @@ msgstr "Gửi tin nhắn"
 msgid "Start XMPP"
 msgstr "Khởi động XMPP"
 
-#: Xmpp.class.php:588
+#: Xmpp.class.php:596
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr "Chat Server đã khởi động. PID là %s"
@@ -265,7 +265,7 @@ msgstr "Chat Server đã khởi động. PID là %s"
 msgid "Started with PID %s!"
 msgstr "Đã khởi động với PID %s!"
 
-#: Xmpp.class.php:559
+#: Xmpp.class.php:567
 msgid "Starting Chat Server..."
 msgstr "Đang khởi động Chat Server..."
 
@@ -273,11 +273,11 @@ msgstr "Đang khởi động Chat Server..."
 msgid "Starting new Xmpp Process..."
 msgstr "Đang khởi động tiến trình Xmpp mới..."
 
-#: Xmpp.class.php:643
+#: Xmpp.class.php:651
 msgid "Stopped Chat Server"
 msgstr "Đã dừng Chat Server"
 
-#: Xmpp.class.php:635
+#: Xmpp.class.php:643
 msgid "Stopping Chat Server"
 msgstr "Đang dừng Chat Server"
 
@@ -394,3 +394,6 @@ msgstr "ở đây"
 #: bin/chatmailer.php:39
 msgid "mentioned you"
 msgstr "Bạn được nhắc đến"
+
+#~ msgid "MongoDB is not running"
+#~ msgstr "MongoDB không chạy"
