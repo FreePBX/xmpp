@@ -539,12 +539,20 @@ class Xmpp implements \BMO {
 		$process->run();
 		if(!$process->isSuccessful() && $sysadmin) {
 			$this->startMongoServer($output);
+			$process = new Process("ps -edaf | grep mongo | grep -v grep");
+			$process->run();
+			if(!$process->isSuccessful()) {
+				if(is_object($output)) {
+					$output->writeln(_("MongoDB is not running. Please start it before starting XMPP"));
+				}
+				return false;
+			}
 		} elseif(!$process->isSuccessful() && !$sysadmin) {
 			if(is_object($output)) {
-				$output->writeln(_("MongoDB is not running"));
+				$output->writeln(_("MongoDB is not running. Please start it before starting XMPP"));
 			}
+			return false;
 		}
-
 
 		$status = $this->freepbx->Pm2->getStatus("xmpp");
 		switch($status['pm2_env']['status']) {
@@ -656,16 +664,16 @@ class Xmpp implements \BMO {
 		touch("/var/spool/asterisk/incron/xmpp.mongodb-start");
 		$process = new Process("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
-		$i = 0;
+		$timer = 30;
 		if(is_object($output)) {
 			$progress = new ProgressBar($output, 0);
 			$progress->setFormat('[%bar%] %elapsed%');
 			$progress->start();
 		}
-		while(!$process->isSuccessful() && $i < 30) {
+		while(!$process->isSuccessful() && $timer > 0) {
 			$process = new Process("ps -edaf | grep mongo | grep -v grep");
 			$process->run();
-			$i++;
+			$timer--;
 			if(is_object($output)) {
 				$progress->setProgress($i);
 			}
