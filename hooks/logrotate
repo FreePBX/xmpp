@@ -9,6 +9,7 @@ if true ; then
 		rotate 5
 		notifempty
 		sharedscripts
+		su asterisk asterisk
 		create 0640 asterisk asterisk
 		postrotate
 		/usr/sbin/fwconsole pm2 --reload-logs -q
