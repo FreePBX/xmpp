@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-20 11:53-0700\n"
+"POT-Creation-Date: 2017-08-22 17:08-0700\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -41,7 +41,7 @@ msgstr "Додайте %s у Диспетчері Користувачів"
 msgid "Admin"
 msgstr "Адміністратор"
 
-#: Xmpp.class.php:115 Xmpp.class.php:720
+#: Xmpp.class.php:115 Xmpp.class.php:728
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -67,17 +67,17 @@ msgstr "Зміна користувача %s на %s"
 msgid "Chat"
 msgstr ""
 
-#: Xmpp.class.php:647
+#: Xmpp.class.php:655
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:553
+#: Xmpp.class.php:561
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:628
+#: Xmpp.class.php:636
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr "Ввімкнути"
 msgid "Error updating xmpp notifications"
 msgstr ""
 
-#: Xmpp.class.php:593
+#: Xmpp.class.php:601
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
@@ -178,8 +178,8 @@ msgstr ""
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:544
-msgid "MongoDB is not running"
+#: Xmpp.class.php:546 Xmpp.class.php:552
+msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr ""
 
 #: Xmpp.class.php:54
@@ -250,7 +250,7 @@ msgstr "Скинути"
 msgid "Running (Uptime: %s)"
 msgstr ""
 
-#: Xmpp.class.php:588
+#: Xmpp.class.php:596
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:559
+#: Xmpp.class.php:567
 msgid "Starting Chat Server..."
 msgstr ""
 
@@ -272,11 +272,11 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: Xmpp.class.php:643
+#: Xmpp.class.php:651
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:635
+#: Xmpp.class.php:643
 msgid "Stopping Chat Server"
 msgstr ""
 
