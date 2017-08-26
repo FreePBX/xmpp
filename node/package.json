@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "lets-chat": "http://mirror.freepbx.org/npm/lets-chat-0.4.82.tgz"
+    "lets-chat": "http://mirror.freepbx.org/npm/lets-chat-0.4.83.tgz"
   },
   "devDependencies": {},
   "author": "",
