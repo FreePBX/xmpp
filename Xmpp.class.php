@@ -99,11 +99,11 @@ class Xmpp implements \BMO {
 			return false;
 		}
 
-		$cwd = getcwd();
+		if(file_exists($this->nodeloc."/package-lock.json")) {
+			@unlink($this->nodeloc."/package-lock.json");
+		}
+
 		$webuser = \FreePBX::Freepbx_conf()->get('AMPASTERISKWEBUSER');
-		chdir($this->nodeloc);
-		putenv("PATH=/bin:/usr/bin:/sbin");
-		putenv("USER=".$webuser);
 		$web = posix_getpwnam($webuser);
 		$home = trim($web['dir']);
 		if (!is_dir($home)) {
