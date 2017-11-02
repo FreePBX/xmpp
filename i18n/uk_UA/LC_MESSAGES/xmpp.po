@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-21 14:42-0400\n"
+"POT-Creation-Date: 2017-11-02 14:18-0400\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -27,9 +27,9 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s друкує..."
 
-#: bin/chatmailer.php:77
+#: bin/chatmailer.php:75
 #, php-format
-msgid "%s just mentioned you in the room %s but you're offline"
+msgid "%s just wrote you in %s %s but you're offline"
 msgstr ""
 
 #: install.php:74
@@ -384,7 +384,7 @@ msgid "here"
 msgstr ""
 
 #: bin/chatmailer.php:39
-msgid "mentioned you"
+msgid "wrote you"
 msgstr ""
 
 #~ msgid "Running XMPP Hooks"

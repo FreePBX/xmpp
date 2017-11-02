@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-21 14:42-0400\n"
+"POT-Creation-Date: 2017-11-02 14:18-0400\n"
 "PO-Revision-Date: 2017-07-19 09:23+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -26,10 +26,10 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s đang đánh máy..."
 
-#: bin/chatmailer.php:77
+#: bin/chatmailer.php:75
 #, php-format
-msgid "%s just mentioned you in the room %s but you're offline"
-msgstr "%s vừa nhắc đến bạn trong phòng %s nhưng bạn đang ngoại tuyến"
+msgid "%s just wrote you in %s %s but you're offline"
+msgstr ""
 
 #: install.php:74
 #, php-format
@@ -392,8 +392,14 @@ msgid "here"
 msgstr "ở đây"
 
 #: bin/chatmailer.php:39
-msgid "mentioned you"
-msgstr "Bạn được nhắc đến"
+msgid "wrote you"
+msgstr ""
+
+#~ msgid "%s just mentioned you in the room %s but you're offline"
+#~ msgstr "%s vừa nhắc đến bạn trong phòng %s nhưng bạn đang ngoại tuyến"
+
+#~ msgid "mentioned you"
+#~ msgstr "Bạn được nhắc đến"
 
 #~ msgid "MongoDB is not running"
 #~ msgstr "MongoDB không chạy"
