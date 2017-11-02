@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-22 17:08-0700\n"
+"POT-Creation-Date: 2017-11-02 14:19-0400\n"
 "PO-Revision-Date: 2016-10-08 12:20+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
 "xmpp/fa_IR/>\n"
-"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -26,9 +26,9 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s در حال تایپ کردن است..."
 
-#: bin/chatmailer.php:77
+#: bin/chatmailer.php:75
 #, php-format
-msgid "%s just mentioned you in the room %s but you're offline"
+msgid "%s just wrote you in %s %s but you're offline"
 msgstr ""
 
 #: install.php:74
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Chat service"
 msgstr ""
 
-#: ucp/views/widget.php:5
+#: ucp/views/widget.php:5 ucp/assets/js/global.js:78
 msgid "Connected"
 msgstr ""
 
@@ -215,6 +215,10 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
+#: ucp/assets/js/global.js:78
+msgid "Offline"
+msgstr ""
+
 #: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr "رمز عبور"
@@ -245,6 +249,10 @@ msgstr "بازنشانی"
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
+
+#: ucp/assets/js/global.js:87
+msgid "Start XMPP"
+msgstr "استارت سرویس XMPP"
 
 #: Xmpp.class.php:596
 #, php-format
@@ -380,7 +388,7 @@ msgid "here"
 msgstr ""
 
 #: bin/chatmailer.php:39
-msgid "mentioned you"
+msgid "wrote you"
 msgstr ""
 
 #~ msgid "Me"
@@ -391,9 +399,6 @@ msgstr ""
 
 #~ msgid "Send Message"
 #~ msgstr "ارسال پیام"
-
-#~ msgid "Start XMPP"
-#~ msgstr "استارت سرویس XMPP"
 
 #~ msgid "There is currently no connection to a valid server"
 #~ msgstr "در حال حاضر ارتباطی با یک سرور معتبر برقرار نیست"
