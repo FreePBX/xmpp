@@ -533,7 +533,17 @@ class Xmpp implements \BMO {
 
 		return $files;
 	}
-	public function startFreepbx($output=null) {
+    public function startFreepbx($output=null) {
+        $process = new Process('node '.__DIR__.'/node/mongoscript.js');
+        try {
+            $process->mustRun();
+        }
+        catch (ProcessFailedException $e){
+            if(is_object($output)) {
+                $output->writeln(_('mongoscript failde: '.$e->getMessage()));
+            }
+            return false;
+        }
 		$sysadmin = $this->freepbx->Modules->checkStatus("sysadmin");
 		$process = new Process("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
