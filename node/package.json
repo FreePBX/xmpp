@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "lets-chat": "http://mirror.freepbx.org/npm/lets-chat-0.4.85.tgz"
+    "async": "^2.6.0",
+    "freepbx": "http://mirror.freepbx.org/npm/freepbx-1.0.2.tgz",
+    "lets-chat": "http://mirror.freepbx.org/npm/lets-chat-0.4.85.tgz",
+    "mongodb": "^2.2.33"
   },
   "devDependencies": {},
   "author": "",
   "license": "Commercial",
-	"private": true
+  "private": true
 }
