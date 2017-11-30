@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-02 14:19-0400\n"
+"POT-Creation-Date: 2017-11-30 14:31-0500\n"
 "PO-Revision-Date: 2017-05-23 17:54-0400\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ucp/assets/js/global.js:367
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: Xmpp.class.php:115 Xmpp.class.php:728
+#: Xmpp.class.php:115 Xmpp.class.php:745
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -64,17 +64,17 @@ msgstr ""
 msgid "Chat"
 msgstr ""
 
-#: Xmpp.class.php:655
+#: Xmpp.class.php:672
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:561
+#: Xmpp.class.php:578
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:636
+#: Xmpp.class.php:653
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Chat service"
 msgstr ""
 
-#: ucp/views/widget.php:5 ucp/assets/js/global.js:78
+#: ucp/views/widget.php:5
 msgid "Connected"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Error updating xmpp notifications"
 msgstr ""
 
-#: Xmpp.class.php:601
+#: Xmpp.class.php:618
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
@@ -173,7 +173,7 @@ msgstr ""
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:546 Xmpp.class.php:552
+#: Xmpp.class.php:549 Xmpp.class.php:555
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr ""
 
@@ -213,10 +213,6 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:78
-msgid "Offline"
-msgstr ""
-
 #: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr ""
@@ -243,16 +239,17 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
+#: Xmpp.class.php:569
+#, php-format
+msgid "Resetting PBX Users Failed: %s"
+msgstr ""
+
 #: Xmpp.class.php:486
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
 
-#: ucp/assets/js/global.js:87
-msgid "Start XMPP"
-msgstr ""
-
-#: Xmpp.class.php:596
+#: Xmpp.class.php:613
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
@@ -262,7 +259,7 @@ msgstr ""
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:567
+#: Xmpp.class.php:584
 msgid "Starting Chat Server..."
 msgstr ""
 
@@ -274,11 +271,11 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: Xmpp.class.php:651
+#: Xmpp.class.php:668
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:643
+#: Xmpp.class.php:660
 msgid "Stopping Chat Server"
 msgstr ""
 
@@ -349,7 +346,7 @@ msgstr ""
 msgid "What is Chat"
 msgstr ""
 
-#: xmpp.i18n.php:4 xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr ""
 
