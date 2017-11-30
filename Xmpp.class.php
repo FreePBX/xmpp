@@ -519,6 +519,9 @@ class Xmpp implements \BMO {
 		$moduledir = __DIR__;
 		$files = array();
 		$files[] = array('type' => 'file',
+			'path' => $moduledir.'/node/resetpbxusers.js',
+			'perms' => 0755);
+		$files[] = array('type' => 'file',
 			'path' => $moduledir.'/bin/chatmailer.php',
 			'perms' => 0755);
 		$files[] = array('type' => 'file',
@@ -554,6 +557,9 @@ class Xmpp implements \BMO {
 			return false;
 		}
 
+		if(!is_executable(__DIR__.'/node/resetpbxusers.js')) {
+			chmod(__DIR__.'/node/resetpbxusers.js', 0755);
+		}
 		$process = new Process('node '.__DIR__.'/node/resetpbxusers.js');
 		try {
 				$process->mustRun();
