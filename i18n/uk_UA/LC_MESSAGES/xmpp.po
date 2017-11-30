@@ -9,17 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-02 14:18-0400\n"
+"POT-Creation-Date: 2017-11-30 14:30-0500\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
 "uk_UA/>\n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk_UA\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: ucp/assets/js/global.js:371
@@ -41,7 +41,7 @@ msgstr "Додайте %s у Диспетчері Користувачів"
 msgid "Admin"
 msgstr "Адміністратор"
 
-#: Xmpp.class.php:115 Xmpp.class.php:728
+#: Xmpp.class.php:115 Xmpp.class.php:745
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -62,17 +62,17 @@ msgstr ""
 msgid "Changing user %s to %s"
 msgstr "Зміна користувача %s на %s"
 
-#: Xmpp.class.php:655
+#: Xmpp.class.php:672
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:561
+#: Xmpp.class.php:578
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:636
+#: Xmpp.class.php:653
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Enabled"
 msgstr "Ввімкнути"
 
-#: Xmpp.class.php:601
+#: Xmpp.class.php:618
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
@@ -165,7 +165,7 @@ msgstr ""
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:546 Xmpp.class.php:552
+#: Xmpp.class.php:549 Xmpp.class.php:555
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr ""
 
@@ -236,6 +236,11 @@ msgstr ""
 msgid "Reset"
 msgstr "Скинути"
 
+#: Xmpp.class.php:569
+#, php-format
+msgid "Resetting PBX Users Failed: %s"
+msgstr ""
+
 #: Xmpp.class.php:486
 #, php-format
 msgid "Running (Uptime: %s)"
@@ -249,7 +254,7 @@ msgstr "Надіслати повідомлення"
 msgid "Start XMPP"
 msgstr "Запуск XMPP"
 
-#: Xmpp.class.php:596
+#: Xmpp.class.php:613
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
@@ -259,7 +264,7 @@ msgstr ""
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:567
+#: Xmpp.class.php:584
 msgid "Starting Chat Server..."
 msgstr ""
 
@@ -267,11 +272,11 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
-#: Xmpp.class.php:651
+#: Xmpp.class.php:668
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:643
+#: Xmpp.class.php:660
 msgid "Stopping Chat Server"
 msgstr ""
 
@@ -346,7 +351,7 @@ msgstr ""
 msgid "What is XMPP"
 msgstr "Що таке XMPP"
 
-#: xmpp.i18n.php:4 xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 #, fuzzy
 msgid "XMPP"
 msgstr "XMPP"

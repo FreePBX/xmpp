@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-02 14:18-0400\n"
+"POT-Creation-Date: 2017-11-30 14:30-0500\n"
 "PO-Revision-Date: 2016-12-16 01:43+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
 "freepbx/xmpp/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -40,7 +40,7 @@ msgstr "Adicionando %s ao Gerenciador de Usuários"
 msgid "Admin"
 msgstr "Administrador"
 
-#: Xmpp.class.php:115 Xmpp.class.php:728
+#: Xmpp.class.php:115 Xmpp.class.php:745
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -61,17 +61,17 @@ msgstr ""
 msgid "Changing user %s to %s"
 msgstr "Alterando usuário %s para %s"
 
-#: Xmpp.class.php:655
+#: Xmpp.class.php:672
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:561
+#: Xmpp.class.php:578
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:636
+#: Xmpp.class.php:653
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: Xmpp.class.php:601
+#: Xmpp.class.php:618
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
@@ -164,7 +164,7 @@ msgstr "Migrando Token de Usuários para o Gerenciador de Usuários"
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:546 Xmpp.class.php:552
+#: Xmpp.class.php:549 Xmpp.class.php:555
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr ""
 
@@ -234,6 +234,11 @@ msgstr ""
 msgid "Reset"
 msgstr "Reiniciar"
 
+#: Xmpp.class.php:569
+#, php-format
+msgid "Resetting PBX Users Failed: %s"
+msgstr ""
+
 #: Xmpp.class.php:486
 #, php-format
 msgid "Running (Uptime: %s)"
@@ -247,7 +252,7 @@ msgstr "Enviar Mensagem"
 msgid "Start XMPP"
 msgstr "Iniciar XMPP"
 
-#: Xmpp.class.php:596
+#: Xmpp.class.php:613
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
@@ -257,7 +262,7 @@ msgstr ""
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:567
+#: Xmpp.class.php:584
 msgid "Starting Chat Server..."
 msgstr ""
 
@@ -265,11 +270,11 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
-#: Xmpp.class.php:651
+#: Xmpp.class.php:668
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:643
+#: Xmpp.class.php:660
 msgid "Stopping Chat Server"
 msgstr ""
 
@@ -343,7 +348,7 @@ msgstr "Conflito no Nome de Usuário %s alterando para %s apagando %s"
 msgid "What is XMPP"
 msgstr "O que é XMPP"
 
-#: xmpp.i18n.php:4 xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
