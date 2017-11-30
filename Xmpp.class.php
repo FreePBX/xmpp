@@ -533,17 +533,7 @@ class Xmpp implements \BMO {
 
 		return $files;
 	}
-    public function startFreepbx($output=null) {
-        $process = new Process('node '.__DIR__.'/node/mongoscript.js');
-        try {
-            $process->mustRun();
-        }
-        catch (ProcessFailedException $e){
-            if(is_object($output)) {
-                $output->writeln(_('mongoscript failde: '.$e->getMessage()));
-            }
-            return false;
-        }
+		public function startFreepbx($output=null) {
 		$sysadmin = $this->freepbx->Modules->checkStatus("sysadmin");
 		$process = new Process("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
@@ -562,6 +552,17 @@ class Xmpp implements \BMO {
 				$output->writeln(_("MongoDB is not running. Please start it before starting XMPP"));
 			}
 			return false;
+		}
+
+		$process = new Process('node '.__DIR__.'/node/resetpbxusers.js');
+		try {
+				$process->mustRun();
+		}
+		catch (ProcessFailedException $e){
+				if(is_object($output)) {
+						$output->writeln(sprintf(_('Resetting PBX Users Failed: %s'),$e->getMessage()));
+				}
+				return false;
 		}
 
 		$status = $this->freepbx->Pm2->getStatus("xmpp");

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "1.5.0",
     "freepbx": "http://mirror.freepbx.org/npm/freepbx-1.0.2.tgz",
     "lets-chat": "http://mirror.freepbx.org/npm/lets-chat-0.4.85.tgz",
     "mongodb": "^2.2.33"
