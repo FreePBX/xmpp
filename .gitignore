@@ -1,3 +1,4 @@
 node/logs/*
 log
 node/node_modules/*
+package-lock.json
