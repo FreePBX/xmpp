@@ -1,69 +1,54 @@
-const async = require('async')
-const MongoClient = require('mongodb').MongoClient
-const FreePBX = new require('freepbx')()
-const url = 'mongodb://localhost:27017/letschat'
+'use strict';
 
-FreePBX.connect()
-  .then(freepbx => {
-    MongoClient.connect(url, (err, db) => {
+var async = require('async');
+var MongoClient = require('mongodb').MongoClient;
+var FreePBX = new require('freepbx')();
+var url = 'mongodb://localhost:27017/letschat';
+
+FreePBX.connect().then(function (freepbx) {
+  MongoClient.connect(url, function (err, db) {
+    if (err) {
+      throw err;
+    }
+    db.collection('users').find().toArray(function (err, result) {
       if (err) {
-        throw err
+        throw err;
       }
-      db
-        .collection('users')
-        .find()
-        .toArray((err, result) => {
-          if (err) {
-            throw err
-          }
 
-          async.each(
-            result,
-            (user, next) => {
-              freepbx.db.query(
-                'SELECT * FROM xmpp_users WHERE username = ?',
-                [user.username],
-                (err, results, fields) => {
-                  if (err) {
-                    throw err
-                  }
-                  let querySearch = { username: user.username }
-                  if (results[0]) {
-                    // The user exists so proceed to update freepbxId
-                    let newValue = { $set: { freepbxId: results[0].user } }
-                    db
-                      .collection('users')
-                      .updateOne(querySearch, newValue, (err, res) => {
-                        if (err) {
-                          throw err
-                        }
-                        next()
-                      })
-                  } else {
-                    // The user doesnt exist at xmpp_users table so proceed to delete in letschat
-                    db
-                      .collection('users')
-                      .deleteOne(querySearch, (err, obj) => {
-                        if (err) {
-                          throw err
-                        }
-                        next()
-                      })
-                  }
-                }
-              )
-            },
-            err => {
+      async.each(result, function (user, next) {
+        freepbx.db.query('SELECT * FROM xmpp_users WHERE username = ?', [user.username], function (err, results, fields) {
+          if (err) {
+            throw err;
+          }
+          var querySearch = { username: user.username };
+          if (results[0]) {
+            // The user exists so proceed to update freepbxId
+            var newValue = { $set: { freepbxId: results[0].user } };
+            db.collection('users').updateOne(querySearch, newValue, function (err, res) {
               if (err) {
-                throw err
+                throw err;
               }
-              db.close()
-              process.exit()
-            }
-          )
-        })
-    })
-  })
-  .catch(err => {
-    throw err
-  })
+              next();
+            });
+          } else {
+            // The user doesnt exist at xmpp_users table so proceed to delete in letschat
+            db.collection('users').deleteOne(querySearch, function (err, obj) {
+              if (err) {
+                throw err;
+              }
+              next();
+            });
+          }
+        });
+      }, function (err) {
+        if (err) {
+          throw err;
+        }
+        db.close();
+        process.exit();
+      });
+    });
+  });
+}).catch(function (err) {
+  throw err;
+});
