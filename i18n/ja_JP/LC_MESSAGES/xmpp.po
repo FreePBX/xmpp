@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-30 14:31-0500\n"
+"POT-Creation-Date: 2018-01-09 15:41-0500\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "%s is typing..."
 msgstr "%s が入力中…"
 
-#: bin/chatmailer.php:75
+#: bin/chatmailer.php:76
 #, php-format
 msgid "%s just wrote you in %s %s but you're offline"
 msgstr ""
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Cannot create xmpp tables"
 msgstr "xmppテーブルを作成できませんでした"
 
-#: bin/chatmailer.php:44
+#: bin/chatmailer.php:45
 #, php-format
 msgid "Change your notification preferences %s"
 msgstr ""
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Finished updating libraries!"
 msgstr ""
 
-#: bin/chatmailer.php:41
+#: bin/chatmailer.php:42
 msgid "If you think this e-mail was an error, please contact us at"
 msgstr ""
 
@@ -289,7 +289,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: bin/chatmailer.php:40
+#: bin/chatmailer.php:41
 msgid "This message was intended for"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgid ""
 "XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
 
-#: bin/chatmailer.php:43
+#: bin/chatmailer.php:44
 msgid "Too many emails?"
 msgstr ""
 
@@ -380,11 +380,11 @@ msgstr ""
 msgid "Yes"
 msgstr "はい"
 
-#: bin/chatmailer.php:44
+#: bin/chatmailer.php:45
 msgid "here"
 msgstr ""
 
-#: bin/chatmailer.php:39
+#: bin/chatmailer.php:40
 msgid "wrote you"
 msgstr ""
 
