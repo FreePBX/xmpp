@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-03 01:29-0500\n"
+"POT-Creation-Date: 2018-01-19 16:17-0500\n"
 "PO-Revision-Date: 2017-07-19 09:23+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/xmpp/"
 "vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -360,7 +360,7 @@ msgstr "Xung đột tên người dùng %s đang đổi thành %s đang xóa %s"
 msgid "What is XMPP"
 msgstr "XMPP là gì"
 
-#: xmpp.i18n.php:4 xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 

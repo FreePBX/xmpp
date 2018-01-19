@@ -9,11 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-03 01:29-0500\n"
+"POT-Creation-Date: 2018-01-19 16:17-0500\n"
 "PO-Revision-Date: 2017-12-14 17:02+0200\n"
 "Last-Translator: tranlsated <noemi@translated.net>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/xmpp/de_DE/>\n"
+"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/xmpp/"
+"de_DE/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -363,7 +363,7 @@ msgstr "Falscher Benutzername %s wird zu %s geändert %s wird gelöscht"
 msgid "What is XMPP"
 msgstr "Was ist XMPP"
 
-#: xmpp.i18n.php:4 xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
