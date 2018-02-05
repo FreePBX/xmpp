@@ -10,10 +10,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-19 16:17-0500\n"
-"PO-Revision-Date: 2017-12-14 17:02+0200\n"
+"PO-Revision-Date: 2018-02-05 09:00+0200\n"
 "Last-Translator: tranlsated <noemi@translated.net>\n"
-"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/xmpp/"
-"de_DE/>\n"
+"Language-Team: German "
+"<http://weblate.freepbx.org/projects/freepbx/xmpp/de_DE/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgstr "%s hat Ihnen soeben in %s %s geschrieben, aber Sie sind offline"
 #: install.php:74
 #, php-format
 msgid "Adding %s to User Manager"
-msgstr "%s wird dem Benutzer-Manager hinzugefügt"
+msgstr "%s wird dem Benutzermanager hinzugefügt"
 
 #: xmpp.i18n.php:6
 msgid "Admin"
@@ -46,7 +46,7 @@ msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
 "Aborting"
 msgstr ""
-"Asterisk Startverzeichnis (%s) existiert nicht und ASTSPOOLDIR existiert "
+"Asterisk-Startverzeichnis (%s) existiert nicht und ASTSPOOLDIR existiert "
 "nicht. Wird abgebrochen"
 
 #: install.php:38
@@ -125,7 +125,7 @@ msgstr "Aktualisierung der Bibliotheken ist abgeschlossen!"
 #: bin/chatmailer.php:41
 msgid "If you think this e-mail was an error, please contact us at"
 msgstr ""
-"Wenn Sie denken, dass diese E-Mail versehentliche gesendet wurde, "
+"Wenn diese E-Mail Ihrer Meinung nach versehentlich gesendet wurde, "
 "kontaktieren Sie uns bitte unter"
 
 #: views/userman_hook.php:27
@@ -134,7 +134,7 @@ msgstr "Übernehmen"
 
 #: Xmpp.class.php:57
 msgid "Installing/Updating MongoDB..."
-msgstr "Mongo DB wird installiert/aktualisiert ..."
+msgstr "MongoDB wird installiert/aktualisiert ..."
 
 #: Xmpp.class.php:79
 msgid "Installing/Updating NodeJS..."
@@ -164,7 +164,7 @@ msgstr "Ich"
 
 #: install.php:43
 msgid "Migrating Token Users to User Manager"
-msgstr "Toekn-Benutzer werden in den Benutzer-Manager verschoben"
+msgstr "Token-Benutzer werden in den Benutzermanager verschoben"
 
 #: Xmpp.class.php:51 Xmpp.class.php:63
 msgid "MongoDB is not installed"
@@ -172,17 +172,17 @@ msgstr "MongoDB ist nicht installiert"
 
 #: Xmpp.class.php:549 Xmpp.class.php:555
 msgid "MongoDB is not running. Please start it before starting XMPP"
-msgstr "MongoDB läuft nicht. Bitte starten Sie dies, bevor Sie XMPP starten"
+msgstr "MongoDB läuft nicht. Bitte starten Sie MongoDB, bevor Sie XMPP starten"
 
 #: Xmpp.class.php:54
 #, php-format
 msgid "MongoDB version is: %s requirement is %s"
-msgstr "MongoDB Version ist: %s Anforderung ist %s"
+msgstr "MongoDB Version ist: %s Erforderlich ist %s"
 
 #: Xmpp.class.php:98
 #, php-format
 msgid "NPM version is: %s requirement is %s"
-msgstr "NPM Version ist: %s Anforderung ist %s"
+msgstr "NPM Version ist: %s Erforderlich ist %s"
 
 #: ucp/assets/js/global.js:129
 msgid "Need a valid recipient"
@@ -212,7 +212,7 @@ msgstr "Knoten ist nicht installiert"
 #: Xmpp.class.php:76
 #, php-format
 msgid "Node version is: %s requirement is %s"
-msgstr "Knotenversion ist: %s Anforderung ist %s"
+msgstr "Knotenversion ist: %s Erforderlich ist %s"
 
 #: ucp/assets/js/global.js:257
 msgid "Password"
@@ -221,7 +221,7 @@ msgstr "Passwort"
 #: ucp/assets/js/global.js:255
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
-"Bitte geben Sie Ihren Benutzernamen und Passwort ein, um sich beim XMPP-"
+"Bitte geben Sie Ihren Benutzernamen und Ihr Passwort ein, um sich am XMPP-"
 "Server anzumelden"
 
 #: Xmpp.class.php:35
@@ -247,7 +247,7 @@ msgstr "Zurücksetzen"
 #: Xmpp.class.php:569
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
-msgstr "Zurücksetzen von PBX Benutzern ist fehlgeschlagen: %s"
+msgstr "Zurücksetzen von PBX-Benutzern ist fehlgeschlagen: %s"
 
 #: Xmpp.class.php:486
 #, php-format
@@ -311,8 +311,8 @@ msgid ""
 "server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
 "users password after clicking Yes"
 msgstr ""
-"Dieser Abschnitt wird diesen Benutzer zu XMPP hinzufügen. Der Benutzer kann "
-"sich dann unter \"%s\" using \"&lt;username&gt;@%s\" beim XMPP-Server "
+"In diesem Abschnitt wird dieser Benutzer zu XMPP hinzugefügt. Der Benutzer "
+"kann sich dann unter \"%s\" mittels \"&lt;username&gt;@%s\" am XMPP-Server "
 "anmelden. Nachdem Sie auf Ja geklickt haben, müssen Sie das Passwort des "
 "Benutzers neu festlegen"
 
@@ -323,7 +323,7 @@ msgstr "Zu viele E-Mails?"
 #: install.php:86
 #, php-format
 msgid "Unable to add %s to User Manager"
-msgstr "Konnte %s nicht zum Benutzer-Manager hinzufügen"
+msgstr "Konnte %s nicht zum Benutzermanager hinzufügen"
 
 #: Xmpp.class.php:44
 msgid ""
@@ -348,7 +348,7 @@ msgstr ""
 #: install.php:77
 #, php-format
 msgid "User %s already exists, updating instead"
-msgstr "Benutzer %s existiert bereits, stattdessen wird aktualisiert"
+msgstr "Benutzer %s existiert bereits, wird stattdessen aktualisiert"
 
 #: ucp/assets/js/global.js:255
 msgid "Username"
@@ -357,7 +357,7 @@ msgstr "Benutzername"
 #: install.php:69
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
-msgstr "Falscher Benutzername %s wird zu %s geändert %s wird gelöscht"
+msgstr "Falscher Benutzername %s wird zu %s geändert, %s wird gelöscht"
 
 #: views/userman_hook.php:4
 msgid "What is XMPP"
@@ -373,7 +373,7 @@ msgstr "XMPP Zugangsdaten"
 
 #: views/xmpp.php:3
 msgid "XMPP/Jabber Settings"
-msgstr "XMPP/Jabber Einstellungen"
+msgstr "XMPP-/Jabber-Einstellungen"
 
 #: ucp/Xmpp.class.php:55
 msgid "Xmpp"
