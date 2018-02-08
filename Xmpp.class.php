@@ -254,6 +254,29 @@ class Xmpp implements \BMO {
 		} else {
 			$this->usermanUpdateUser($id, $display, $data);
 		}
+		if($this->freepbx->Modules->moduleHasMethod('Zulu', 'getContactLUIDByZuluID')) {
+			$data['uuid'] = $this->freepbx->Zulu->getContactLUIDByZuluID($data['id']);
+		} else {
+			$data['uuid'] = null;
+		}
+		$data['freepbxId'] = $id;
+		$addUserParam = base64_encode(json_encode($data));
+		if(!is_executable(__DIR__.'/node/adduserletschat.js')) {
+			chmod(__DIR__.'/node/adduserletschat.js', 0755);
+		}
+		$addUserCommand = 'node '.__DIR__.'/node/adduserletschat.js '.$addUserParam;
+		$process = new Process($addUserCommand);
+		try {
+			$process->mustRun();
+		}
+		catch (ProcessFailedException $e){
+			if(is_object($output)) {
+				$output->writeln(sprintf(_('Add user to letschat failed: %s'),$e->getMessage()));
+			}
+			return false;
+		}
+
+
 	}
 
 	public function usermanUpdateUser($id, $display, $data) {
@@ -301,6 +324,22 @@ class Xmpp implements \BMO {
 			$sql = "DELETE FROM prosody WHERE user = :puser";
 			$sth = $this->db->prepare($sql);
 			$sth->execute(array(":puser" => $user['username']));
+		}
+		$data['freepbxId'] = $id;
+		$delUserParam = base64_encode(json_encode($data));
+		if(!is_executable(__DIR__.'/node/deluserletschat.js')) {
+			chmod(__DIR__.'/node/deluserletschat.js', 0755);
+		}
+		$delUserCommand = 'node '.__DIR__.'/node/deluserletschat.js '.$delUserParam;
+		$process = new Process($delUserCommand);
+		try {
+			$process->mustRun();
+		}
+		catch (ProcessFailedException $e){
+			if(is_object($output)) {
+				$output->writeln(sprintf(_('Deletion of user on letschat failed: %s'),$e->getMessage()));
+			}
+			return false;
 		}
 	}
 
@@ -536,7 +575,7 @@ class Xmpp implements \BMO {
 
 		return $files;
 	}
-		public function startFreepbx($output=null) {
+	public function startFreepbx($output=null) {
 		$sysadmin = $this->freepbx->Modules->checkStatus("sysadmin");
 		$process = new Process("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
