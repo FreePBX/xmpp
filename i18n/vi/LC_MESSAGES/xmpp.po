@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-19 16:17-0500\n"
+"POT-Creation-Date: 2018-02-08 20:16-0500\n"
 "PO-Revision-Date: 2017-07-19 09:23+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/xmpp/"
 "vi/>\n"
-"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -31,6 +31,11 @@ msgstr "%s đang đánh máy..."
 msgid "%s just wrote you in %s %s but you're offline"
 msgstr ""
 
+#: Xmpp.class.php:274
+#, php-format
+msgid "Add user to letschat failed: %s"
+msgstr ""
+
 #: install.php:74
 #, php-format
 msgid "Adding %s to User Manager"
@@ -40,7 +45,7 @@ msgstr "Đang thêm %s vào trình quản lý người dùng"
 msgid "Admin"
 msgstr "Quản trị viên"
 
-#: Xmpp.class.php:115 Xmpp.class.php:745
+#: Xmpp.class.php:115 Xmpp.class.php:784
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -63,23 +68,28 @@ msgstr "Thay đổi tùy chọn thông báo %s của bạn"
 msgid "Changing user %s to %s"
 msgstr "Đang thay đổi người dùng %s thành %s"
 
-#: Xmpp.class.php:672
+#: Xmpp.class.php:711
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr "Chat Server đã gặp sự cố: %s"
 
-#: Xmpp.class.php:578
+#: Xmpp.class.php:617
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr "Chat Server đã đang chạy trên PID %s đối với %s"
 
-#: Xmpp.class.php:653
+#: Xmpp.class.php:692
 msgid "Chat Server is not running"
 msgstr "Chat Server không chạy"
 
 #: page.xmpp.php:20
 msgid "Delete"
 msgstr "Xóa"
+
+#: Xmpp.class.php:340
+#, php-format
+msgid "Deletion of user on letschat failed: %s"
+msgstr ""
 
 #: install.php:60
 msgid "Detected Blank username, removing"
@@ -109,7 +119,7 @@ msgstr "Kích hoạt thông báo mail"
 msgid "Enabled"
 msgstr "Đã kích hoạt"
 
-#: Xmpp.class.php:618
+#: Xmpp.class.php:657
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr "Không thành công khi chạy: '%s'"
@@ -168,7 +178,7 @@ msgstr "Đang dịch chuyển Người dùng Token tới trình quản lý ngư�
 msgid "MongoDB is not installed"
 msgstr "MongoDB không được cài đặt"
 
-#: Xmpp.class.php:549 Xmpp.class.php:555
+#: Xmpp.class.php:588 Xmpp.class.php:594
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr ""
 
@@ -238,16 +248,16 @@ msgstr "Không được phép gửi đệ quy đến chính bạn!"
 msgid "Removing Prosody.."
 msgstr "Đang xóa Prosody.."
 
-#: Xmpp.class.php:506
+#: Xmpp.class.php:545
 msgid "Reset"
 msgstr "Cài đặt lại"
 
-#: Xmpp.class.php:569
+#: Xmpp.class.php:608
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:486
+#: Xmpp.class.php:525
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr "Đang chạy ( thời gian chạy: %s)"
@@ -260,7 +270,7 @@ msgstr "Gửi tin nhắn"
 msgid "Start XMPP"
 msgstr "Khởi động XMPP"
 
-#: Xmpp.class.php:613
+#: Xmpp.class.php:652
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr "Chat Server đã khởi động. PID là %s"
@@ -270,7 +280,7 @@ msgstr "Chat Server đã khởi động. PID là %s"
 msgid "Started with PID %s!"
 msgstr "Đã khởi động với PID %s!"
 
-#: Xmpp.class.php:584
+#: Xmpp.class.php:623
 msgid "Starting Chat Server..."
 msgstr "Đang khởi động Chat Server..."
 
@@ -278,11 +288,11 @@ msgstr "Đang khởi động Chat Server..."
 msgid "Starting new Xmpp Process..."
 msgstr "Đang khởi động tiến trình Xmpp mới..."
 
-#: Xmpp.class.php:668
+#: Xmpp.class.php:707
 msgid "Stopped Chat Server"
 msgstr "Đã dừng Chat Server"
 
-#: Xmpp.class.php:660
+#: Xmpp.class.php:699
 msgid "Stopping Chat Server"
 msgstr "Đang dừng Chat Server"
 
@@ -290,7 +300,7 @@ msgstr "Đang dừng Chat Server"
 msgid "Stopping old running processes..."
 msgstr "Đang dừng các tiến trình cũ đang chạy..."
 
-#: Xmpp.class.php:511
+#: Xmpp.class.php:550
 msgid "Submit"
 msgstr "Gửi đi"
 
@@ -330,7 +340,7 @@ msgstr ""
 "Không thể xóa Prosody, nó không được sử dụng nữa và đã xung đột vói gói này. "
 "Vui lòng xóa nó trước khi tiếp tục"
 
-#: Xmpp.class.php:479
+#: Xmpp.class.php:518
 msgid "Unknown"
 msgstr "Không xác định"
 
@@ -360,7 +370,7 @@ msgstr "Xung đột tên người dùng %s đang đổi thành %s đang xóa %s"
 msgid "What is XMPP"
 msgstr "XMPP là gì"
 
-#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
@@ -376,11 +386,11 @@ msgstr "Các cài đặt XMPP/Jabber"
 msgid "Xmpp"
 msgstr "Giao thức Xmpp"
 
-#: Xmpp.class.php:477
+#: Xmpp.class.php:516
 msgid "Xmpp Daemon"
 msgstr "Giao thức Xmpp Daemon"
 
-#: Xmpp.class.php:488
+#: Xmpp.class.php:527
 msgid "Xmpp is not running"
 msgstr "Xmpp không chạy"
 
