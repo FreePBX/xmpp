@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>13.0.17.11</version>
+	<version>13.0.17.12</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,6 +17,7 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.17.12* Version bump
 		*13.0.17.11* Bump
 		*13.0.17.10* Return uuid when listing room and room messages
 		*13.0.17.9* Fix bug running script
