@@ -33,6 +33,6 @@ MongoClient.connect(url, (err, db) => {
     if (err) {
       throw err;
     }
-  };)
+  });
   db.close();
 });
