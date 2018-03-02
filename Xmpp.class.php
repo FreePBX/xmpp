@@ -270,9 +270,7 @@ class Xmpp implements \BMO {
 			$process->mustRun();
 		}
 		catch (ProcessFailedException $e){
-			if(is_object($output)) {
-				$output->writeln(sprintf(_('Add user to letschat failed: %s'),$e->getMessage()));
-			}
+			freepbx_log(FPBX_LOG_ERROR,sprintf(_('Add user to letschat failed: %s'),$e->getMessage()));
 			return false;
 		}
 
@@ -297,9 +295,22 @@ class Xmpp implements \BMO {
 			if($xmppEnable) {
 				$this->saveUser($id, $data['username']);
 				if($data['prevUsername'] != $data['username']) {
-					$sql = "UPDATE prosody SET user = :user WHERE user = :puser";
-					$sth = $this->db->prepare($sql);
-					$sth->execute(array(":user" => $data['username'], ":puser" => $data['prevUsername']));
+					$newData = array("id" => $id, "username" => $data['username']);
+		            $updateUserParam = base64_encode(json_encode($newData));
+		            if(!is_executable(__DIR__.'/node/updateuserletschat.js')) {
+		            	chmod(__DIR__.'/node/updateuserletschat.js', 0755);
+		            }
+		            $updateUserCommand = 'node '.__DIR__.'/node/updateuserletschat.js '.$updateUserParam;
+		            $process = new Process($updateUserCommand);
+		            try {
+		            	$process->mustRun();
+		            }
+		            catch (ProcessFailedException $e){
+		            	if(is_object($output)) {
+		            		$output->writeln(sprintf(_('Update of user on letschat failed: %s'),$e->getMessage()));
+		            	}
+		            	return false;
+		            }
 				}
 			} elseif(!$xmppEnable) {
 				$this->usermanDelUser($id, $display, $data);
@@ -309,9 +320,23 @@ class Xmpp implements \BMO {
 			if(!empty($user)) {
 				$this->saveUser($id, $data['username']);
 				if($data['prevUsername'] != $data['username']) {
-					$sql = "UPDATE prosody SET user = :user WHERE user = :puser";
-					$sth = $this->db->prepare($sql);
-					$sth->execute(array(":user" => $data['username'], ":puser" => $data['prevUsername']));
+					$newData = array("id" => $id, "username" => $data['username']);
+		            $updateUserParam = base64_encode(json_encode($newData));
+		            if(!is_executable(__DIR__.'/node/updateuserletschat.js')) {
+		            	chmod(__DIR__.'/node/updateuserletschat.js', 0755);
+		            }
+		            $updateUserCommand = 'node '.__DIR__.'/node/updateuserletschat.js '.$updateUserParam;
+		            $process = new Process($updateUserCommand);
+		            try {
+		            	$process->mustRun();
+		            }
+		            catch (ProcessFailedException $e){
+		            	if(is_object($output)) {
+		            		$output->writeln(sprintf(_('Update of user on letschat failed: %s'),$e->getMessage()));
+		            	}
+		            	return false;
+		            }
+
 				}
 			}
 		}
@@ -336,9 +361,7 @@ class Xmpp implements \BMO {
 			$process->mustRun();
 		}
 		catch (ProcessFailedException $e){
-			if(is_object($output)) {
-				$output->writeln(sprintf(_('Deletion of user on letschat failed: %s'),$e->getMessage()));
-			}
+			freepbx_log(FPBX_LOG_ERROR,sprintf(_('Deletion of user on letschat failed: %s'),$e->getMessage()));
 			return false;
 		}
 	}
