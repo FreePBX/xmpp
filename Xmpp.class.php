@@ -270,9 +270,7 @@ class Xmpp implements \BMO {
 			$process->mustRun();
 		}
 		catch (ProcessFailedException $e){
-			if(is_object($output)) {
-				$output->writeln(sprintf(_('Add user to letschat failed: %s'),$e->getMessage()));
-			}
+			freepbx_log(FPBX_LOG_ERROR,sprintf(_('Add user to letschat failed: %s'),$e->getMessage()));
 			return false;
 		}
 
@@ -336,9 +334,7 @@ class Xmpp implements \BMO {
 			$process->mustRun();
 		}
 		catch (ProcessFailedException $e){
-			if(is_object($output)) {
-				$output->writeln(sprintf(_('Deletion of user on letschat failed: %s'),$e->getMessage()));
-			}
+			freepbx_log(FPBX_LOG_ERROR,sprintf(_('Deletion of user on letschat failed: %s'),$e->getMessage()));
 			return false;
 		}
 	}
