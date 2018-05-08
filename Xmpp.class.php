@@ -255,7 +255,7 @@ class Xmpp implements \BMO {
 			$this->usermanUpdateUser($id, $display, $data);
 		}
 		if($this->freepbx->Modules->moduleHasMethod('Zulu', 'getContactLUIDByZuluID')) {
-			$data['uuid'] = $this->freepbx->Zulu->getContactLUIDByZuluID($data['id']);
+			$data['uuid'] = $this->freepbx->Zulu->getContactLUIDByZuluID($id);
 		} else {
 			$data['uuid'] = null;
 		}
