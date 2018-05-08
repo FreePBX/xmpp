@@ -7,6 +7,7 @@ cat <<- EOF > /etc/logrotate.d/freepbx-xmpp
 	rotate 5
 	notifempty
 	sharedscripts
+	dateext
 	create 0640 asterisk asterisk
 	su asterisk asterisk
 	postrotate
@@ -14,4 +15,3 @@ cat <<- EOF > /etc/logrotate.d/freepbx-xmpp
 	endscript
 }
 EOF
-
