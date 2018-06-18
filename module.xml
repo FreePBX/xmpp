@@ -2,10 +2,10 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>14.0.1.6</version>
+	<version>15.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
-	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
+	<licenselink>https://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
 	<category>Admin</category>
 	<description>Manage and configure a XMPP Server Prosody and requires the Prosody RPM from your PBX be installed.</description>
 	<menuitems>
@@ -17,17 +17,10 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
-		*14.0.1.6* Merge from 13
-		*14.0.1.5* FREEPBX-14223
-		*14.0.1.4* Bump version of letschat
-		*14.0.1.3* Fix userman deps
-		*14.0.1.2* PM2 updates
-		*14.0.1.1* Require PM2
-		*14.0.1* Utilize pm2
-		*14.0.1beta1* Use entirely new engine
+		*15.0.1.6* branch from 15, add backup
 	</changelog>
 	<supported>
-		<version>14.0</version>
+		<version>15.0</version>
 	</supported>
 	<hooks>
 		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
@@ -53,6 +46,4 @@
 			<method callingMethod="preAsteriskHooks" class="Xmpp" namespace="FreePBX\modules">stopFreepbx</method>
 		</framework>
 	</hooks>
-	<location>release/2.11/xmpp-2.11.0.3.tgz</location>
-	<md5sum>e784b420c579ca7a6eb51f94b616e451</md5sum>
 </module>

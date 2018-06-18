@@ -1,11 +1,15 @@
 <?php
 // vim: set ai ts=4 sw=4 ft=php:
 namespace FreePBX\modules;
+use BMO;
+use PDO;
+use Exception;
+
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 //progress bar
 use Symfony\Component\Console\Helper\ProgressBar;
-class Xmpp implements \BMO {
+class Xmpp implements BMO {
 	private $dirty = false;
 
 	private $nodever = "0.12.18";
@@ -15,7 +19,7 @@ class Xmpp implements \BMO {
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
-			throw new \Exception("Not given a FreePBX Object");
+			throw new Exception("Not given a FreePBX Object");
 		}
 		$this->freepbx = $freepbx;
 		$this->db = $freepbx->Database;
@@ -103,16 +107,16 @@ class Xmpp implements \BMO {
 			@unlink($this->nodeloc."/package-lock.json");
 		}
 
-		$webuser = \FreePBX::Freepbx_conf()->get('AMPASTERISKWEBUSER');
+		$webuser = $this->freepbx->Config->get('AMPASTERISKWEBUSER');
 		$web = posix_getpwnam($webuser);
 		$home = trim($web['dir']);
 		if (!is_dir($home)) {
 			// Well, that's handy. It doesn't exist. Let's use ASTSPOOLDIR instead, because
 			// that should exist and be writable.
-			$home = \FreePBX::Freepbx_conf()->get('ASTSPOOLDIR');
+			$home = $this->freepbx->Config->get('ASTSPOOLDIR');
 			if (!is_dir($home)) {
 				// OK, I give up.
-				throw new \Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
+				throw new Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
 			}
 		}
 
@@ -156,16 +160,10 @@ class Xmpp implements \BMO {
 		$sth->execute();
 		try {
 			$this->freepbx->Pm2->delete("xmpp");
-		} catch(\Exception $e) {}
+		} catch(Exception $e) {}
 
 	}
 
-	public function backup(){
-
-	}
-	public function restore($backup){
-
-	}
 
 	public function usermanShowPage() {
 		if(isset($_REQUEST['action'])) {
@@ -324,7 +322,7 @@ class Xmpp implements \BMO {
 		$sql = 'SELECT value FROM xmpp_options WHERE keyword = :option';
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(":option" => $option));
-		$option = $sth->fetch(\PDO::FETCH_ASSOC);
+		$option = $sth->fetch(PDO::FETCH_ASSOC);
 		return isset($option['value']) ? $option['value'] : false;
 	}
 
@@ -332,18 +330,12 @@ class Xmpp implements \BMO {
 		$sql = 'SELECT keyword, value FROM xmpp_options';
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
-		$ret = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		$ret = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 		//ensure defaults are set
 		$defaults = array(
-			//'dbhost'	=> '',
-			//'dbname'	=> 'localhost',
-			//'dbpass'	=> '',
-			//'dbuser'	=> '',
 			'domain'	=> '',
-			//'port'		=> '5222',
 			'dirty'		=> 'false'
-
 		);
 		foreach ($ret as $my => $r) {
 			$res[$r['keyword']] = $r['value'];
@@ -437,7 +429,7 @@ class Xmpp implements \BMO {
 		$sql = 'SELECT * FROM xmpp_users';
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
-		$users = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		$users = $sth->fetchAll(PDO::FETCH_ASSOC);
 		if (empty($users)) {
 			return false;
 		}
@@ -461,7 +453,7 @@ class Xmpp implements \BMO {
 		$sql = 'SELECT u.*, o.value as domain FROM xmpp_users u, xmpp_options o WHERE o.keyword = "domain" AND u.user = :id';
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(":id" => $id));
-		return $sth->fetch(\PDO::FETCH_ASSOC);
+		return $sth->fetch(PDO::FETCH_ASSOC);
 	}
 
 	public function usermanAddContactInfo($user) {
@@ -716,16 +708,16 @@ class Xmpp implements \BMO {
 	}
 
 	public function getHomeDir() {
-		$webuser = \FreePBX::Freepbx_conf()->get('AMPASTERISKWEBUSER');
+		$webuser = $this->freepbx->Config->get('AMPASTERISKWEBUSER');
 		$web = posix_getpwnam($webuser);
 		$home = trim($web['dir']);
 		if (!is_dir($home)) {
 			// Well, that's handy. It doesn't exist. Let's use ASTSPOOLDIR instead, because
 			// that should exist and be writable.
-			$home = \FreePBX::Freepbx_conf()->get('ASTSPOOLDIR');
+			$home = $this->freepbx->Config->get('ASTSPOOLDIR');
 			if (!is_dir($home)) {
 				// OK, I give up.
-				throw new \Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
+				throw new Exception(sprintf(_("Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. Aborting"),$home));
 			}
 		}
 		return $home;
