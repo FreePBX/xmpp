@@ -10,16 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-02 13:29-0500\n"
-"PO-Revision-Date: 2018-02-05 09:00+0200\n"
-"Last-Translator: tranlsated <noemi@translated.net>\n"
-"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/xmpp/"
-"de_DE/>\n"
+"PO-Revision-Date: 2018-07-18 19:13+0000\n"
+"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
+"Language-Team: German <http://*/projects/freepbx/xmpp/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 2.19.1\n"
 
 #: ucp/assets/js/global.js:371
 #, perl-format
@@ -34,7 +33,7 @@ msgstr "%s hat Ihnen soeben in %s %s geschrieben, aber Sie sind offline"
 #: Xmpp.class.php:273
 #, php-format
 msgid "Add user to letschat failed: %s"
-msgstr ""
+msgstr "Das Hinzufügen des Benutzers zu „letschat“ schlug fehl: %s"
 
 #: install.php:74
 #, php-format
@@ -89,7 +88,7 @@ msgstr "Löschen"
 #: Xmpp.class.php:364
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
-msgstr ""
+msgstr "Das Entfernen des Benutzers von „letschat“ ist fehlgeschlage: %s"
 
 #: install.php:60
 msgid "Detected Blank username, removing"
@@ -97,9 +96,10 @@ msgstr "Leerer Benutzername erkannt, wird gelöscht"
 
 #: views/xmpp.php:21
 msgid "Domain"
-msgstr "Domain"
+msgstr "Domäne"
 
 #: views/xmpp.php:33
+#, fuzzy
 msgid "Domain XMPP will serve"
 msgstr "Domain XMPP dient dazu"
 
@@ -350,7 +350,7 @@ msgstr "Unbekannt"
 #: Xmpp.class.php:310 Xmpp.class.php:335
 #, php-format
 msgid "Update of user on letschat failed: %s"
-msgstr ""
+msgstr "Das Aktualisieren des Benutzers bei „letschat“ ist fehlgeschlagen: %s"
 
 #: ucp/views/settings.php:12
 msgid ""
