@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 13:29-0500\n"
+"POT-Creation-Date: 2018-05-08 17:57-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ucp/assets/js/global.js:371
+#: ucp/assets/js/global.js:367
 #, perl-format
 msgid "%s is typing..."
 msgstr ""
 
-#: bin/chatmailer.php:75
+#: bin/chatmailer.php:76
 #, php-format
 msgid "%s just wrote you in %s %s but you're offline"
 msgstr ""
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Cannot create xmpp tables"
 msgstr ""
 
-#: bin/chatmailer.php:44
+#: bin/chatmailer.php:45
 #, php-format
 msgid "Change your notification preferences %s"
 msgstr ""
@@ -62,6 +62,15 @@ msgstr ""
 #: install.php:67
 #, php-format
 msgid "Changing user %s to %s"
+msgstr ""
+
+#: Xmpp.class.php:176
+#: Xmpp.class.php:186
+#: Xmpp.class.php:197
+#: ucp/Xmpp.class.php:28
+#: ucp/Xmpp.class.php:32
+#: ucp/Xmpp.class.php:44
+msgid "Chat"
 msgstr ""
 
 #: Xmpp.class.php:734
@@ -76,6 +85,14 @@ msgstr ""
 
 #: Xmpp.class.php:715
 msgid "Chat Server is not running"
+msgstr ""
+
+#: ucp/Xmpp.class.php:33
+msgid "Chat service"
+msgstr ""
+
+#: ucp/views/widget.php:5
+msgid "Connected"
 msgstr ""
 
 #: page.xmpp.php:20
@@ -118,6 +135,10 @@ msgstr ""
 msgid "Enabled"
 msgstr ""
 
+#: ucp/Xmpp.class.php:149
+msgid "Error updating xmpp notifications"
+msgstr ""
+
 #: Xmpp.class.php:680
 #, php-format
 msgid "Failed to run: '%s'"
@@ -131,7 +152,7 @@ msgstr ""
 msgid "Finished updating libraries!"
 msgstr ""
 
-#: bin/chatmailer.php:41
+#: bin/chatmailer.php:42
 msgid "If you think this e-mail was an error, please contact us at"
 msgstr ""
 
@@ -151,7 +172,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:259
+#: ucp/assets/js/global.js:244
 msgid "Login"
 msgstr ""
 
@@ -159,10 +180,6 @@ msgstr ""
 msgid ""
 "Manage and configure a XMPP Server Prosody and requires the Prosody RPM from "
 "your PBX be installed."
-msgstr ""
-
-#: ucp/assets/js/global.js:170
-msgid "Me"
 msgstr ""
 
 #: install.php:43
@@ -189,17 +206,13 @@ msgstr ""
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:129
+#: ucp/assets/js/global.js:104
 msgid "Need a valid recipient"
 msgstr ""
 
-#: ucp/assets/js/global.js:355
+#: ucp/assets/js/global.js:351
 #, perl-format
 msgid "New Message from %s"
-msgstr ""
-
-#: ucp/Xmpp.class.php:32
-msgid "New XMPP"
 msgstr ""
 
 #: views/userman_hook.php:24
@@ -220,11 +233,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:257
+#: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr ""
 
-#: ucp/assets/js/global.js:255
+#: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
@@ -234,7 +247,7 @@ msgid ""
 "before continuing"
 msgstr ""
 
-#: ucp/assets/js/global.js:132
+#: ucp/assets/js/global.js:107
 msgid "Recursively sending to yourself is not allowed!"
 msgstr ""
 
@@ -256,14 +269,6 @@ msgstr ""
 msgid "Running (Uptime: %s)"
 msgstr ""
 
-#: ucp/assets/js/global.js:45
-msgid "Send Message"
-msgstr ""
-
-#: ucp/assets/js/global.js:112
-msgid "Start XMPP"
-msgstr ""
-
 #: Xmpp.class.php:675
 #, php-format
 msgid "Started Chat Server. PID is %s"
@@ -282,6 +287,10 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
+#: ucp/views/widget.php:5
+msgid "Status"
+msgstr ""
+
 #: Xmpp.class.php:730
 msgid "Stopped Chat Server"
 msgstr ""
@@ -298,23 +307,19 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: ucp/assets/js/global.js:43
-msgid "There is currently no connection to a valid server"
-msgstr ""
-
-#: bin/chatmailer.php:40
+#: bin/chatmailer.php:41
 msgid "This message was intended for"
 msgstr ""
 
 #: views/userman_hook.php:9
 #, php-format
 msgid ""
-"This section will add this user to XMPP. The user can then login to the XMPP "
-"server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
-"users password after clicking Yes"
+"This section will add this user to the Chat service. The Chat service is a "
+"local XMPP server that runs on your machine. The user can then login to the "
+"XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
 
-#: bin/chatmailer.php:43
+#: bin/chatmailer.php:44
 msgid "Too many emails?"
 msgstr ""
 
@@ -350,7 +355,11 @@ msgstr ""
 msgid "User %s already exists, updating instead"
 msgstr ""
 
-#: ucp/assets/js/global.js:255
+#: ucp/views/widget.php:8
+msgid "User List"
+msgstr ""
+
+#: ucp/assets/js/global.js:240
 msgid "Username"
 msgstr ""
 
@@ -360,14 +369,14 @@ msgid "Username Conflict %s changing to %s deleting %s"
 msgstr ""
 
 #: views/userman_hook.php:4
-msgid "What is XMPP"
+msgid "What is Chat"
 msgstr ""
 
 #: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr ""
 
-#: ucp/assets/js/global.js:255
+#: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
 msgstr ""
 
@@ -375,7 +384,7 @@ msgstr ""
 msgid "XMPP/Jabber Settings"
 msgstr ""
 
-#: ucp/Xmpp.class.php:55
+#: ucp/Xmpp.class.php:82
 msgid "Xmpp"
 msgstr ""
 
@@ -387,18 +396,18 @@ msgstr ""
 msgid "Xmpp is not running"
 msgstr ""
 
+#: ucp/Xmpp.class.php:147
+msgid "Xmpp mail notifications has been updated!"
+msgstr ""
+
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr ""
 
-#: ucp/assets/js/global.js:90
-msgid "Your settings have been saved"
-msgstr ""
-
-#: bin/chatmailer.php:44
+#: bin/chatmailer.php:45
 msgid "here"
 msgstr ""
 
-#: bin/chatmailer.php:39
+#: bin/chatmailer.php:40
 msgid "wrote you"
 msgstr ""

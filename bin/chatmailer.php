@@ -24,9 +24,10 @@ if(function_exists('sysadmin_get_storage_email')){
 
 
 $mail_data['ucp_url'] = '';
+$hostname = (!empty(\FreePBX::Userman()->getGlobalsetting('hostname'))) ? \FreePBX::Userman()->getGlobalsetting('hostname') : gethostname();
 
 if(\FreePBX::Modules()->moduleHasMethod("Ucp","getUcpLink")) {
-		$mail_data['ucp_url'] = \FreePBX::Ucp()->getUcpLink();
+	$mail_data['ucp_url'] = \FreePBX::Ucp()->getUcpLink($hostname);
 }
 
 $sender = \FreePBX::Userman()->getUserByUsername($params['sender']);

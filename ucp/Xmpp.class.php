@@ -18,33 +18,60 @@ class Xmpp extends Modules{
 		$this->enabled = ($this->xmpp->getUserByID($this->user['id'])) ? true : false;
 	}
 
-	public function getNavItems() {
-		$out = array();
-		if(!$this->enabled) {
-			return $out;
+	public function getSimpleWidgetList() {
+		if (!$this->enabled) {
+			return array();
 		}
-		$out[] = array(
+
+		return array(
 			"rawname" => "xmpp",
-			"badge" => false,
-			"icon" => "sf sf-xmpp-logo",
-			"hide" => true,
-			"menu" => array(
-				"html" => '<li><a class="new">'._("New XMPP").'</a></li><li class="breaker"><hr></li>'
+			"display" => _("Chat"),
+			"icon" => "fa fa-comments-o",
+			"list" => array(
+				array(
+					"display" => _("Chat"),
+					"description" => _("Chat service")
+				)
 			)
 		);
-		return $out;
+	}
+
+	public function getSimpleWidgetDisplay($id) {
+		if (!$this->enabled) {
+			return array();
+		}
+		return array(
+			'title' => _("Chat"),
+			'html' => $this->load_view(__DIR__."/views/widget.php",array())
+		);
 	}
 
 	function getStaticSettings() {
 		return array('enabled' => $this->enabled);
 	}
+	
+	function poll($data) {
+		$vars['xmpp-mails-enable'] = $this->UCP->FreePBX->Userman->getCombinedModuleSettingByID($this->user['id'], $this->module, 'mail');
 
-	function getDisplay() {
+		return array("data" => $vars);
+	}
+
+	function getUserSettingsDisplay() {
+		
 		if($this->enabled){
 			$vars = array();
 			$vars['enabled'] = $this->UCP->FreePBX->Userman->getCombinedModuleSettingByID($this->user['id'], $this->module, 'mail');
-			return $this->load_view(__DIR__.'/views/settings.php', $vars);
+			$html = $this->load_view(__DIR__.'/views/settings.php', array('enabled' => $vars['enabled']));
+
+			return array(
+				array(
+					"rawname" => "xmpp",
+					"name" => "Xmpp",
+					"html" => $html
+				)
+			);
 		}
+		return false;
 	}
 	//Left Menu
 	public function getMenuItems() {
@@ -113,12 +140,17 @@ class Xmpp extends Modules{
 			}
 			break;
 			case 'mail':
-				$this->UCP->FreePBX->Userman->setModuleSettingByID($this->user['id'],$this->module,'mail',$_POST['xmpp-mails-enable']);
-				$return[] = array(
-					"module" => $this->module,
-					"value" => $_POST['xmpp-mails-enable']
-				);
-				echo $return;
+				$message = '';
+				$return['status'] = true;
+
+				if ($this->UCP->FreePBX->Userman->setModuleSettingByID($this->user['id'], $this->module,'mail', $_POST['xmpp-mails-enable'])) {
+					$message = _('Xmpp mail notifications has been updated!');
+				} else {
+					$message = _('Error updating xmpp notifications');
+					$alert = 'fail';
+				}
+				$return['alert'] = $alert;
+				$return['message'] = $message; 
 			break;
 		}
 		return $return;

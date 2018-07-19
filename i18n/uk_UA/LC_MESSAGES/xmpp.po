@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 13:29-0500\n"
+"POT-Creation-Date: 2018-03-02 13:33-0500\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -22,12 +22,12 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: ucp/assets/js/global.js:371
+#: ucp/assets/js/global.js:367
 #, perl-format
 msgid "%s is typing..."
 msgstr "%s друкує..."
 
-#: bin/chatmailer.php:75
+#: bin/chatmailer.php:76
 #, php-format
 msgid "%s just wrote you in %s %s but you're offline"
 msgstr ""
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Cannot create xmpp tables"
 msgstr "Неможливо створити таблиці XMPP"
 
-#: bin/chatmailer.php:44
+#: bin/chatmailer.php:45
 #, php-format
 msgid "Change your notification preferences %s"
 msgstr ""
@@ -66,6 +66,11 @@ msgstr ""
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "Зміна користувача %s на %s"
+
+#: Xmpp.class.php:176 Xmpp.class.php:186 Xmpp.class.php:197
+#: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
+msgid "Chat"
+msgstr ""
 
 #: Xmpp.class.php:734
 #, php-format
@@ -79,6 +84,14 @@ msgstr ""
 
 #: Xmpp.class.php:715
 msgid "Chat Server is not running"
+msgstr ""
+
+#: ucp/Xmpp.class.php:33
+msgid "Chat service"
+msgstr ""
+
+#: ucp/views/widget.php:5
+msgid "Connected"
 msgstr ""
 
 #: page.xmpp.php:20
@@ -118,6 +131,10 @@ msgstr ""
 msgid "Enabled"
 msgstr "Ввімкнути"
 
+#: ucp/Xmpp.class.php:149
+msgid "Error updating xmpp notifications"
+msgstr ""
+
 #: Xmpp.class.php:680
 #, php-format
 msgid "Failed to run: '%s'"
@@ -131,7 +148,7 @@ msgstr ""
 msgid "Finished updating libraries!"
 msgstr ""
 
-#: bin/chatmailer.php:41
+#: bin/chatmailer.php:42
 msgid "If you think this e-mail was an error, please contact us at"
 msgstr ""
 
@@ -151,7 +168,7 @@ msgstr ""
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
-#: ucp/assets/js/global.js:259
+#: ucp/assets/js/global.js:244
 msgid "Login"
 msgstr "Ввійти"
 
@@ -162,10 +179,6 @@ msgid ""
 msgstr ""
 "Керування та налаштування XMPP серверу Просоді і потребує щоб RPM Просоді "
 "було встановлено з вашої PBX."
-
-#: ucp/assets/js/global.js:170
-msgid "Me"
-msgstr "Я"
 
 #: install.php:43
 msgid "Migrating Token Users to User Manager"
@@ -189,18 +202,14 @@ msgstr ""
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:129
+#: ucp/assets/js/global.js:104
 msgid "Need a valid recipient"
 msgstr "Потрібен дійсний одержувач"
 
-#: ucp/assets/js/global.js:355
+#: ucp/assets/js/global.js:351
 #, perl-format
 msgid "New Message from %s"
 msgstr "Нове повідомлення від %s"
-
-#: ucp/Xmpp.class.php:32
-msgid "New XMPP"
-msgstr "Новий XMPP"
 
 #: views/userman_hook.php:24
 msgid "No"
@@ -219,11 +228,11 @@ msgstr ""
 msgid "Node version is: %s requirement is %s"
 msgstr ""
 
-#: ucp/assets/js/global.js:257
+#: ucp/assets/js/global.js:242
 msgid "Password"
 msgstr "Пароль"
 
-#: ucp/assets/js/global.js:255
+#: ucp/assets/js/global.js:240
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 "Будь ласка, введіть ім'я користувача та пароль для входу на сервер XMPP"
@@ -234,7 +243,7 @@ msgid ""
 "before continuing"
 msgstr ""
 
-#: ucp/assets/js/global.js:132
+#: ucp/assets/js/global.js:107
 msgid "Recursively sending to yourself is not allowed!"
 msgstr "Рекурсивне надсилання до себе не припускається!"
 
@@ -256,14 +265,6 @@ msgstr ""
 msgid "Running (Uptime: %s)"
 msgstr ""
 
-#: ucp/assets/js/global.js:45
-msgid "Send Message"
-msgstr "Надіслати повідомлення"
-
-#: ucp/assets/js/global.js:112
-msgid "Start XMPP"
-msgstr "Запуск XMPP"
-
 #: Xmpp.class.php:675
 #, php-format
 msgid "Started Chat Server. PID is %s"
@@ -282,6 +283,10 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
+#: ucp/views/widget.php:5
+msgid "Status"
+msgstr ""
+
 #: Xmpp.class.php:730
 msgid "Stopped Chat Server"
 msgstr ""
@@ -298,27 +303,19 @@ msgstr ""
 msgid "Submit"
 msgstr "Застосувати"
 
-#: ucp/assets/js/global.js:43
-msgid "There is currently no connection to a valid server"
-msgstr "Наразі немає підключення до дійсного сервера"
-
-#: bin/chatmailer.php:40
+#: bin/chatmailer.php:41
 msgid "This message was intended for"
 msgstr ""
 
 #: views/userman_hook.php:9
 #, php-format
 msgid ""
-"This section will add this user to XMPP. The user can then login to the XMPP "
-"server at \"%s\" using \"&lt;username&gt;@%s\" You will need to redefine the "
-"users password after clicking Yes"
+"This section will add this user to the Chat service. The Chat service is a "
+"local XMPP server that runs on your machine. The user can then login to the "
+"XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
-"У цьому розділі можна додати цього користувача в XMPP. Після цього "
-"користувач може зайти на сервер XMPP \"%s\" використовуючи  \"&lt;"
-"username&gt;@%s\" Вам буде необхідно перевизначити паролі користувачів після "
-"натискання Так"
 
-#: bin/chatmailer.php:43
+#: bin/chatmailer.php:44
 msgid "Too many emails?"
 msgstr ""
 
@@ -353,7 +350,11 @@ msgstr ""
 msgid "User %s already exists, updating instead"
 msgstr "Користувач %s вже існує, оновлення замість"
 
-#: ucp/assets/js/global.js:255
+#: ucp/views/widget.php:8
+msgid "User List"
+msgstr ""
+
+#: ucp/assets/js/global.js:240
 msgid "Username"
 msgstr "Ім'я користувача"
 
@@ -363,15 +364,15 @@ msgid "Username Conflict %s changing to %s deleting %s"
 msgstr ""
 
 #: views/userman_hook.php:4
-msgid "What is XMPP"
-msgstr "Що таке XMPP"
+msgid "What is Chat"
+msgstr ""
 
 #: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 #, fuzzy
 msgid "XMPP"
 msgstr "XMPP"
 
-#: ucp/assets/js/global.js:255
+#: ucp/assets/js/global.js:240
 msgid "XMPP Credentials"
 msgstr "Посвідчення XMPP"
 
@@ -379,7 +380,7 @@ msgstr "Посвідчення XMPP"
 msgid "XMPP/Jabber Settings"
 msgstr "Налаштування XMPP/Jabber"
 
-#: ucp/Xmpp.class.php:55
+#: ucp/Xmpp.class.php:82
 msgid "Xmpp"
 msgstr ""
 
@@ -391,21 +392,49 @@ msgstr ""
 msgid "Xmpp is not running"
 msgstr ""
 
+#: ucp/Xmpp.class.php:147
+msgid "Xmpp mail notifications has been updated!"
+msgstr ""
+
 #: views/userman_hook.php:23
 msgid "Yes"
 msgstr "Так"
 
-#: ucp/assets/js/global.js:90
-msgid "Your settings have been saved"
-msgstr ""
-
-#: bin/chatmailer.php:44
+#: bin/chatmailer.php:45
 msgid "here"
 msgstr ""
 
-#: bin/chatmailer.php:39
+#: bin/chatmailer.php:40
 msgid "wrote you"
 msgstr ""
+
+#~ msgid "Start XMPP"
+#~ msgstr "Запуск XMPP"
+
+#~ msgid "Me"
+#~ msgstr "Я"
+
+#~ msgid "New XMPP"
+#~ msgstr "Новий XMPP"
+
+#~ msgid "Send Message"
+#~ msgstr "Надіслати повідомлення"
+
+#~ msgid "There is currently no connection to a valid server"
+#~ msgstr "Наразі немає підключення до дійсного сервера"
+
+#~ msgid ""
+#~ "This section will add this user to XMPP. The user can then login to the "
+#~ "XMPP server at \"%s\" using \"&lt;username&gt;@%s\" You will need to "
+#~ "redefine the users password after clicking Yes"
+#~ msgstr ""
+#~ "У цьому розділі можна додати цього користувача в XMPP. Після цього "
+#~ "користувач може зайти на сервер XMPP \"%s\" використовуючи  \"&lt;"
+#~ "username&gt;@%s\" Вам буде необхідно перевизначити паролі користувачів "
+#~ "після натискання Так"
+
+#~ msgid "What is XMPP"
+#~ msgstr "Що таке XMPP"
 
 #~ msgid "Running XMPP Hooks"
 #~ msgstr "Запуск гачка XMPP"

@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>13.0.17.13</version>
+	<version>14.0.1.15</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,94 +17,26 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
-		*13.0.17.13* FREEPBX-16988
-		*13.0.17.12* Version bump
-		*13.0.17.11* Bump
-		*13.0.17.10* Return uuid when listing room and room messages
-		*13.0.17.9* Fix bug running script
-		*13.0.17.8* Update to let's chat libraries
-		*13.0.17.7* Update to let's chat libraries
-		*13.0.17.6* Update to let's chat libraries
-		*13.0.17.5* Update let's chat libraries
-		*13.0.17.4* Check to make sure MongoDB has started after we tried
-		*13.0.17.3* This is needed otherwise authentication is broken
-		*13.0.17.2* Userman dep only works if fully defined
-		*13.0.17.1* Update to require pm2
-		*13.0.17* Add email script for offline notifications
-		*13.0.16.9* Require newest pm2 for proxy support
-		*13.0.16.8* Dont write into npmrc file
-		*13.0.16.7* FREEPBX-14620 invalid directory permissions
-		*13.0.16.6* Fix starting mongoDB
-		*13.0.16.5* Fixed Writing to the home directory as root
-		*13.0.16.4* Logrotate fixes
-		*13.0.16* Utilize new pm2 module
-		*13.0.15.3* No -y option on rpm
-		*13.0.15.2* Remove Prosody another way
-		*13.0.15.1* FREEPBX-14384
-		*13.0.15* Replace Prosody with Lets Chat
-		*13.0.14* Call Userman the BMO way
-		*13.0.13* FREEPBX-12517 dont allow sending messages to self
-		*13.0.12* Open Source Module: https://www.freepbx.org/sangomas-commitment-to-open-source/
-		*13.0.11* Support better chat interfaces
-		*13.0.10* FREEPBX-12419 remove debug
-		*13.0.9* No need to prompt to reenter password
-		*13.0.8* Fix issue with users not getting saved
-		*13.0.7* Password prompt instead of text
-		*13.0.6* FREEPBX-10758
-		*13.0.5* Invalid foreach
-		*13.0.4* Remove en_US Translations
-		*13.0.3* Fix permission management in User Manager
-		*13.0.2.3* FREEPBX-9818 daemon wont start
-		*13.0.1alpha3* FREEPBX-9799 invalid reference
-		*13.0.1alpha2* Fix issue with new strict error handler in 13
-		*13.0.1alpha1* Usermanager Groups
-		*12.0.23* FREEPBX-8829 Support username changes
-		*12.0.22* Executable flag set on bin
-		*12.0.21* FREEPBX-8571 fix wsod in User Manager
-		*12.0.20* Catch writing to the prosody database incase there are errors
-		*12.0.19* Write out conf file if not licensed.
-		*12.0.18* Report the real status of Prosody
-		*12.0.17* Syntax
-		*12.0.15* Xmpp reset password support through User manager and UCP
-		*12.0.14* Better contact manager support
-		*12.0.13* Add contact manager action
-		*12.0.12* Dont double hide
-		*12.0.11* Hide if not connected
-		*12.0.10* Support for contact manager
-		*12.0.9* Fix double, tripple, quadrupal messages in UCP
-		*12.0.8* Dont show xmpp if its disabled
-		*12.0.7* Use contact manager if present
-		*12.0.6* Typing and presencestate in UCP
-		*12.0.5* XMPP chat inside of UCP
-		*12.0.4* FREEPBX-7976 Only show if services are running in dashboard if licensed
-		*12.0.3* Xmpp Support in UCP
-		*12.0.2* Permissions fixes
-		*12.0.1* Move dashboard hooks into xmpp
-		*2.11.1.15* Add one-to-many mappings for extensions on userman users.
-		*2.11.1.14* Require rebuild of configs on module upgrade
-		*2.11.1.13* Fix for upcoming userman module update
-		*2.11.1.12* Handle AMI reconnect, fixing a resource consumption issue.
-		*2.11.1.11* Fix rare usermanager preload error bug
-		*2.11.1.8* Sales cleanup
-		*2.11.1.7* Hide xmpp setting on user creation
-		*2.11.1.6* Set dirty to true when deleting users
-		*2.11.1.5* Change Username Fix
-		*2.11.1.4* Instead of using internal functions just remove the user through SQL
-		*2.11.1.3* UM Tweak
-		*2.11.1.2* UM Tweak
-		*2.11.1.1* UM Tweak
-		*2.11.1.0* Now using User Manager
-		*2.11.0.7* Add presence component, for managing presence state.
-		*2.11.0.4* Add Assets Back
-		*2.11.0.3* Fix issue with not updating MySQL password.
-		*2.11.0.2* Packaging of ver 2.11.0.2
-		*2.11.0.1* Fix issue with sales page not showing
-		*2.11.0.0* Bump for 2.11
-		*2.10.5.11* Add sales information
-		*2.10.5.10* Generate password if non given on migration
+		*14.0.1.15* Update logrotate
+		*14.0.1.14* FREEPBX-16988
+		*14.0.1.13* Version bump
+		*14.0.1.12* Add commands for being called by userman hooks 
+		*14.0.1.11* Update user info whenever login
+		*14.0.1.10* Return uuid when listing room and room messages
+		*14.0.1.9* Improve url on the mail template footer 
+		*14.0.1.8* Update to let's chat libraries
+		*14.0.1.7* Update to let's chat libraries
+		*14.0.1.6* Merge from 13
+		*14.0.1.5* FREEPBX-14223
+		*14.0.1.4* Bump version of letschat
+		*14.0.1.3* Fix userman deps
+		*14.0.1.2* PM2 updates
+		*14.0.1.1* Require PM2
+		*14.0.1* Utilize pm2
+		*14.0.1beta1* Use entirely new engine
 	</changelog>
 	<supported>
-		<version>13.0</version>
+		<version>14.0</version>
 	</supported>
 	<hooks>
 		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
