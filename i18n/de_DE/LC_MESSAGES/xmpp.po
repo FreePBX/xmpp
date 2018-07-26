@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-02 13:29-0500\n"
-"PO-Revision-Date: 2018-07-18 19:13+0000\n"
+"PO-Revision-Date: 2018-07-27 07:37+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/xmpp/de/>\n"
 "Language: de_DE\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19.1\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: ucp/assets/js/global.js:371
 #, perl-format
@@ -99,9 +99,8 @@ msgid "Domain"
 msgstr "Domäne"
 
 #: views/xmpp.php:33
-#, fuzzy
 msgid "Domain XMPP will serve"
-msgstr "Domain XMPP dient dazu"
+msgstr "Domain, die XMPP bedient"
 
 #: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:151
 msgid "Done"
@@ -396,7 +395,7 @@ msgstr "Xmpp"
 
 #: Xmpp.class.php:539
 msgid "Xmpp Daemon"
-msgstr "Xmpp Daemon"
+msgstr "XMPP-Daemon"
 
 #: Xmpp.class.php:550
 msgid "Xmpp is not running"
