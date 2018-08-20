@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>15.0.1</version>
+	<version>15.0.2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>https://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,6 +17,7 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
+		*15.0.2* Packaging of ver 15.0.2
 		*15.0.1.6* branch from 15, add backup
 	</changelog>
 	<supported>
@@ -24,27 +25,27 @@
 	</supported>
 	<database>
 		<table name="prosody">
-			<field name="host" type="text" notnull="false" />
-			<field name="user" type="text" notnull="false" />
-			<field name="store" type="text" notnull="false" />
-			<field name="key" type="text" notnull="false" />
-			<field name="type" type="text" notnull="false" />
-			<field name="value" type="text" notnull="false" />
+			<field name="host" type="text" notnull="false"/>
+			<field name="user" type="text" notnull="false"/>
+			<field name="store" type="text" notnull="false"/>
+			<field name="key" type="text" notnull="false"/>
+			<field name="type" type="text" notnull="false"/>
+			<field name="value" type="text" notnull="false"/>
 			<key name="prosody_index" type="index">
-				<column name="host" />
-				<column name="user" />
-				<column name="store" />
-				<column name="key" />
+				<column name="host"/>
+				<column name="user"/>
+				<column name="store"/>
+				<column name="key"/>
 			</key>
 		</table>
 		<table name="xmpp_users">
-			<field name="user" type="string" length="50" default="" primarykey="true" />
-			<field name="username" type="string" length="50" notnull="false" />
-			<field name="password" type="string" length="50" notnull="false" />
+			<field name="user" type="string" length="50" default="" primarykey="true"/>
+			<field name="username" type="string" length="50" notnull="false"/>
+			<field name="password" type="string" length="50" notnull="false"/>
 		</table>
 		<table name="xmpp_options">
-			<field name="keyword" type="string" length="75" default="" primarykey="true" />
-			<field name="value" type="text" notnull="false" />
+			<field name="keyword" type="string" length="75" default="" primarykey="true"/>
+			<field name="value" type="text" notnull="false"/>
 		</table>
 
 	</database>

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 13:33-0500\n"
+"POT-Creation-Date: 2018-08-20 14:02-0400\n"
 "PO-Revision-Date: 2015-07-13 12:24+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/fpbxc/xmpp/"
@@ -31,12 +31,12 @@ msgstr "%s が入力中…"
 msgid "%s just wrote you in %s %s but you're offline"
 msgstr ""
 
-#: Xmpp.class.php:273
+#: Xmpp.class.php:271
 #, php-format
 msgid "Add user to letschat failed: %s"
 msgstr ""
 
-#: install.php:74
+#: install.php:50
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr "%s をユーザー管理に追加中"
@@ -45,14 +45,14 @@ msgstr "%s をユーザー管理に追加中"
 msgid "Admin"
 msgstr ""
 
-#: Xmpp.class.php:115 Xmpp.class.php:807
+#: Xmpp.class.php:119 Xmpp.class.php:799
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
 "Aborting"
 msgstr ""
 
-#: install.php:38
+#: install.php:14
 msgid "Cannot create xmpp tables"
 msgstr "xmppテーブルを作成できませんでした"
 
@@ -61,27 +61,27 @@ msgstr "xmppテーブルを作成できませんでした"
 msgid "Change your notification preferences %s"
 msgstr ""
 
-#: install.php:67
+#: install.php:43
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "ユーザー %s から %s に変更中"
 
-#: Xmpp.class.php:176 Xmpp.class.php:186 Xmpp.class.php:197
+#: Xmpp.class.php:174 Xmpp.class.php:184 Xmpp.class.php:195
 #: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
 msgid "Chat"
 msgstr ""
 
-#: Xmpp.class.php:734
+#: Xmpp.class.php:726
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:640
+#: Xmpp.class.php:632
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:715
+#: Xmpp.class.php:707
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -97,12 +97,12 @@ msgstr ""
 msgid "Delete"
 msgstr "削除"
 
-#: Xmpp.class.php:364
+#: Xmpp.class.php:362
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
 msgstr ""
 
-#: install.php:60
+#: install.php:36
 msgid "Detected Blank username, removing"
 msgstr "空のユーザー名を検出しましたので削除します"
 
@@ -114,7 +114,7 @@ msgstr "ドメイン"
 msgid "Domain XMPP will serve"
 msgstr "XMPP機能が提供されるドメイン"
 
-#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:151
+#: Xmpp.class.php:44 Xmpp.class.php:71 Xmpp.class.php:92 Xmpp.class.php:155
 msgid "Done"
 msgstr ""
 
@@ -134,16 +134,16 @@ msgstr "有効"
 msgid "Error updating xmpp notifications"
 msgstr ""
 
-#: Xmpp.class.php:680
+#: Xmpp.class.php:672
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
 
-#: Xmpp.class.php:142
+#: Xmpp.class.php:146
 msgid "Failed!"
 msgstr ""
 
-#: Xmpp.class.php:128
+#: Xmpp.class.php:132
 msgid "Finished updating libraries!"
 msgstr ""
 
@@ -155,15 +155,15 @@ msgstr ""
 msgid "Inherit"
 msgstr ""
 
-#: Xmpp.class.php:57
+#: Xmpp.class.php:61
 msgid "Installing/Updating MongoDB..."
 msgstr ""
 
-#: Xmpp.class.php:79
+#: Xmpp.class.php:83
 msgid "Installing/Updating NodeJS..."
 msgstr ""
 
-#: Xmpp.class.php:119
+#: Xmpp.class.php:123
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
 
@@ -177,24 +177,24 @@ msgid ""
 "your PBX be installed."
 msgstr ""
 
-#: install.php:43
+#: install.php:19
 msgid "Migrating Token Users to User Manager"
 msgstr "トークンのユーザーをユーザー管理に移行中"
 
-#: Xmpp.class.php:51 Xmpp.class.php:63
+#: Xmpp.class.php:55 Xmpp.class.php:67
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:611 Xmpp.class.php:617
+#: Xmpp.class.php:603 Xmpp.class.php:609
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr ""
 
-#: Xmpp.class.php:54
+#: Xmpp.class.php:58
 #, php-format
 msgid "MongoDB version is: %s requirement is %s"
 msgstr ""
 
-#: Xmpp.class.php:98
+#: Xmpp.class.php:102
 #, php-format
 msgid "NPM version is: %s requirement is %s"
 msgstr ""
@@ -212,15 +212,15 @@ msgstr "%s より新規メッセージ"
 msgid "No"
 msgstr "いいえ"
 
-#: Xmpp.class.php:94
+#: Xmpp.class.php:98
 msgid "Node Package Manager is not installed"
 msgstr ""
 
-#: Xmpp.class.php:73 Xmpp.class.php:85
+#: Xmpp.class.php:77 Xmpp.class.php:89
 msgid "Node is not installed"
 msgstr ""
 
-#: Xmpp.class.php:76
+#: Xmpp.class.php:80
 #, php-format
 msgid "Node version is: %s requirement is %s"
 msgstr ""
@@ -233,7 +233,7 @@ msgstr ""
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr ""
 
-#: Xmpp.class.php:35
+#: Xmpp.class.php:39
 msgid ""
 "Prosody is no longer used and conflicts with this package. Please remove it "
 "before continuing"
@@ -243,39 +243,39 @@ msgstr ""
 msgid "Recursively sending to yourself is not allowed!"
 msgstr ""
 
-#: Xmpp.class.php:38
+#: Xmpp.class.php:42
 msgid "Removing Prosody.."
 msgstr ""
 
-#: Xmpp.class.php:568
+#: Xmpp.class.php:560
 msgid "Reset"
 msgstr ""
 
-#: Xmpp.class.php:631
+#: Xmpp.class.php:623
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:548
+#: Xmpp.class.php:540
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
 
-#: Xmpp.class.php:675
+#: Xmpp.class.php:667
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
 
-#: Xmpp.class.php:144
+#: Xmpp.class.php:148
 #, php-format
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:646
+#: Xmpp.class.php:638
 msgid "Starting Chat Server..."
 msgstr ""
 
-#: Xmpp.class.php:138
+#: Xmpp.class.php:142
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
@@ -283,19 +283,19 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: Xmpp.class.php:730
+#: Xmpp.class.php:722
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:722
+#: Xmpp.class.php:714
 msgid "Stopping Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:149
+#: Xmpp.class.php:153
 msgid "Stopping old running processes..."
 msgstr ""
 
-#: Xmpp.class.php:573
+#: Xmpp.class.php:565
 msgid "Submit"
 msgstr ""
 
@@ -315,22 +315,22 @@ msgstr ""
 msgid "Too many emails?"
 msgstr ""
 
-#: install.php:86
+#: install.php:62
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr "%s をユーザー管理に追加できません"
 
-#: Xmpp.class.php:44
+#: Xmpp.class.php:48
 msgid ""
 "Unable to remove Prosody, it is no longer used and conflicts with this "
 "package. Please remove it before continuing"
 msgstr ""
 
-#: Xmpp.class.php:541
+#: Xmpp.class.php:533
 msgid "Unknown"
 msgstr "不明"
 
-#: Xmpp.class.php:310 Xmpp.class.php:335
+#: Xmpp.class.php:308 Xmpp.class.php:333
 #, php-format
 msgid "Update of user on letschat failed: %s"
 msgstr ""
@@ -341,7 +341,7 @@ msgid ""
 "chat."
 msgstr ""
 
-#: install.php:77
+#: install.php:53
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr "ユーザー %s は既に存在するため、更新します"
@@ -354,7 +354,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: install.php:69
+#: install.php:45
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "ユーザー名が衝突: %s を %s に変更して %s を削除します"
@@ -379,11 +379,11 @@ msgstr ""
 msgid "Xmpp"
 msgstr ""
 
-#: Xmpp.class.php:539
+#: Xmpp.class.php:531
 msgid "Xmpp Daemon"
 msgstr ""
 
-#: Xmpp.class.php:550
+#: Xmpp.class.php:542
 msgid "Xmpp is not running"
 msgstr ""
 
