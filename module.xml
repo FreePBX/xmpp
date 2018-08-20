@@ -22,6 +22,32 @@
 	<supported>
 		<version>15.0</version>
 	</supported>
+	<database>
+		<table name="prosody">
+			<field name="host" type="text" notnull="false" />
+			<field name="user" type="text" notnull="false" />
+			<field name="store" type="text" notnull="false" />
+			<field name="key" type="text" notnull="false" />
+			<field name="type" type="text" notnull="false" />
+			<field name="value" type="text" notnull="false" />
+			<key name="prosody_index" type="index">
+				<column name="host" />
+				<column name="user" />
+				<column name="store" />
+				<column name="key" />
+			</key>
+		</table>
+		<table name="xmpp_users">
+			<field name="user" type="string" length="50" default="" primarykey="true" />
+			<field name="username" type="string" length="50" notnull="false" />
+			<field name="password" type="string" length="50" notnull="false" />
+		</table>
+		<table name="xmpp_options">
+			<field name="keyword" type="string" length="75" default="" primarykey="true" />
+			<field name="value" type="text" notnull="false" />
+		</table>
+
+	</database>
 	<hooks>
 		<dashboard class="Overview" namespace="FreePBX\modules\Dashboard\Sections">
 			<method callingMethod="getSummary" class="Xmpp" namespace="FreePBX\Modules">dashboardService</method>

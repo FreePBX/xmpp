@@ -722,4 +722,14 @@ class Xmpp implements BMO {
 		}
 		return $home;
 	}
+
+	public function sdbse($pdo){
+		$this->db = $pdo;
+		return $this;
+	}
+	
+	public function resetDatabase(){
+		$this->db = $this->FreePBX->Database;
+		return $this;
+	}
 }

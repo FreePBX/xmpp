@@ -1,30 +1,6 @@
 <?php
 $first_install = db_e($db->getAll('SELECT * FROM xmpp_options'), '');
 
-//prosody creates this on startup but just to be safe we should as well
-$sql[] = "CREATE TABLE IF NOT EXISTS `prosody` (
-  `host` text,
-  `user` text,
-  `store` text,
-  `key` text,
-  `type` text,
-  `value` mediumtext,
-  KEY `prosody_index` (`host`(20),`user`(20),`store`(20),`key`(20))
-)";
-
-$sql[] = "CREATE TABLE IF NOT EXISTS `xmpp_users` (
-  `user` varchar(50) NOT NULL default '',
-  `username` varchar(50) default NULL,
-  `password` varchar(50) default NULL,
-  PRIMARY KEY  (`user`)
-)";
-
-$sql[] = "CREATE TABLE IF NOT EXISTS `xmpp_options` (
-  `keyword` varchar(75) NOT NULL default '',
-  `value` text,
-  PRIMARY KEY  (`keyword`)
-)";
-
 if ($first_install) {
 	$sql[] = 'INSERT INTO xmpp_options (keyword, value) VALUES
 			("dirty", "true"),
