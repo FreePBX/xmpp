@@ -24,9 +24,10 @@ if(function_exists('sysadmin_get_storage_email')){
 
 
 $mail_data['ucp_url'] = '';
+$hostname = (!empty(\FreePBX::Userman()->getGlobalsetting('hostname'))) ? \FreePBX::Userman()->getGlobalsetting('hostname') : gethostname();
 
 if(\FreePBX::Modules()->moduleHasMethod("Ucp","getUcpLink")) {
-		$mail_data['ucp_url'] = \FreePBX::Ucp()->getUcpLink();
+	$mail_data['ucp_url'] = \FreePBX::Ucp()->getUcpLink($hostname);
 }
 
 $sender = \FreePBX::Userman()->getUserByUsername($params['sender']);
@@ -36,13 +37,12 @@ $mail_data['date_now'] = date('F j h:i A');
 $mail_data['message'] = $params['message'];
 $mail_data['sender_name'] = $sender['displayname'];
 $mail_data['receiver_name'] = $receiver['displayname'];
-$mail_data['mentioned_you'] = _('mentioned you');
+$mail_data['mentioned_you'] = _('wrote you');
 $mail_data['message_intended_for'] = _('This message was intended for');
 $mail_data['if_it_was_error'] = _('If you think this e-mail was an error, please contact us at');
 $mail_data['admin_email'] = $admin_email;
 $mail_data['too_many_emails'] = _('Too many emails?');
 $mail_data['change_your_notification'] = sprintf(_('Change your notification preferences %s'), '<a href="'.$mail_data['ucp_url'].'" style="color:rgb(17, 114, 186); text-decoration:none;">'._('here').'</a>');
-
 if (empty($sender) || empty($receiver)) {
 	die();
 }
@@ -50,7 +50,6 @@ if (empty($sender) || empty($receiver)) {
 if (!\FreePBX::Userman()->getCombinedModuleSettingByID($receiver['id'], 'Xmpp', 'mail')) {
 	die();
 }
-
 
 $data = \FreePBX::Contactmanager()->getImageByID($sender['id'], $sender['email'], $sender['type']);
 
@@ -74,7 +73,7 @@ foreach ($matches[1] as $match) {
 $mailer = new \CI_Email();
 $mailer->from($sender['email']);
 $mailer->to($receiver['email']);
-$mailer->subject(sprintf(_("%s just mentioned you in the room %s but you're offline"), $mail_data['sender_name'], $mail_data['room']));
+$mailer->subject(sprintf(_("%s just wrote you in %s %s but you're offline"), $mail_data['sender_name'], $mail_data['room']['type'], $mail_data['room']['name']));
 $mailer->set_mailtype('html');
 $mailer->message($htmlMessage);
 $mailer->send();
