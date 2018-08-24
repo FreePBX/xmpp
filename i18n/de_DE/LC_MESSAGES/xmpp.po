@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-02 13:29-0500\n"
-"PO-Revision-Date: 2018-07-27 07:37+0000\n"
+"PO-Revision-Date: 2018-08-25 15:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/xmpp/de/>\n"
 "Language: de_DE\n"
@@ -42,7 +42,7 @@ msgstr "%s wird dem Benutzermanager hinzugefügt"
 
 #: xmpp.i18n.php:6
 msgid "Admin"
-msgstr "Admin"
+msgstr "Administrator"
 
 #: Xmpp.class.php:115 Xmpp.class.php:807
 #, php-format
@@ -303,7 +303,7 @@ msgstr "Alte laufende Prozesse werden gestoppt ..."
 
 #: Xmpp.class.php:573
 msgid "Submit"
-msgstr "Senden"
+msgstr "Absenden"
 
 #: ucp/assets/js/global.js:43
 msgid "There is currently no connection to a valid server"
