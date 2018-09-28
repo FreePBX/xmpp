@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>13.0.17.14</version>
+	<version>13.0.17.15</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,6 +17,7 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
+		*13.0.17.15* FREEPBX-18077 User/Grp perms for XMPP not working correctly in userman 
 		*13.0.17.14* FREEPBX-18076 XMPP login fails silently if userman email address is not unique 
 		*13.0.17.13* FREEPBX-16988
 		*13.0.17.12* Version bump
