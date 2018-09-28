@@ -9,13 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-08 17:57-0400\n"
+"POT-Creation-Date: 2018-09-28 15:05-0400\n"
 "PO-Revision-Date: 2018-09-04 11:23+0000\n"
 "Last-Translator: Petr Varvarovsky <petrv@atlantis.cz>\n"
 "Language-Team: Czech <http://*/projects/freepbx/xmpp/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
@@ -44,8 +44,7 @@ msgstr "Přidání %s do Správce uživatelů"
 msgid "Admin"
 msgstr "Admin"
 
-#: Xmpp.class.php:115
-#: Xmpp.class.php:807
+#: Xmpp.class.php:115 Xmpp.class.php:807
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -66,12 +65,8 @@ msgstr "Změnit předvolby pro oznámení %s"
 msgid "Changing user %s to %s"
 msgstr "Změna uživatele %s na %s"
 
-#: Xmpp.class.php:176
-#: Xmpp.class.php:186
-#: Xmpp.class.php:197
-#: ucp/Xmpp.class.php:28
-#: ucp/Xmpp.class.php:32
-#: ucp/Xmpp.class.php:44
+#: Xmpp.class.php:176 Xmpp.class.php:186 Xmpp.class.php:197
+#: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
 msgid "Chat"
 msgstr "Chat"
 
@@ -118,10 +113,7 @@ msgstr "Doména"
 msgid "Domain XMPP will serve"
 msgstr "Doména XMPP bude sloužit"
 
-#: Xmpp.class.php:40
-#: Xmpp.class.php:67
-#: Xmpp.class.php:88
-#: Xmpp.class.php:151
+#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:151
 msgid "Done"
 msgstr "Hotovo"
 
@@ -190,13 +182,11 @@ msgstr ""
 msgid "Migrating Token Users to User Manager"
 msgstr "Migrace uživatelů Token do Správce uživatelů"
 
-#: Xmpp.class.php:51
-#: Xmpp.class.php:63
+#: Xmpp.class.php:51 Xmpp.class.php:63
 msgid "MongoDB is not installed"
 msgstr "MongoDB není nainstalována"
 
-#: Xmpp.class.php:611
-#: Xmpp.class.php:617
+#: Xmpp.class.php:611 Xmpp.class.php:617
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr "MongoDB není spuštěna. Zapněte ji před spuštěním XMPP"
 
@@ -227,8 +217,7 @@ msgstr "Ne"
 msgid "Node Package Manager is not installed"
 msgstr "Správce nodů není nainstalován"
 
-#: Xmpp.class.php:73
-#: Xmpp.class.php:85
+#: Xmpp.class.php:73 Xmpp.class.php:85
 msgid "Node is not installed"
 msgstr "Nod není nainstalován"
 
@@ -349,8 +338,7 @@ msgstr ""
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: Xmpp.class.php:310
-#: Xmpp.class.php:335
+#: Xmpp.class.php:310 Xmpp.class.php:335
 #, php-format
 msgid "Update of user on letschat failed: %s"
 msgstr "Aktualizace uživatele na chatu se nezdařila: %s"
@@ -383,7 +371,7 @@ msgstr "Uživatelské jméno koliduje %s změna na %s smazání %s"
 msgid "What is Chat"
 msgstr "Co je chat"
 
-#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
