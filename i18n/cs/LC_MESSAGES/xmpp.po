@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-28 15:05-0400\n"
+"POT-Creation-Date: 2018-09-28 15:06-0400\n"
 "PO-Revision-Date: 2018-09-04 11:23+0000\n"
 "Last-Translator: Petr Varvarovsky <petrv@atlantis.cz>\n"
 "Language-Team: Czech <http://*/projects/freepbx/xmpp/cs/>\n"
@@ -30,12 +30,12 @@ msgstr "%s píše..."
 msgid "%s just wrote you in %s %s but you're offline"
 msgstr "%s vám napsal v %s %s, ale byl jste offline"
 
-#: Xmpp.class.php:273
+#: Xmpp.class.php:271
 #, php-format
 msgid "Add user to letschat failed: %s"
 msgstr "Přidání uživatele fo chatu selhalo: %s"
 
-#: install.php:74
+#: install.php:50
 #, php-format
 msgid "Adding %s to User Manager"
 msgstr "Přidání %s do Správce uživatelů"
@@ -44,14 +44,14 @@ msgstr "Přidání %s do Správce uživatelů"
 msgid "Admin"
 msgstr "Admin"
 
-#: Xmpp.class.php:115 Xmpp.class.php:807
+#: Xmpp.class.php:119 Xmpp.class.php:799
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
 "Aborting"
 msgstr "Domovský adresář Asterisku (%s) a ASTSPOOLDIR neexistuje. Přerušeno"
 
-#: install.php:38
+#: install.php:14
 msgid "Cannot create xmpp tables"
 msgstr "Nelze vytvořit xmpp tabulky"
 
@@ -60,27 +60,27 @@ msgstr "Nelze vytvořit xmpp tabulky"
 msgid "Change your notification preferences %s"
 msgstr "Změnit předvolby pro oznámení %s"
 
-#: install.php:67
+#: install.php:43
 #, php-format
 msgid "Changing user %s to %s"
 msgstr "Změna uživatele %s na %s"
 
-#: Xmpp.class.php:176 Xmpp.class.php:186 Xmpp.class.php:197
+#: Xmpp.class.php:174 Xmpp.class.php:184 Xmpp.class.php:195
 #: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
 msgid "Chat"
 msgstr "Chat"
 
-#: Xmpp.class.php:734
+#: Xmpp.class.php:726
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr "Chatový server se nefunguje: %s"
 
-#: Xmpp.class.php:640
+#: Xmpp.class.php:632
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr "Chatový server již běží na PID %s pro %s"
 
-#: Xmpp.class.php:715
+#: Xmpp.class.php:707
 msgid "Chat Server is not running"
 msgstr "Chatový server není spuštěn"
 
@@ -96,12 +96,12 @@ msgstr "Spojeno"
 msgid "Delete"
 msgstr "Smazat"
 
-#: Xmpp.class.php:364
+#: Xmpp.class.php:362
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
 msgstr "Vymazání uživatele na chatu se nezdařilo: %s"
 
-#: install.php:60
+#: install.php:36
 msgid "Detected Blank username, removing"
 msgstr "Detekováno prázdné uživatelské jméno, odstraněno"
 
@@ -113,7 +113,7 @@ msgstr "Doména"
 msgid "Domain XMPP will serve"
 msgstr "Doména XMPP bude sloužit"
 
-#: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:151
+#: Xmpp.class.php:44 Xmpp.class.php:71 Xmpp.class.php:92 Xmpp.class.php:155
 msgid "Done"
 msgstr "Hotovo"
 
@@ -133,16 +133,16 @@ msgstr "Povoleno"
 msgid "Error updating xmpp notifications"
 msgstr "Chyba při aktualizaci oznámení xmpp"
 
-#: Xmpp.class.php:680
+#: Xmpp.class.php:672
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr "Chyba spuštění: '%s'"
 
-#: Xmpp.class.php:142
+#: Xmpp.class.php:146
 msgid "Failed!"
 msgstr "Chyba!"
 
-#: Xmpp.class.php:128
+#: Xmpp.class.php:132
 msgid "Finished updating libraries!"
 msgstr "Dokončené aktualizace knihoven!"
 
@@ -154,15 +154,15 @@ msgstr "Pokud si myslíte, že tento e-mail byl chybný, kontaktujte nás na"
 msgid "Inherit"
 msgstr "Zdědit"
 
-#: Xmpp.class.php:57
+#: Xmpp.class.php:61
 msgid "Installing/Updating MongoDB..."
 msgstr "Instalace/aktualizace MongoDB..."
 
-#: Xmpp.class.php:79
+#: Xmpp.class.php:83
 msgid "Installing/Updating NodeJS..."
 msgstr "Instalace/aktualizace NodeJS..."
 
-#: Xmpp.class.php:119
+#: Xmpp.class.php:123
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr "Instalace/aktualizace požadovaných knihoven. Může to chvíli trvat..."
 
@@ -178,24 +178,24 @@ msgstr ""
 "Spravujte a konfigurujte XCPP Server Prosody, vyžaduje instalaci Prosody RPM "
 "z ústředny."
 
-#: install.php:43
+#: install.php:19
 msgid "Migrating Token Users to User Manager"
 msgstr "Migrace uživatelů Token do Správce uživatelů"
 
-#: Xmpp.class.php:51 Xmpp.class.php:63
+#: Xmpp.class.php:55 Xmpp.class.php:67
 msgid "MongoDB is not installed"
 msgstr "MongoDB není nainstalována"
 
-#: Xmpp.class.php:611 Xmpp.class.php:617
+#: Xmpp.class.php:603 Xmpp.class.php:609
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr "MongoDB není spuštěna. Zapněte ji před spuštěním XMPP"
 
-#: Xmpp.class.php:54
+#: Xmpp.class.php:58
 #, php-format
 msgid "MongoDB version is: %s requirement is %s"
 msgstr "Verze MongoDB je: %s Požadovaná je %s"
 
-#: Xmpp.class.php:98
+#: Xmpp.class.php:102
 #, php-format
 msgid "NPM version is: %s requirement is %s"
 msgstr "Verze NPM je: %s Požadovaná je %s"
@@ -213,15 +213,15 @@ msgstr "Nová zpráva od %s"
 msgid "No"
 msgstr "Ne"
 
-#: Xmpp.class.php:94
+#: Xmpp.class.php:98
 msgid "Node Package Manager is not installed"
 msgstr "Správce nodů není nainstalován"
 
-#: Xmpp.class.php:73 Xmpp.class.php:85
+#: Xmpp.class.php:77 Xmpp.class.php:89
 msgid "Node is not installed"
 msgstr "Nod není nainstalován"
 
-#: Xmpp.class.php:76
+#: Xmpp.class.php:80
 #, php-format
 msgid "Node version is: %s requirement is %s"
 msgstr "Verze Nodu je: %s Požadovaná je %s"
@@ -234,7 +234,7 @@ msgstr "Heslo"
 msgid "Please enter your username and password to login to the XMPP server"
 msgstr "Zadejte uživatelské jméno a heslo pro přihlášení k serveru XMPP"
 
-#: Xmpp.class.php:35
+#: Xmpp.class.php:39
 msgid ""
 "Prosody is no longer used and conflicts with this package. Please remove it "
 "before continuing"
@@ -246,39 +246,39 @@ msgstr ""
 msgid "Recursively sending to yourself is not allowed!"
 msgstr "Rekurzivní zasílání samo na sebe není povoleno!"
 
-#: Xmpp.class.php:38
+#: Xmpp.class.php:42
 msgid "Removing Prosody.."
 msgstr "Odstraňování Prosody.."
 
-#: Xmpp.class.php:568
+#: Xmpp.class.php:560
 msgid "Reset"
 msgstr "Resetovat"
 
-#: Xmpp.class.php:631
+#: Xmpp.class.php:623
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
 msgstr "Resetování uživatelů PBX selhalo: %s"
 
-#: Xmpp.class.php:548
+#: Xmpp.class.php:540
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr "Spuštěno (doba provozu: %s)"
 
-#: Xmpp.class.php:675
+#: Xmpp.class.php:667
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr "Spuštěn chat server. PID je %s"
 
-#: Xmpp.class.php:144
+#: Xmpp.class.php:148
 #, php-format
 msgid "Started with PID %s!"
 msgstr "Spuštěno s PID %s!"
 
-#: Xmpp.class.php:646
+#: Xmpp.class.php:638
 msgid "Starting Chat Server..."
 msgstr "Spouštění chat serveru..."
 
-#: Xmpp.class.php:138
+#: Xmpp.class.php:142
 msgid "Starting new Xmpp Process..."
 msgstr "Spouštění nového procesu Xmpp..."
 
@@ -286,19 +286,19 @@ msgstr "Spouštění nového procesu Xmpp..."
 msgid "Status"
 msgstr "Stav"
 
-#: Xmpp.class.php:730
+#: Xmpp.class.php:722
 msgid "Stopped Chat Server"
 msgstr "Chat server zastaven"
 
-#: Xmpp.class.php:722
+#: Xmpp.class.php:714
 msgid "Stopping Chat Server"
 msgstr "Zastavování chatového serveru"
 
-#: Xmpp.class.php:149
+#: Xmpp.class.php:153
 msgid "Stopping old running processes..."
 msgstr "Zastavování starých běžících procesů..."
 
-#: Xmpp.class.php:573
+#: Xmpp.class.php:565
 msgid "Submit"
 msgstr "Potvrdit"
 
@@ -321,12 +321,12 @@ msgstr ""
 msgid "Too many emails?"
 msgstr "Příliš mnoho e-mailů?"
 
-#: install.php:86
+#: install.php:62
 #, php-format
 msgid "Unable to add %s to User Manager"
 msgstr "Nelze přidat %s do Správce uživatelů"
 
-#: Xmpp.class.php:44
+#: Xmpp.class.php:48
 msgid ""
 "Unable to remove Prosody, it is no longer used and conflicts with this "
 "package. Please remove it before continuing"
@@ -334,11 +334,11 @@ msgstr ""
 "Nelze odstranit Prosody. Již se nepoužívá a je v konfliktu s tímto balíčkem. "
 "Před dalším pokračováním jej odstraňte"
 
-#: Xmpp.class.php:541
+#: Xmpp.class.php:533
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: Xmpp.class.php:310 Xmpp.class.php:335
+#: Xmpp.class.php:308 Xmpp.class.php:333
 #, php-format
 msgid "Update of user on letschat failed: %s"
 msgstr "Aktualizace uživatele na chatu se nezdařila: %s"
@@ -349,7 +349,7 @@ msgid ""
 "chat."
 msgstr "Označuje, že někdo chce upozorňovat na offline zprávy z chatu."
 
-#: install.php:77
+#: install.php:53
 #, php-format
 msgid "User %s already exists, updating instead"
 msgstr "Uživatel %s již existuje, aktualizuji"
@@ -362,7 +362,7 @@ msgstr "Seznam uživatelů"
 msgid "Username"
 msgstr "Uživatelské jméno"
 
-#: install.php:69
+#: install.php:45
 #, php-format
 msgid "Username Conflict %s changing to %s deleting %s"
 msgstr "Uživatelské jméno koliduje %s změna na %s smazání %s"
@@ -387,11 +387,11 @@ msgstr "Nastavení XMPP/Jabber"
 msgid "Xmpp"
 msgstr "Xmpp"
 
-#: Xmpp.class.php:539
+#: Xmpp.class.php:531
 msgid "Xmpp Daemon"
 msgstr "Xmpp démon"
 
-#: Xmpp.class.php:550
+#: Xmpp.class.php:542
 msgid "Xmpp is not running"
 msgstr "Xmpp není spuštěno"
 
