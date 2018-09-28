@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 13:29-0500\n"
+"POT-Creation-Date: 2018-09-28 15:05-0400\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -366,7 +366,7 @@ msgstr ""
 msgid "What is XMPP"
 msgstr "Що таке XMPP"
 
-#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
 #, fuzzy
 msgid "XMPP"
 msgstr "XMPP"
