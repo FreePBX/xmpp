@@ -30,6 +30,7 @@ if(!empty($argv[1])) {
 				if($xmpp->auth($username, $password)) {
 					$data = FreePBX::Userman()->getUserByUsername($username);
 					unset($data['password']);
+					unset($data['email']);
 					if(FreePBX::Modules()->moduleHasMethod('Zulu', 'getContactLUIDByZuluID')) {
 						$data['uuid'] = FreePBX::Zulu()->getContactLUIDByZuluID($data['id']);
 					} else {
