@@ -228,7 +228,7 @@ class Xmpp implements BMO {
 			} else {
 				$data = $this->userman->getUserByID($user);
 				$data['prevUsername'] = $data['username'];
-				$this->usermanUpdateUser($user, $display, $data);
+				$this->usermanUpdateUser($user, $display, $data, true);
 			}
 		}
 	}
@@ -275,8 +275,8 @@ class Xmpp implements BMO {
 
 	}
 
-	public function usermanUpdateUser($id, $display, $data) {
-		if(isset($_POST['xmpp_enable'])) {
+	public function usermanUpdateUser($id, $display, $data, $group = false) {
+		if(isset($_POST['xmpp_enable']) && !$group) {
 			if($_POST['xmpp_enable'] == 'true') {
 				$this->userman->setModuleSettingByID($id,'xmpp','enable', true);
 			} elseif($_POST['xmpp_enable'] == 'false') {
@@ -310,7 +310,7 @@ class Xmpp implements BMO {
 		            	return false;
 		            }
 				}
-			} elseif(!$xmppEnable) {
+			} elseif(!$xmppEnable && $_POST['xmpp_enable'] != "inherit") {
 				$this->usermanDelUser($id, $display, $data);
 			}
 		} elseif($enabled) {
@@ -337,6 +337,8 @@ class Xmpp implements BMO {
 
 				}
 			}
+		} elseif(!$enabled) {
+			$this->usermanDelUser($id, $display, $data);
 		}
 	}
 
