@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-28 15:40-0400\n"
-"PO-Revision-Date: 2018-08-25 15:00+0000\n"
+"PO-Revision-Date: 2018-10-09 21:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/xmpp/de/>\n"
 "Language: de_DE\n"
@@ -225,12 +225,12 @@ msgstr "Node Package Manager ist nicht installiert"
 
 #: Xmpp.class.php:73 Xmpp.class.php:85
 msgid "Node is not installed"
-msgstr "Knoten ist nicht installiert"
+msgstr "Node ist nicht installiert"
 
 #: Xmpp.class.php:76
 #, php-format
 msgid "Node version is: %s requirement is %s"
-msgstr "Knotenversion ist: %s Erforderlich ist %s"
+msgstr "Node-Version ist %s, Voraussetzung ist %s"
 
 #: ucp/assets/js/global.js:242
 msgid "Password"
