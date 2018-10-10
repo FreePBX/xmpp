@@ -17,8 +17,8 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
-		*15.0.4* FREEPBX-18077 User/Grp perms for XMPP not working correctly in userman 
-		*15.0.3* FREEPBX-18076 XMPP login fails silently if userman email address is not unique 
+		*15.0.4* FREEPBX-18077 User/Grp perms for XMPP not working correctly in userman
+		*15.0.3* FREEPBX-18076 XMPP login fails silently if userman email address is not unique
 		*15.0.2* Packaging of ver 15.0.2
 		*15.0.1.6* branch from 15, add backup
 	</changelog>
@@ -26,20 +26,6 @@
 		<version>15.0</version>
 	</supported>
 	<database>
-		<table name="prosody">
-			<field name="host" type="text" notnull="false"/>
-			<field name="user" type="text" notnull="false"/>
-			<field name="store" type="text" notnull="false"/>
-			<field name="key" type="text" notnull="false"/>
-			<field name="type" type="text" notnull="false"/>
-			<field name="value" type="text" notnull="false"/>
-			<key name="prosody_index" type="index">
-				<column name="host"/>
-				<column name="user"/>
-				<column name="store"/>
-				<column name="key"/>
-			</key>
-		</table>
 		<table name="xmpp_users">
 			<field name="user" type="string" length="50" default="" primarykey="true"/>
 			<field name="username" type="string" length="50" notnull="false"/>
