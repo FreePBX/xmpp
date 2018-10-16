@@ -2,16 +2,16 @@
 
 if true ; then
 	cat <<- EOF > /etc/logrotate.d/freepbx-xmpp
-	/var/log/asterisk/xmpp_err.log
-	/var/log/asterisk/xmpp_out.log{
+	/var/log/asterisk/xmpp_*.log {
 		size 50M
 		missingok
+		dateext
 		rotate 5
 		notifempty
 		sharedscripts
 		create 0640 asterisk asterisk
 		postrotate
-		/usr/sbin/fwconsole pm2 --reload-logs -q
+			/usr/sbin/fwconsole pm2 --reload-logs -q
 		endscript
 	}
 	EOF
