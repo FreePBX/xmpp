@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 13:29-0500\n"
+"POT-Creation-Date: 2018-09-28 15:40-0400\n"
 "PO-Revision-Date: 2016-10-05 21:12+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -46,7 +46,7 @@ msgstr "Додайте %s у Диспетчері Користувачів"
 msgid "Admin"
 msgstr "Адміністратор"
 
-#: Xmpp.class.php:115 Xmpp.class.php:807
+#: Xmpp.class.php:115 Xmpp.class.php:809
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -67,17 +67,17 @@ msgstr ""
 msgid "Changing user %s to %s"
 msgstr "Зміна користувача %s на %s"
 
-#: Xmpp.class.php:734
+#: Xmpp.class.php:736
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:640
+#: Xmpp.class.php:642
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr ""
 
-#: Xmpp.class.php:715
+#: Xmpp.class.php:717
 msgid "Chat Server is not running"
 msgstr ""
 
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Видалити"
 
-#: Xmpp.class.php:364
+#: Xmpp.class.php:366
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
 msgstr ""
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Enabled"
 msgstr "Ввімкнути"
 
-#: Xmpp.class.php:680
+#: Xmpp.class.php:682
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr ""
@@ -175,7 +175,7 @@ msgstr ""
 msgid "MongoDB is not installed"
 msgstr ""
 
-#: Xmpp.class.php:611 Xmpp.class.php:617
+#: Xmpp.class.php:613 Xmpp.class.php:619
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr ""
 
@@ -242,16 +242,16 @@ msgstr "Рекурсивне надсилання до себе не припу�
 msgid "Removing Prosody.."
 msgstr ""
 
-#: Xmpp.class.php:568
+#: Xmpp.class.php:570
 msgid "Reset"
 msgstr "Скинути"
 
-#: Xmpp.class.php:631
+#: Xmpp.class.php:633
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
 msgstr ""
 
-#: Xmpp.class.php:548
+#: Xmpp.class.php:550
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr ""
@@ -264,7 +264,7 @@ msgstr "Надіслати повідомлення"
 msgid "Start XMPP"
 msgstr "Запуск XMPP"
 
-#: Xmpp.class.php:675
+#: Xmpp.class.php:677
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr ""
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Started with PID %s!"
 msgstr ""
 
-#: Xmpp.class.php:646
+#: Xmpp.class.php:648
 msgid "Starting Chat Server..."
 msgstr ""
 
@@ -282,11 +282,11 @@ msgstr ""
 msgid "Starting new Xmpp Process..."
 msgstr ""
 
-#: Xmpp.class.php:730
+#: Xmpp.class.php:732
 msgid "Stopped Chat Server"
 msgstr ""
 
-#: Xmpp.class.php:722
+#: Xmpp.class.php:724
 msgid "Stopping Chat Server"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Stopping old running processes..."
 msgstr ""
 
-#: Xmpp.class.php:573
+#: Xmpp.class.php:575
 msgid "Submit"
 msgstr "Застосувати"
 
@@ -333,7 +333,7 @@ msgid ""
 "package. Please remove it before continuing"
 msgstr ""
 
-#: Xmpp.class.php:541
+#: Xmpp.class.php:543
 msgid "Unknown"
 msgstr "Невідомо"
 
@@ -366,7 +366,7 @@ msgstr ""
 msgid "What is XMPP"
 msgstr "Що таке XMPP"
 
-#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
 #, fuzzy
 msgid "XMPP"
 msgstr "XMPP"
@@ -383,11 +383,11 @@ msgstr "Налаштування XMPP/Jabber"
 msgid "Xmpp"
 msgstr ""
 
-#: Xmpp.class.php:539
+#: Xmpp.class.php:541
 msgid "Xmpp Daemon"
 msgstr ""
 
-#: Xmpp.class.php:550
+#: Xmpp.class.php:552
 msgid "Xmpp is not running"
 msgstr ""
 

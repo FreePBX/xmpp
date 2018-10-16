@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-02 13:29-0500\n"
+"POT-Creation-Date: 2018-09-28 15:40-0400\n"
 "PO-Revision-Date: 2018-02-05 09:00+0200\n"
 "Last-Translator: tranlsated <noemi@translated.net>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/xmpp/"
@@ -45,7 +45,7 @@ msgstr "%s wird dem Benutzermanager hinzugefügt"
 msgid "Admin"
 msgstr "Admin"
 
-#: Xmpp.class.php:115 Xmpp.class.php:807
+#: Xmpp.class.php:115 Xmpp.class.php:809
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -68,17 +68,17 @@ msgstr "Ändern Sie Ihre Benachrichtigungspräferenzen %s"
 msgid "Changing user %s to %s"
 msgstr "Benutzer %s zu %s ändern"
 
-#: Xmpp.class.php:734
+#: Xmpp.class.php:736
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr "Chat-Server-Fehler: %s"
 
-#: Xmpp.class.php:640
+#: Xmpp.class.php:642
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr "Der Chat-Server lief bereits auf PID %s für %s"
 
-#: Xmpp.class.php:715
+#: Xmpp.class.php:717
 msgid "Chat Server is not running"
 msgstr "Chat-Server funktioniert nicht"
 
@@ -86,7 +86,7 @@ msgstr "Chat-Server funktioniert nicht"
 msgid "Delete"
 msgstr "Löschen"
 
-#: Xmpp.class.php:364
+#: Xmpp.class.php:366
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
 msgstr ""
@@ -119,7 +119,7 @@ msgstr "E-Mail-Benachrichtigungen aktivieren"
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: Xmpp.class.php:680
+#: Xmpp.class.php:682
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr "Konnte nicht gestartet werden: '%s'"
@@ -180,7 +180,7 @@ msgstr "Token-Benutzer werden in den Benutzermanager verschoben"
 msgid "MongoDB is not installed"
 msgstr "MongoDB ist nicht installiert"
 
-#: Xmpp.class.php:611 Xmpp.class.php:617
+#: Xmpp.class.php:613 Xmpp.class.php:619
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr "MongoDB läuft nicht. Bitte starten Sie MongoDB, bevor Sie XMPP starten"
 
@@ -250,16 +250,16 @@ msgstr "Sie dürfen nicht rekursiv an sich selbst senden!"
 msgid "Removing Prosody.."
 msgstr "Prosody wird entfernt ..."
 
-#: Xmpp.class.php:568
+#: Xmpp.class.php:570
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: Xmpp.class.php:631
+#: Xmpp.class.php:633
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
 msgstr "Zurücksetzen von PBX-Benutzern ist fehlgeschlagen: %s"
 
-#: Xmpp.class.php:548
+#: Xmpp.class.php:550
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr "Läuft (Betriebsdauer: %s)"
@@ -272,7 +272,7 @@ msgstr "Nachricht senden"
 msgid "Start XMPP"
 msgstr "XMPP starten"
 
-#: Xmpp.class.php:675
+#: Xmpp.class.php:677
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr "Chat-Server wurde gestartet. PID ist %s"
@@ -282,7 +282,7 @@ msgstr "Chat-Server wurde gestartet. PID ist %s"
 msgid "Started with PID %s!"
 msgstr "PID %s wurde gestartet!"
 
-#: Xmpp.class.php:646
+#: Xmpp.class.php:648
 msgid "Starting Chat Server..."
 msgstr "Chat-Server wird gestartet ..."
 
@@ -290,11 +290,11 @@ msgstr "Chat-Server wird gestartet ..."
 msgid "Starting new Xmpp Process..."
 msgstr "Neuer XMPP-Prozess wird gestartet ..."
 
-#: Xmpp.class.php:730
+#: Xmpp.class.php:732
 msgid "Stopped Chat Server"
 msgstr "Chat-Server wurde gestoppt"
 
-#: Xmpp.class.php:722
+#: Xmpp.class.php:724
 msgid "Stopping Chat Server"
 msgstr "Chat-Server wird gestoppt"
 
@@ -302,7 +302,7 @@ msgstr "Chat-Server wird gestoppt"
 msgid "Stopping old running processes..."
 msgstr "Alte laufende Prozesse werden gestoppt ..."
 
-#: Xmpp.class.php:573
+#: Xmpp.class.php:575
 msgid "Submit"
 msgstr "Senden"
 
@@ -343,7 +343,7 @@ msgstr ""
 "Kann Prosody nicht entfernen. Es wird nicht mehr verwendet und ist nicht "
 "kompatibel mit diesem Paket. Bitte entfernen Sie es, bevor Sie fortfahren"
 
-#: Xmpp.class.php:541
+#: Xmpp.class.php:543
 msgid "Unknown"
 msgstr "Unbekannt"
 
@@ -378,7 +378,7 @@ msgstr "Falscher Benutzername %s wird zu %s geändert, %s wird gelöscht"
 msgid "What is XMPP"
 msgstr "Was ist XMPP"
 
-#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
@@ -394,11 +394,11 @@ msgstr "XMPP-/Jabber-Einstellungen"
 msgid "Xmpp"
 msgstr "Xmpp"
 
-#: Xmpp.class.php:539
+#: Xmpp.class.php:541
 msgid "Xmpp Daemon"
 msgstr "Xmpp Daemon"
 
-#: Xmpp.class.php:550
+#: Xmpp.class.php:552
 msgid "Xmpp is not running"
 msgstr "Xmpp läuft nicht"
 
