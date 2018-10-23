@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-28 15:40-0400\n"
-"PO-Revision-Date: 2018-10-23 00:42+0000\n"
+"PO-Revision-Date: 2018-10-24 01:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/xmpp/de/>\n"
 "Language: de_DE\n"
@@ -408,7 +408,7 @@ msgstr "Xmpp läuft nicht"
 
 #: ucp/Xmpp.class.php:147
 msgid "Xmpp mail notifications has been updated!"
-msgstr "XMPP-Mail-Benachrichtigungen wurden aktualisiert"
+msgstr "XMPP-Mail-Benachrichtigungen wurden aktualisiert!"
 
 #: views/userman_hook.php:23
 msgid "Yes"
