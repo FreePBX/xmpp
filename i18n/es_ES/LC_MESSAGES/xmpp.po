@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-28 15:40-0400\n"
+"POT-Creation-Date: 2019-01-01 22:23-0500\n"
 "PO-Revision-Date: 2018-11-30 18:16+0000\n"
 "Last-Translator: Eduardo Abad <eabad@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/xmpp/es/>\n"
@@ -366,7 +366,7 @@ msgstr "Conflicto en Nombre de Usurio %s cambiar a %s borrando %s"
 msgid "What is Chat"
 msgstr ""
 
-#: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
