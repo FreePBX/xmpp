@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-28 15:40-0400\n"
-"PO-Revision-Date: 2018-08-25 15:00+0000\n"
+"PO-Revision-Date: 2018-10-24 01:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/xmpp/de/>\n"
 "Language: de_DE\n"
@@ -70,7 +70,7 @@ msgstr "Benutzer %s zu %s ändern"
 #: Xmpp.class.php:176 Xmpp.class.php:186 Xmpp.class.php:197
 #: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
 msgid "Chat"
-msgstr ""
+msgstr "Chat"
 
 #: Xmpp.class.php:736
 #, php-format
@@ -88,11 +88,11 @@ msgstr "Chat-Server funktioniert nicht"
 
 #: ucp/Xmpp.class.php:33
 msgid "Chat service"
-msgstr ""
+msgstr "Char-Dienst"
 
 #: ucp/views/widget.php:5
 msgid "Connected"
-msgstr ""
+msgstr "Verbunden"
 
 #: page.xmpp.php:20
 msgid "Delete"
@@ -133,7 +133,7 @@ msgstr "Aktiviert"
 
 #: ucp/Xmpp.class.php:149
 msgid "Error updating xmpp notifications"
-msgstr ""
+msgstr "Fehler beim Aktualisieren der XMPP-Benachrichtigungen"
 
 #: Xmpp.class.php:682
 #, php-format
@@ -156,7 +156,7 @@ msgstr ""
 
 #: views/userman_hook.php:27
 msgid "Inherit"
-msgstr "Übernehmen"
+msgstr "Erben"
 
 #: Xmpp.class.php:57
 msgid "Installing/Updating MongoDB..."
@@ -225,12 +225,12 @@ msgstr "Node Package Manager ist nicht installiert"
 
 #: Xmpp.class.php:73 Xmpp.class.php:85
 msgid "Node is not installed"
-msgstr "Knoten ist nicht installiert"
+msgstr "Node ist nicht installiert"
 
 #: Xmpp.class.php:76
 #, php-format
 msgid "Node version is: %s requirement is %s"
-msgstr "Knotenversion ist: %s Erforderlich ist %s"
+msgstr "Node-Version ist %s, Voraussetzung ist %s"
 
 #: ucp/assets/js/global.js:242
 msgid "Password"
@@ -292,7 +292,7 @@ msgstr "Neuer XMPP-Prozess wird gestartet ..."
 
 #: ucp/views/widget.php:5
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: Xmpp.class.php:732
 msgid "Stopped Chat Server"
@@ -321,6 +321,10 @@ msgid ""
 "local XMPP server that runs on your machine. The user can then login to the "
 "XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
+"Dieser Abschnitt fügt den Benutzer zum Chat-Dienst hinzu. Der Chat-Dienst "
+"ist ein lokaler XMPP-Server, der ebenfalls auf Ihrem System läuft. Der "
+"Benutzer kann sich anschließend mit „&lt;username&gt;@%s“ am XMPP-Server auf "
+"„%s“ anmelden"
 
 #: bin/chatmailer.php:44
 msgid "Too many emails?"
@@ -363,7 +367,7 @@ msgstr "Benutzer %s existiert bereits, wird stattdessen aktualisiert"
 
 #: ucp/views/widget.php:8
 msgid "User List"
-msgstr ""
+msgstr "Benutzerliste"
 
 #: ucp/assets/js/global.js:240
 msgid "Username"
@@ -376,7 +380,7 @@ msgstr "Falscher Benutzername %s wird zu %s geändert, %s wird gelöscht"
 
 #: views/userman_hook.php:4
 msgid "What is Chat"
-msgstr ""
+msgstr "Was ist Chat"
 
 #: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
@@ -404,7 +408,7 @@ msgstr "Xmpp läuft nicht"
 
 #: ucp/Xmpp.class.php:147
 msgid "Xmpp mail notifications has been updated!"
-msgstr ""
+msgstr "XMPP-Mail-Benachrichtigungen wurden aktualisiert!"
 
 #: views/userman_hook.php:23
 msgid "Yes"
