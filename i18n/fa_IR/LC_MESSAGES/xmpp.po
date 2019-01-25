@@ -10,16 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-01 22:23-0500\n"
-"PO-Revision-Date: 2016-10-08 12:20+0200\n"
-"Last-Translator: psdk <hyavari26@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
-"xmpp/fa_IR/>\n"
+"PO-Revision-Date: 2019-01-25 20:46+0000\n"
+"Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
+"Language-Team: Persian <http://*/projects/freepbx/xmpp/fa/>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: ucp/assets/js/global.js:367
 #, perl-format
@@ -29,12 +28,12 @@ msgstr "%s در حال تایپ کردن است..."
 #: bin/chatmailer.php:76
 #, php-format
 msgid "%s just wrote you in %s %s but you're offline"
-msgstr ""
+msgstr "%s1 just wrote you in %s2 %s3"
 
 #: Xmpp.class.php:273
 #, php-format
 msgid "Add user to letschat failed: %s"
-msgstr ""
+msgstr "Add user to letschat failed: %s1"
 
 #: install.php:74
 #, php-format
@@ -51,6 +50,8 @@ msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
 "Aborting"
 msgstr ""
+"Asterisk home dir (%s1) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
+"Aborting"
 
 #: install.php:38
 msgid "Cannot create xmpp tables"
@@ -59,7 +60,7 @@ msgstr "عدم ایجاد جداول xmpp"
 #: bin/chatmailer.php:45
 #, php-format
 msgid "Change your notification preferences %s"
-msgstr ""
+msgstr "تنظیمات اطلاع رسانی را به ٪s1 تغییر دهید"
 
 #: install.php:67
 #, php-format
@@ -69,29 +70,29 @@ msgstr "تغییر کاربر %s به %s"
 #: Xmpp.class.php:176 Xmpp.class.php:186 Xmpp.class.php:197
 #: ucp/Xmpp.class.php:28 ucp/Xmpp.class.php:32 ucp/Xmpp.class.php:44
 msgid "Chat"
-msgstr ""
+msgstr "چت"
 
 #: Xmpp.class.php:736
 #, php-format
 msgid "Chat Server Failed: %s"
-msgstr ""
+msgstr "سرور چت نتواند: ٪s1"
 
 #: Xmpp.class.php:642
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
-msgstr ""
+msgstr "Chat Server has already been running on PID %s1 for %s2"
 
 #: Xmpp.class.php:717
 msgid "Chat Server is not running"
-msgstr ""
+msgstr "سرور چت در حال اجرا نیست"
 
 #: ucp/Xmpp.class.php:33
 msgid "Chat service"
-msgstr ""
+msgstr "سرویس چت"
 
 #: ucp/views/widget.php:5
 msgid "Connected"
-msgstr ""
+msgstr "متصل"
 
 #: page.xmpp.php:20
 msgid "Delete"
@@ -100,7 +101,7 @@ msgstr "حذف"
 #: Xmpp.class.php:366
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
-msgstr ""
+msgstr "حذف کاربر در loschat ناموفق بود: ٪s1"
 
 #: install.php:60
 msgid "Detected Blank username, removing"
@@ -116,7 +117,7 @@ msgstr "دامنه ای که سرویس XMPP را فراهم می کند"
 
 #: Xmpp.class.php:40 Xmpp.class.php:67 Xmpp.class.php:88 Xmpp.class.php:151
 msgid "Done"
-msgstr ""
+msgstr "انجام شده"
 
 #: views/userman_hook.php:37
 msgid "Enable XMPP for this user"
@@ -124,7 +125,7 @@ msgstr "فعال سازی سرویس XMPP برای این کاربر"
 
 #: ucp/views/settings.php:4
 msgid "Enable mail notifications"
-msgstr ""
+msgstr "فعال سازی هشدار ایمیل"
 
 #: views/userman_hook.php:18
 msgid "Enabled"
@@ -132,24 +133,24 @@ msgstr "فعال"
 
 #: ucp/Xmpp.class.php:149
 msgid "Error updating xmpp notifications"
-msgstr ""
+msgstr "خطا در به روز رسانی اعلان های xmpp"
 
 #: Xmpp.class.php:682
 #, php-format
 msgid "Failed to run: '%s'"
-msgstr ""
+msgstr "اجرا نشد: '٪s1'"
 
 #: Xmpp.class.php:142
 msgid "Failed!"
-msgstr ""
+msgstr "ناموفق!"
 
 #: Xmpp.class.php:128
 msgid "Finished updating libraries!"
-msgstr ""
+msgstr "اتمام به روز رسانی کتابخانه!"
 
 #: bin/chatmailer.php:42
 msgid "If you think this e-mail was an error, please contact us at"
-msgstr ""
+msgstr "اگر فکر می کنید این ایمیل یک خطا بود، لطفا با ما تماس بگیرید"
 
 #: views/userman_hook.php:27
 msgid "Inherit"
@@ -157,15 +158,16 @@ msgstr "موروثی"
 
 #: Xmpp.class.php:57
 msgid "Installing/Updating MongoDB..."
-msgstr ""
+msgstr "نصب/به روز رسانی MongoDB..."
 
 #: Xmpp.class.php:79
 msgid "Installing/Updating NodeJS..."
-msgstr ""
+msgstr "نصب/به روز رسانی NodeJS..."
 
 #: Xmpp.class.php:119
 msgid "Installing/Updating Required Libraries. This may take a while..."
 msgstr ""
+"نصب / به روز رسانی کتابخانه های مورد نیاز. این ممکن است مدتی طول بکشد..."
 
 #: ucp/assets/js/global.js:244
 msgid "Login"
@@ -183,21 +185,21 @@ msgstr "مهاجرت توکن کاربران به مدیریت کاربران"
 
 #: Xmpp.class.php:51 Xmpp.class.php:63
 msgid "MongoDB is not installed"
-msgstr ""
+msgstr "MongoDB نصب نشده"
 
 #: Xmpp.class.php:613 Xmpp.class.php:619
 msgid "MongoDB is not running. Please start it before starting XMPP"
-msgstr ""
+msgstr "MongoDB اجرا نشده. لطفا قبل از شروع XMPP آن را شروع کنید"
 
 #: Xmpp.class.php:54
 #, php-format
 msgid "MongoDB version is: %s requirement is %s"
-msgstr ""
+msgstr "نسخه MongoDB: %s1 ولی نسخه %s2 نیاز است"
 
 #: Xmpp.class.php:98
 #, php-format
 msgid "NPM version is: %s requirement is %s"
-msgstr ""
+msgstr "نسخه NPM: %s1 ولی نسخه %s2 نیاز است"
 
 #: ucp/assets/js/global.js:104
 msgid "Need a valid recipient"
@@ -214,16 +216,16 @@ msgstr "خیر"
 
 #: Xmpp.class.php:94
 msgid "Node Package Manager is not installed"
-msgstr ""
+msgstr "Node Package Manager نصب نشده است"
 
 #: Xmpp.class.php:73 Xmpp.class.php:85
 msgid "Node is not installed"
-msgstr ""
+msgstr "Node نصب نشده"
 
 #: Xmpp.class.php:76
 #, php-format
 msgid "Node version is: %s requirement is %s"
-msgstr ""
+msgstr "نسخه Node: %s1 ولی نسخه %s2 نیاز است"
 
 #: ucp/assets/js/global.js:242
 msgid "Password"
@@ -238,6 +240,8 @@ msgid ""
 "Prosody is no longer used and conflicts with this package. Please remove it "
 "before continuing"
 msgstr ""
+"پروندگی دیگر مورد استفاده قرار نمی گیرد و با این بسته مواجه است. لطفا قبل از "
+"ادامه آن را حذف کنید"
 
 #: ucp/assets/js/global.js:107
 msgid "Recursively sending to yourself is not allowed!"
@@ -245,7 +249,7 @@ msgstr "ارسال بازگشتی به خود مجاز نیست!"
 
 #: Xmpp.class.php:38
 msgid "Removing Prosody.."
-msgstr ""
+msgstr "حذف Prosody.."
 
 #: Xmpp.class.php:570
 msgid "Reset"
@@ -254,46 +258,46 @@ msgstr "بازنشانی"
 #: Xmpp.class.php:633
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
-msgstr ""
+msgstr "بازنشانی کاربران PBX شکست خورد: ٪s1"
 
 #: Xmpp.class.php:550
 #, php-format
 msgid "Running (Uptime: %s)"
-msgstr ""
+msgstr "در حال اجرا (Uptime: ٪s1)"
 
 #: Xmpp.class.php:677
 #, php-format
 msgid "Started Chat Server. PID is %s"
-msgstr ""
+msgstr "سرور چت آغاز شده. PID: %s1"
 
 #: Xmpp.class.php:144
 #, php-format
 msgid "Started with PID %s!"
-msgstr ""
+msgstr "شروع با PID %s1!"
 
 #: Xmpp.class.php:648
 msgid "Starting Chat Server..."
-msgstr ""
+msgstr "آغاز سرور چت..."
 
 #: Xmpp.class.php:138
 msgid "Starting new Xmpp Process..."
-msgstr ""
+msgstr "شروع فرآیند Xmpp جدید ..."
 
 #: ucp/views/widget.php:5
 msgid "Status"
-msgstr ""
+msgstr "وضعیت"
 
 #: Xmpp.class.php:732
 msgid "Stopped Chat Server"
-msgstr ""
+msgstr "سرور چت متوقف شد"
 
 #: Xmpp.class.php:724
 msgid "Stopping Chat Server"
-msgstr ""
+msgstr "سرور چت متوقف شد"
 
 #: Xmpp.class.php:149
 msgid "Stopping old running processes..."
-msgstr ""
+msgstr "توقف فرآیندهای در حال اجرا ..."
 
 #: Xmpp.class.php:575
 msgid "Submit"
@@ -301,7 +305,7 @@ msgstr "ثبت"
 
 #: bin/chatmailer.php:41
 msgid "This message was intended for"
-msgstr ""
+msgstr "این پیام در نظر گرفته شده بود"
 
 #: views/userman_hook.php:9
 #, php-format
@@ -310,10 +314,13 @@ msgid ""
 "local XMPP server that runs on your machine. The user can then login to the "
 "XMPP server at \"%s\" using \"&lt;username&gt;@%s\""
 msgstr ""
+"این بخش این کاربر را به سرویس گپ اضافه می کند. سرویس چت محلی سرور XMPP است "
+"که بر روی دستگاه شما اجرا می شود. سپس کاربر می تواند با استفاده از \"& lt؛ "
+"2username & gt؛ 3 @٪ s4\" در \"٪ s1\" سرور XMPP وارد شوید\""
 
 #: bin/chatmailer.php:44
 msgid "Too many emails?"
-msgstr ""
+msgstr "بیش از حد ایمیل؟"
 
 #: install.php:86
 #, php-format
@@ -325,6 +332,8 @@ msgid ""
 "Unable to remove Prosody, it is no longer used and conflicts with this "
 "package. Please remove it before continuing"
 msgstr ""
+"Unable to remove Prosody، دیگر از این بسته استفاده نمیشود و با آن مخالف است. "
+"لطفا قبل از ادامه آن را حذف کنید"
 
 #: Xmpp.class.php:543
 msgid "Unknown"
@@ -333,13 +342,15 @@ msgstr "ناشناخته"
 #: Xmpp.class.php:310 Xmpp.class.php:335
 #, php-format
 msgid "Update of user on letschat failed: %s"
-msgstr ""
+msgstr "بروزرسانی کاربر در loschat ناموفق بود: ٪s1"
 
 #: ucp/views/settings.php:12
 msgid ""
 "Used to indicate that somebody wants notifications for offline messages from "
 "chat."
 msgstr ""
+"مورد استفاده برای نشان دادن آن است که کسی میخواهد اعلانهای پیام آفلاین را از "
+"چت داشته باشد."
 
 #: install.php:77
 #, php-format
@@ -348,7 +359,7 @@ msgstr "کاربر %s وجود دارد، بروزرسانی تغییرات"
 
 #: ucp/views/widget.php:8
 msgid "User List"
-msgstr ""
+msgstr "فهرست کاربر"
 
 #: ucp/assets/js/global.js:240
 msgid "Username"
@@ -361,7 +372,7 @@ msgstr "نام کاربری %s تلاقی دارد تغییر %s حذف %s"
 
 #: views/userman_hook.php:4
 msgid "What is Chat"
-msgstr ""
+msgstr "چت چیست"
 
 #: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
@@ -377,19 +388,19 @@ msgstr "تنظیمات XMPP/Jabber"
 
 #: ucp/Xmpp.class.php:82
 msgid "Xmpp"
-msgstr ""
+msgstr "Xmpp"
 
 #: Xmpp.class.php:541
 msgid "Xmpp Daemon"
-msgstr ""
+msgstr "Xmpp Daemon"
 
 #: Xmpp.class.php:552
 msgid "Xmpp is not running"
-msgstr ""
+msgstr "Xmpp اجرا نشده"
 
 #: ucp/Xmpp.class.php:147
 msgid "Xmpp mail notifications has been updated!"
-msgstr ""
+msgstr "اطلاعیه های ایمیل Xmpp به روز شده است!"
 
 #: views/userman_hook.php:23
 msgid "Yes"
@@ -397,11 +408,11 @@ msgstr "بله"
 
 #: bin/chatmailer.php:45
 msgid "here"
-msgstr ""
+msgstr "اینجا"
 
 #: bin/chatmailer.php:40
 msgid "wrote you"
-msgstr ""
+msgstr "نوشته"
 
 #~ msgid "Start XMPP"
 #~ msgstr "استارت سرویس XMPP"
