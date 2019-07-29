@@ -346,9 +346,6 @@ class Xmpp implements BMO {
 		$user = $this->getUserByID($id);
 		if(!empty($user)) {
 			$this->delUser($id);
-			$sql = "DELETE FROM prosody WHERE user = :puser";
-			$sth = $this->db->prepare($sql);
-			$sth->execute(array(":puser" => $user['username']));
 		}
 		$data['freepbxId'] = $id;
 		$delUserParam = base64_encode(json_encode($data));
