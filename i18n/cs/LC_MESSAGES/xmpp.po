@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-26 20:55-0400\n"
+"POT-Creation-Date: 2019-08-05 12:08+0530\n"
 "PO-Revision-Date: 2018-09-04 11:23+0000\n"
 "Last-Translator: Petr Varvarovsky <petrv@atlantis.cz>\n"
 "Language-Team: Czech <http://*/projects/freepbx/xmpp/cs/>\n"
@@ -44,7 +44,7 @@ msgstr "Přidání %s do Správce uživatelů"
 msgid "Admin"
 msgstr "Admin"
 
-#: Xmpp.class.php:119 Xmpp.class.php:801
+#: Xmpp.class.php:119 Xmpp.class.php:798
 #, php-format
 msgid ""
 "Asterisk home dir (%s) doesn't exist, and, ASTSPOOLDIR doesn't exist. "
@@ -70,17 +70,17 @@ msgstr "Změna uživatele %s na %s"
 msgid "Chat"
 msgstr "Chat"
 
-#: Xmpp.class.php:728
+#: Xmpp.class.php:725
 #, php-format
 msgid "Chat Server Failed: %s"
 msgstr "Chatový server se nefunguje: %s"
 
-#: Xmpp.class.php:634
+#: Xmpp.class.php:631
 #, php-format
 msgid "Chat Server has already been running on PID %s for %s"
 msgstr "Chatový server již běží na PID %s pro %s"
 
-#: Xmpp.class.php:709
+#: Xmpp.class.php:706
 msgid "Chat Server is not running"
 msgstr "Chatový server není spuštěn"
 
@@ -96,7 +96,7 @@ msgstr "Spojeno"
 msgid "Delete"
 msgstr "Smazat"
 
-#: Xmpp.class.php:364
+#: Xmpp.class.php:361
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
 msgstr "Vymazání uživatele na chatu se nezdařilo: %s"
@@ -133,7 +133,7 @@ msgstr "Povoleno"
 msgid "Error updating xmpp notifications"
 msgstr "Chyba při aktualizaci oznámení xmpp"
 
-#: Xmpp.class.php:674
+#: Xmpp.class.php:671
 #, php-format
 msgid "Failed to run: '%s'"
 msgstr "Chyba spuštění: '%s'"
@@ -186,7 +186,7 @@ msgstr "Migrace uživatelů Token do Správce uživatelů"
 msgid "MongoDB is not installed"
 msgstr "MongoDB není nainstalována"
 
-#: Xmpp.class.php:605 Xmpp.class.php:611
+#: Xmpp.class.php:602 Xmpp.class.php:608
 msgid "MongoDB is not running. Please start it before starting XMPP"
 msgstr "MongoDB není spuštěna. Zapněte ji před spuštěním XMPP"
 
@@ -250,21 +250,21 @@ msgstr "Rekurzivní zasílání samo na sebe není povoleno!"
 msgid "Removing Prosody.."
 msgstr "Odstraňování Prosody.."
 
-#: Xmpp.class.php:562
+#: Xmpp.class.php:559
 msgid "Reset"
 msgstr "Resetovat"
 
-#: Xmpp.class.php:625
+#: Xmpp.class.php:622
 #, php-format
 msgid "Resetting PBX Users Failed: %s"
 msgstr "Resetování uživatelů PBX selhalo: %s"
 
-#: Xmpp.class.php:542
+#: Xmpp.class.php:539
 #, php-format
 msgid "Running (Uptime: %s)"
 msgstr "Spuštěno (doba provozu: %s)"
 
-#: Xmpp.class.php:669
+#: Xmpp.class.php:666
 #, php-format
 msgid "Started Chat Server. PID is %s"
 msgstr "Spuštěn chat server. PID je %s"
@@ -274,7 +274,7 @@ msgstr "Spuštěn chat server. PID je %s"
 msgid "Started with PID %s!"
 msgstr "Spuštěno s PID %s!"
 
-#: Xmpp.class.php:640
+#: Xmpp.class.php:637
 msgid "Starting Chat Server..."
 msgstr "Spouštění chat serveru..."
 
@@ -286,11 +286,11 @@ msgstr "Spouštění nového procesu Xmpp..."
 msgid "Status"
 msgstr "Stav"
 
-#: Xmpp.class.php:724
+#: Xmpp.class.php:721
 msgid "Stopped Chat Server"
 msgstr "Chat server zastaven"
 
-#: Xmpp.class.php:716
+#: Xmpp.class.php:713
 msgid "Stopping Chat Server"
 msgstr "Zastavování chatového serveru"
 
@@ -298,7 +298,7 @@ msgstr "Zastavování chatového serveru"
 msgid "Stopping old running processes..."
 msgstr "Zastavování starých běžících procesů..."
 
-#: Xmpp.class.php:567
+#: Xmpp.class.php:564
 msgid "Submit"
 msgstr "Potvrdit"
 
@@ -334,7 +334,7 @@ msgstr ""
 "Nelze odstranit Prosody. Již se nepoužívá a je v konfliktu s tímto balíčkem. "
 "Před dalším pokračováním jej odstraňte"
 
-#: Xmpp.class.php:535
+#: Xmpp.class.php:532
 msgid "Unknown"
 msgstr "Neznámý"
 
@@ -371,7 +371,7 @@ msgstr "Uživatelské jméno koliduje %s změna na %s smazání %s"
 msgid "What is Chat"
 msgstr "Co je chat"
 
-#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
@@ -387,11 +387,11 @@ msgstr "Nastavení XMPP/Jabber"
 msgid "Xmpp"
 msgstr "Xmpp"
 
-#: Xmpp.class.php:533
+#: Xmpp.class.php:530
 msgid "Xmpp Daemon"
 msgstr "Xmpp démon"
 
-#: Xmpp.class.php:544
+#: Xmpp.class.php:541
 msgid "Xmpp is not running"
 msgstr "Xmpp není spuštěno"
 
