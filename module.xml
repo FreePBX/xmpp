@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>15.0.6.4</version>
+	<version>16.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>https://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,17 +17,10 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
-		*15.0.6.4* bump 
-		*15.0.6.3* FREEPBX-20314 Getting SQL error while creating Group with Some users selected. 
-		*15.0.6.2* fixing legacy restore 
-		*15.0.5* FREEPBX-18283 remove prosody table defs 
-		*15.0.4* FREEPBX-18077 User/Grp perms for XMPP not working correctly in userman
-		*15.0.3* FREEPBX-18076 XMPP login fails silently if userman email address is not unique
-		*15.0.2* Packaging of ver 15.0.2
-		*15.0.1.6* branch from 15, add backup
+		*16.0.1alpha* 16.0.1 alpha release
 	</changelog>
 	<supported>
-		<version>15.0</version>
+		<version>16.0</version>
 	</supported>
 	<database>
 		<table name="xmpp_users">
