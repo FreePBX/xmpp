@@ -2,12 +2,13 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>14.0.1.19</version>
+	<version>14.0.1.20</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
 	<category>Admin</category>
 	<description>Manage and configure a XMPP Server Prosody and requires the Prosody RPM from your PBX be installed.</description>
+  	<more-info>https://wiki.freepbx.org/display/F2/XMPP+Chat+Management</more-info>
 	<menuitems>
 		<xmpp needsenginedb="yes">XMPP</xmpp>
 	</menuitems>
@@ -17,6 +18,7 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
+		*14.0.1.20* Packaging of ver 14.0.1.20
 		*14.0.1.19* FREEPBX-18865
 		*14.0.1.18* FREEPBX-18396 
 		*14.0.1.17* FREEPBX-18077 User/Grp perms for XMPP not working correctly in userman 
