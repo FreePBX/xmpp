@@ -56,7 +56,7 @@ $astman->add_event_handler("presencestatus", function($event, $data, $server, $p
 	global $comp;
 	global $domain;
 
-	$hints = split(',', $data['Hint']);
+	$hints = preg_split('[\,]', $data['Hint']);
 	$presence = $hints[1];
 	if (!$presence) {
 		return;
