@@ -2,13 +2,13 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>15.0.6.5</version>
+	<version>15.0.6.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>https://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
 	<category>Admin</category>
 	<description>Manage and configure a XMPP Server Prosody and requires the Prosody RPM from your PBX be installed.</description>
-  	<more-info>https://wiki.freepbx.org/display/F2/XMPP+Chat+Management</more-info>
+  	<more-info>https://wiki.freepbx.org/display/FPG/XMPP+Chat+Management</more-info>
 	<menuitems>
 		<xmpp needsenginedb="yes">XMPP</xmpp>
 	</menuitems>
@@ -18,6 +18,7 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
+		*15.0.6.6* Packaging of ver 15.0.6.6
 		*15.0.6.5* Packaging of ver 15.0.6.5
 		*15.0.6.4* bump 
 		*15.0.6.3* FREEPBX-20314 Getting SQL error while creating Group with Some users selected. 
