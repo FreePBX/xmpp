@@ -518,7 +518,7 @@ class Xmpp implements BMO {
 	}
 
 	public function usermanAddContactInfo($user) {
-		$o = $this->getUserByID($user['id']);
+		$o = isset($user['id']) ?  $this->getUserByID($user['id']) : '';
 		if(!empty($o)) {
 			$user['xmpp'] = $o['username'] . '@' . $o['domain'];
 		}
