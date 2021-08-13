@@ -287,10 +287,11 @@ class Xmpp implements BMO {
 		}
 
 		$enabled = $this->userman->getCombinedModuleSettingByID($id, 'xmpp', 'enable');
-
+		if($_POST['xmpp_enable'] =='inherit' && isset($_POST['groups'][0])){
+			$enabled = $this->userman->getModuleSettingByGID($_POST['groups'][0],'xmpp', 'enable');
+		}
 		if($enabled && $display == 'userman') {
-			$xmppEnable = ($_POST['xmpp_enable'] == 'true') ? true : false;
-			if($xmppEnable) {
+			if($enabled) {
 				$this->saveUser($id, $data['username']);
 				if($data['prevUsername'] != $data['username']) {
 					$newData = array("id" => $id, "username" => $data['username']);
@@ -432,7 +433,6 @@ class Xmpp implements BMO {
 		if ($user && $user['username'] == $username) {
 			return true;
 		}
-
 		//insert
 		$sql = 'REPLACE INTO xmpp_users (user, username, password) VALUES (:user, :username, :password)';
 		$sth = $this->db->prepare($sql);
