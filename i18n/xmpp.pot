@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-31 11:11+0000\n"
+"POT-Creation-Date: 2021-08-13 03:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: Xmpp.class.php:361
+#: Xmpp.class.php:362
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
 msgstr ""
@@ -338,8 +338,8 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: Xmpp.class.php:308
-#: Xmpp.class.php:333
+#: Xmpp.class.php:309
+#: Xmpp.class.php:334
 #, php-format
 msgid "Update of user on letschat failed: %s"
 msgstr ""

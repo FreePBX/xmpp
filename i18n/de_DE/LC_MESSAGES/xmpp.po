@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-17 13:54+0530\n"
+"POT-Creation-Date: 2021-08-13 03:49+0000\n"
 "PO-Revision-Date: 2018-07-27 07:37+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/xmpp/de/>\n"
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Löschen"
 
-#: Xmpp.class.php:361
+#: Xmpp.class.php:362
 #, php-format
 msgid "Deletion of user on letschat failed: %s"
 msgstr "Das Entfernen des Benutzers von „letschat“ ist fehlgeschlage: %s"
@@ -343,7 +343,7 @@ msgstr ""
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: Xmpp.class.php:308 Xmpp.class.php:333
+#: Xmpp.class.php:309 Xmpp.class.php:334
 #, php-format
 msgid "Update of user on letschat failed: %s"
 msgstr "Das Aktualisieren des Benutzers bei „letschat“ ist fehlgeschlagen: %s"
