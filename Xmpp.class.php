@@ -287,7 +287,7 @@ class Xmpp implements BMO {
 		}
 
 		$enabled = $this->userman->getCombinedModuleSettingByID($id, 'xmpp', 'enable');
-		if($_POST['xmpp_enable'] =='inherit' && isset($_POST['groups'][0])){
+		if(isset($_POST['xmpp_enable']) && $_POST['xmpp_enable'] =='inherit' && isset($_POST['groups'][0])){
 			$enabled = $this->userman->getModuleSettingByGID($_POST['groups'][0],'xmpp', 'enable');
 		}
 		if($enabled && $display == 'userman') {
