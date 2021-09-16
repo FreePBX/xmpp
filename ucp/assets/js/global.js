@@ -252,7 +252,7 @@ var XmppC = UCPMC.extend({
 						Xmpp.jid = data.jid;
 						$(".message-box[data-module='Xmpp'] .response textarea").prop("disabled", false);
 						$(".custom-widget[data-widget_rawname=xmpp] a i").css("color", "green");
-						if (typeof UCP.Modules.Presencestate !== "undefined" && typeof UCP.Modules.Presencestate.menu.presence !== "undefined") {
+						if (typeof UCP.Modules.Presencestate !== "undefined" && UCP.Modules.Presencestate.menu  && typeof UCP.Modules.Presencestate.menu.presence !== "undefined") {
 							Xmpp.sendEvent("setPresence", UCP.Modules.Presencestate.menu.presence);
 						}
 					});
