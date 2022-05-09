@@ -64,7 +64,7 @@ var XmppC = UCPMC.extend({
 				$this = this;
 		$.each(this.roster, function(k,v) {
 			var user = clone.clone();
-			user.removeClass("hidden clone").addClass("user").attr("data-jid",v.user).data("jid",v.user);
+			user.removeClass("d-none clone").addClass("user").attr("data-jid",v.user).data("jid",v.user);
 			user.find(".name").text(v.name);
 			user.find("i").css("color",(v.show == "available") ? "green" : "grey");
 			user.click(function() {

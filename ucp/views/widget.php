@@ -1,4 +1,4 @@
-<div class="clone hidden">
+<div class="clone d-none">
 	<i class="fa fa-user" aria-hidden="true"></i> <span class="name"></span>
 </div>
 <div class="status">

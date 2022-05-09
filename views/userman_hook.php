@@ -1,7 +1,7 @@
 <div class="panel panel-info">
 	<div class="panel-heading">
 		<div class="panel-title">
-			<a href="#" data-toggle="collapse" data-target="#moreinfo-xmpp"><i class="glyphicon glyphicon-info-sign"></i></a>&nbsp;&nbsp;&nbsp;<?php echo _("What is Chat")?>
+			<a href="#" data-toggle="collapse" data-target="#moreinfo-xmpp"><i class="fa fa-info-circle"></i></a>&nbsp;&nbsp;&nbsp;<?php echo _("What is Chat")?>
 		</div>
 	</div>
 	<!--At some point we can probably kill this... Maybe make is a 1 time panel that may be dismissed-->
@@ -12,8 +12,8 @@
 <div class="element-container">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="row">
-				<div class="form-group">
+			<div class="">
+				<div class="form-group row">
 					<div class="col-md-3">
 						<label class="control-label" for="xmpp_enable"><?php echo _('Enabled')?></label>
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="xmpp_enable"></i>
