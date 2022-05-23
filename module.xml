@@ -2,7 +2,7 @@
 	<rawname>xmpp</rawname>
 	<repo>standard</repo>
 	<name>XMPP</name>
-	<version>16.0.6</version>
+	<version>17.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3</license>
 	<licenselink>https://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -18,15 +18,10 @@
 		<module>pm2 ge 13.0.3.8</module>
 	</depends>
 	<changelog>
-		*16.0.6* FREEI-4793 
-		*16.0.5* FREEI-3897 added one more condition to check menu field is null 
-		*16.0.4* FREEI-3804 PBXact wizard broken 'Undefined index: xmpp_enable' 
-		*16.0.3* FREEPBX-22734 XMPP chat not honoring the Userman settings 
-		*16.0.2* Packaging of ver 16.0.2
-		*16.0.1alpha* 16.0.1 alpha release
+		*17.0.1alpha* 17.0.1 alpha release
 	</changelog>
 	<supported>
-		<version>16.0</version>
+		<version>17.0</version>
 	</supported>
 	<database>
 		<table name="xmpp_users">
