@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-16 06:55+0000\n"
+"POT-Creation-Date: 2022-05-23 10:06+0000\n"
 "PO-Revision-Date: 2018-09-04 11:23+0000\n"
 "Last-Translator: Petr Varvarovsky <petrv@atlantis.cz>\n"
 "Language-Team: Czech <http://*/projects/freepbx/xmpp/cs/>\n"
@@ -371,7 +371,7 @@ msgstr "Uživatelské jméno koliduje %s změna na %s smazání %s"
 msgid "What is Chat"
 msgstr "Co je chat"
 
-#: xmpp.i18n.php:4 /dev/shm/freepbx/xmpp/xmpp.i18n.php:10
+#: xmpp.i18n.php:4 /usr/src/freepbx/xmpp/xmpp.i18n.php:10
 msgid "XMPP"
 msgstr "XMPP"
 
