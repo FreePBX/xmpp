@@ -262,7 +262,7 @@ class Xmpp implements BMO {
 		if(!is_executable(__DIR__.'/node/adduserletschat.js')) {
 			chmod(__DIR__.'/node/adduserletschat.js', 0755);
 		}
-		$addUserCommand = 'node '.__DIR__.'/node/adduserletschat.js '.$addUserParam;
+		$addUserCommand = ['node', _DIR__.'node/adduserletschat.js', $addUserParam];
 		$process = new Process($addUserCommand);
 		try {
 			$process->mustRun();
@@ -299,7 +299,7 @@ class Xmpp implements BMO {
 		            if(!is_executable(__DIR__.'/node/updateuserletschat.js')) {
 		            	chmod(__DIR__.'/node/updateuserletschat.js', 0755);
 		            }
-		            $updateUserCommand = 'node '.__DIR__.'/node/updateuserletschat.js '.$updateUserParam;
+		            $updateUserCommand = ['node', __DIR__.'/node/updateuserletschat.js', $updateUserParam];
 		            $process = new Process($updateUserCommand);
 		            try {
 		            	$process->mustRun();
@@ -324,7 +324,7 @@ class Xmpp implements BMO {
 		            if(!is_executable(__DIR__.'/node/updateuserletschat.js')) {
 		            	chmod(__DIR__.'/node/updateuserletschat.js', 0755);
 		            }
-		            $updateUserCommand = 'node '.__DIR__.'/node/updateuserletschat.js '.$updateUserParam;
+		            $updateUserCommand = ['node', __DIR__.'/node/updateuserletschat.js', $updateUserParam];
 		            $process = new Process($updateUserCommand);
 		            try {
 		            	$process->mustRun();
@@ -353,7 +353,7 @@ class Xmpp implements BMO {
 		if(!is_executable(__DIR__.'/node/deluserletschat.js')) {
 			chmod(__DIR__.'/node/deluserletschat.js', 0755);
 		}
-		$delUserCommand = 'node '.__DIR__.'/node/deluserletschat.js '.$delUserParam;
+		$delUserCommand = ['node', __DIR__.'/node/deluserletschat.js', $delUserParam];
 		$process = new Process($delUserCommand);
 		try {
 			$process->mustRun();
@@ -591,11 +591,11 @@ class Xmpp implements BMO {
 	}
 	public function startFreepbx($output=null) {
 		$sysadmin = $this->freepbx->Modules->checkStatus("sysadmin");
-		$process = new Process("ps -edaf | grep mongo | grep -v grep");
+		$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
 		if(!$process->isSuccessful() && $sysadmin) {
 			$this->startMongoServer($output);
-			$process = new Process("ps -edaf | grep mongo | grep -v grep");
+			$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
 			$process->run();
 			if(!$process->isSuccessful()) {
 				if(is_object($output)) {
@@ -613,7 +613,7 @@ class Xmpp implements BMO {
 		if(!is_executable(__DIR__.'/node/resetpbxusers.js')) {
 			chmod(__DIR__.'/node/resetpbxusers.js', 0755);
 		}
-		$process = new Process('node '.__DIR__.'/node/resetpbxusers.js');
+		$process = new Process(['node', __DIR__.'/node/resetpbxusers.js']);
 		try {
 				$process->mustRun();
 		}
@@ -732,7 +732,7 @@ class Xmpp implements BMO {
 
 	private function startMongoServer($output) {
 		touch("/var/spool/asterisk/incron/xmpp.mongodb-start");
-		$process = new Process("ps -edaf | grep mongo | grep -v grep");
+		$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
 		$timer = 30;
 		if(is_object($output)) {
@@ -741,7 +741,7 @@ class Xmpp implements BMO {
 			$progress->start();
 		}
 		while(!$process->isSuccessful() && $timer > 0) {
-			$process = new Process("ps -edaf | grep mongo | grep -v grep");
+			$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
 			$process->run();
 			$timer--;
 			if(is_object($output)) {
