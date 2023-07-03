@@ -263,7 +263,7 @@ class Xmpp implements BMO {
 			chmod(__DIR__.'/node/adduserletschat.js', 0755);
 		}
 		$addUserCommand = ['node', _DIR__.'node/adduserletschat.js', $addUserParam];
-		$process = new Process($addUserCommand);
+		$process = \freepbx_get_process_obj($addUserCommand);
 		try {
 			$process->mustRun();
 		}
@@ -300,7 +300,7 @@ class Xmpp implements BMO {
 		            	chmod(__DIR__.'/node/updateuserletschat.js', 0755);
 		            }
 		            $updateUserCommand = ['node', __DIR__.'/node/updateuserletschat.js', $updateUserParam];
-		            $process = new Process($updateUserCommand);
+		            $process = \freepbx_get_process_obj($updateUserCommand);
 		            try {
 		            	$process->mustRun();
 		            }
@@ -325,7 +325,7 @@ class Xmpp implements BMO {
 		            	chmod(__DIR__.'/node/updateuserletschat.js', 0755);
 		            }
 		            $updateUserCommand = ['node', __DIR__.'/node/updateuserletschat.js', $updateUserParam];
-		            $process = new Process($updateUserCommand);
+		            $process = \freepbx_get_process_obj($updateUserCommand);
 		            try {
 		            	$process->mustRun();
 		            }
@@ -354,7 +354,7 @@ class Xmpp implements BMO {
 			chmod(__DIR__.'/node/deluserletschat.js', 0755);
 		}
 		$delUserCommand = ['node', __DIR__.'/node/deluserletschat.js', $delUserParam];
-		$process = new Process($delUserCommand);
+		$process = \freepbx_get_process_obj($delUserCommand);
 		try {
 			$process->mustRun();
 		}
@@ -591,11 +591,11 @@ class Xmpp implements BMO {
 	}
 	public function startFreepbx($output=null) {
 		$sysadmin = $this->freepbx->Modules->checkStatus("sysadmin");
-		$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
+		$process = \freepbx_get_process_obj("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
 		if(!$process->isSuccessful() && $sysadmin) {
 			$this->startMongoServer($output);
-			$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
+			$process = \freepbx_get_process_obj("ps -edaf | grep mongo | grep -v grep");
 			$process->run();
 			if(!$process->isSuccessful()) {
 				if(is_object($output)) {
@@ -613,7 +613,7 @@ class Xmpp implements BMO {
 		if(!is_executable(__DIR__.'/node/resetpbxusers.js')) {
 			chmod(__DIR__.'/node/resetpbxusers.js', 0755);
 		}
-		$process = new Process(['node', __DIR__.'/node/resetpbxusers.js']);
+		$process = \freepbx_get_process_obj(['node', __DIR__.'/node/resetpbxusers.js']);
 		try {
 				$process->mustRun();
 		}
@@ -732,7 +732,7 @@ class Xmpp implements BMO {
 
 	private function startMongoServer($output) {
 		touch("/var/spool/asterisk/incron/xmpp.mongodb-start");
-		$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
+		$process = \freepbx_get_process_obj("ps -edaf | grep mongo | grep -v grep");
 		$process->run();
 		$timer = 30;
 		if(is_object($output)) {
@@ -741,7 +741,7 @@ class Xmpp implements BMO {
 			$progress->start();
 		}
 		while(!$process->isSuccessful() && $timer > 0) {
-			$process = Process::fromShellCommandline("ps -edaf | grep mongo | grep -v grep");
+			$process = \freepbx_get_process_obj("ps -edaf | grep mongo | grep -v grep");
 			$process->run();
 			$timer--;
 			if(is_object($output)) {

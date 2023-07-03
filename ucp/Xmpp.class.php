@@ -6,7 +6,7 @@
  */
 namespace UCP\Modules;
 use \UCP\Modules as Modules;
-
+#[\AllowDynamicProperties]
 class Xmpp extends Modules{
 	protected $module = 'Xmpp';
 	private $ext = 0;
