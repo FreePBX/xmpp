@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-23 15:34+0000\n"
-"PO-Revision-Date: 2023-11-11 13:03+0000\n"
+"PO-Revision-Date: 2023-11-18 14:01+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/xmpp/pl/>"
 "\n"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: xmpp.i18n.php:6
 msgid "Admin"
-msgstr ""
+msgstr "Administrator"
 
 #: Xmpp.class.php:115
 #: Xmpp.class.php:809
